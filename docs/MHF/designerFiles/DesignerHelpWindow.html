@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>PhysioForms.designerFiles.DesignerHelpWindow API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PhysioForms.designerFiles.DesignerHelpWindow</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file &#39;DesignerHelpWindow.ui&#39;
+#
+# Created by: PyQt5 UI code generator 5.15.2
+#
+# WARNING: Any manual changes made to this file will be lost when pyuic5 is
+# run again.  Do not edit this file unless you know what you are doing.
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_HelpWindow(object):
+    def setupUi(self, HelpWindow):
+        HelpWindow.setObjectName(&#34;HelpWindow&#34;)
+        HelpWindow.resize(820, 815)
+        HelpWindow.setMinimumSize(QtCore.QSize(701, 621))
+        HelpWindow.setStyleSheet(&#34;background-color:rgb(255, 255, 255)&#34;)
+        self.centralwidget = QtWidgets.QWidget(HelpWindow)
+        self.centralwidget.setObjectName(&#34;centralwidget&#34;)
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(&#34;gridLayout&#34;)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName(&#34;verticalLayout&#34;)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily(&#34;MS Shell Dlg 2&#34;)
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName(&#34;label&#34;)
+        self.verticalLayout.addWidget(self.label)
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName(&#34;line&#34;)
+        self.verticalLayout.addWidget(self.line)
+        spacerItem = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.verticalLayout.addItem(spacerItem)
+        self.helphtml = QtWidgets.QTextBrowser(self.centralwidget)
+        self.helphtml.setMinimumSize(QtCore.QSize(800, 700))
+        self.helphtml.setMaximumSize(QtCore.QSize(800, 700))
+        self.helphtml.setFrameShape(QtWidgets.QFrame.Box)
+        self.helphtml.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.helphtml.setLineWidth(0)
+        self.helphtml.setObjectName(&#34;helphtml&#34;)
+        self.verticalLayout.addWidget(self.helphtml)
+        self.line_2 = QtWidgets.QFrame(self.centralwidget)
+        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setObjectName(&#34;line_2&#34;)
+        self.verticalLayout.addWidget(self.line_2)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(&#34;horizontalLayout_2&#34;)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem1)
+        self.helpbutton = QtWidgets.QPushButton(self.centralwidget)
+        self.helpbutton.setObjectName(&#34;helpbutton&#34;)
+        self.horizontalLayout_2.addWidget(self.helpbutton)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem2)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        HelpWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(HelpWindow)
+        QtCore.QMetaObject.connectSlotsByName(HelpWindow)
+
+    def retranslateUi(self, HelpWindow):
+        _translate = QtCore.QCoreApplication.translate
+        HelpWindow.setWindowTitle(_translate(&#34;HelpWindow&#34;, &#34;physioForms - Hilfe&#34;))
+        self.label.setText(_translate(&#34;HelpWindow&#34;, &#34;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=\&#34;center\&#34;&gt;&lt;span style=\&#34; font-size:18pt; font-weight:600;\&#34;&gt;Hilfe-Übersicht&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#34;))
+        self.helphtml.setHtml(_translate(&#34;HelpWindow&#34;, &#34;&lt;!DOCTYPE HTML PUBLIC \&#34;-//W3C//DTD HTML 4.0//EN\&#34; \&#34;http://www.w3.org/TR/REC-html40/strict.dtd\&#34;&gt;\n&#34;
+&#34;&lt;html&gt;&lt;head&gt;&lt;meta name=\&#34;qrichtext\&#34; content=\&#34;1\&#34; /&gt;&lt;style type=\&#34;text/css\&#34;&gt;\n&#34;
+&#34;p, li { white-space: pre-wrap; }\n&#34;
+&#34;&lt;/style&gt;&lt;/head&gt;&lt;body style=\&#34; font-family:\&#39;MS Shell Dlg 2\&#39;; font-size:8.25pt; font-weight:400; font-style:normal;\&#34;&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:22pt; font-weight:600;\&#34;&gt;Das physioForms-Hauptfenster:&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Nach dem Start von physioForms öffnet sich das Hauptfenster.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im oberen Bereich ist der aktuelle Fragebogen, sowie dessen Kategorie zu sehen.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Wenn noch kein Fragebogen geöffnet, importiert oder gespeichert wurde, wird dieser als &amp;quot;ungespeichert&amp;quot; angezeigt.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Gleiches gilt für die Kategorie, welche beim Start mit &amp;quot;ohne Kategorie&amp;quot; angezeigt wird.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameTitle.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im linken Bereich unterhalb der Bezeichnungen befindet sich die Fragebogen-Anzeige.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Diese zeigt den aktuell bearbeiteten Fragebogen samt Fragen, deren Kurzbeschreibung, optionaler Antworten und Abhängigkeiten an.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Die Fragen können per Drag und Drop-Funktion neu angeordnet werden.  Dies legt auch die Reihenfolge für den Export fest.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameTree.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Mithilfe der Pfeile, welche sich rechts von dem Fenster befinden, können gespeicherte Fragen hinzugefügt oder entfernt werden.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im rechten Teil befindet sich die Fragenbibliothek. Fragen können nach Kategorie oder durch die Suche gefiltert werden.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameListJPG.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Button-Funktionen im unteren Bereich:&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnen    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet ein Fenster in dem ein gespeicherter Fragebogen geöffnet werden kann.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Speichern    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Speichert den Stand des aktuellen Fragebogens in der Bibliothek.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Leeren    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Entfernt den aktuellen Stand des Fragebogens.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_FragenKat.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Import    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Importiert einen Fragebogen im JSON-Format und öffnet ihn in der Fragebogen-Anzeige.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Export    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Exportiert den aktuellen Fragebogen im physioForms-spezifischen Format.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_ImpExpJPG.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Bearbeiten    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Wenn eine Frage im aktuellen Fragebogen ausgewählt ist, werden die Einstellungen der Frage geöffnet.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Löschen    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Löscht eine Frage aus dem aktuellen Fragebogen, nicht aus der Bibliothek.    &lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_Fragen.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Neue Frage    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet die Frage-Einstellungen um eine neue Frage zu erstellen.&lt;br /&gt;Diese werden automatisch in der Bibliothek gespeichert.      &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Bibliothek    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet die Bibliothek, in der sich eine Auflistung aller Fragen, Fragebögen, sowie Kategorien für Fragen und Fragebögen befindet.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_Fragen.JPG\&#34; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#34;))
+        self.helpbutton.setText(_translate(&#34;HelpWindow&#34;, &#34;Hilfe schließen&#34;))
+
+from PhysioForms.designerFiles import ressources_rc</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow"><code class="flex name class">
+<span>class <span class="ident">Ui_HelpWindow</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Ui_HelpWindow(object):
+    def setupUi(self, HelpWindow):
+        HelpWindow.setObjectName(&#34;HelpWindow&#34;)
+        HelpWindow.resize(820, 815)
+        HelpWindow.setMinimumSize(QtCore.QSize(701, 621))
+        HelpWindow.setStyleSheet(&#34;background-color:rgb(255, 255, 255)&#34;)
+        self.centralwidget = QtWidgets.QWidget(HelpWindow)
+        self.centralwidget.setObjectName(&#34;centralwidget&#34;)
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(&#34;gridLayout&#34;)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName(&#34;verticalLayout&#34;)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily(&#34;MS Shell Dlg 2&#34;)
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName(&#34;label&#34;)
+        self.verticalLayout.addWidget(self.label)
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName(&#34;line&#34;)
+        self.verticalLayout.addWidget(self.line)
+        spacerItem = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.verticalLayout.addItem(spacerItem)
+        self.helphtml = QtWidgets.QTextBrowser(self.centralwidget)
+        self.helphtml.setMinimumSize(QtCore.QSize(800, 700))
+        self.helphtml.setMaximumSize(QtCore.QSize(800, 700))
+        self.helphtml.setFrameShape(QtWidgets.QFrame.Box)
+        self.helphtml.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.helphtml.setLineWidth(0)
+        self.helphtml.setObjectName(&#34;helphtml&#34;)
+        self.verticalLayout.addWidget(self.helphtml)
+        self.line_2 = QtWidgets.QFrame(self.centralwidget)
+        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setObjectName(&#34;line_2&#34;)
+        self.verticalLayout.addWidget(self.line_2)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(&#34;horizontalLayout_2&#34;)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem1)
+        self.helpbutton = QtWidgets.QPushButton(self.centralwidget)
+        self.helpbutton.setObjectName(&#34;helpbutton&#34;)
+        self.horizontalLayout_2.addWidget(self.helpbutton)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem2)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        HelpWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(HelpWindow)
+        QtCore.QMetaObject.connectSlotsByName(HelpWindow)
+
+    def retranslateUi(self, HelpWindow):
+        _translate = QtCore.QCoreApplication.translate
+        HelpWindow.setWindowTitle(_translate(&#34;HelpWindow&#34;, &#34;physioForms - Hilfe&#34;))
+        self.label.setText(_translate(&#34;HelpWindow&#34;, &#34;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=\&#34;center\&#34;&gt;&lt;span style=\&#34; font-size:18pt; font-weight:600;\&#34;&gt;Hilfe-Übersicht&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#34;))
+        self.helphtml.setHtml(_translate(&#34;HelpWindow&#34;, &#34;&lt;!DOCTYPE HTML PUBLIC \&#34;-//W3C//DTD HTML 4.0//EN\&#34; \&#34;http://www.w3.org/TR/REC-html40/strict.dtd\&#34;&gt;\n&#34;
+&#34;&lt;html&gt;&lt;head&gt;&lt;meta name=\&#34;qrichtext\&#34; content=\&#34;1\&#34; /&gt;&lt;style type=\&#34;text/css\&#34;&gt;\n&#34;
+&#34;p, li { white-space: pre-wrap; }\n&#34;
+&#34;&lt;/style&gt;&lt;/head&gt;&lt;body style=\&#34; font-family:\&#39;MS Shell Dlg 2\&#39;; font-size:8.25pt; font-weight:400; font-style:normal;\&#34;&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:22pt; font-weight:600;\&#34;&gt;Das physioForms-Hauptfenster:&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Nach dem Start von physioForms öffnet sich das Hauptfenster.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im oberen Bereich ist der aktuelle Fragebogen, sowie dessen Kategorie zu sehen.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Wenn noch kein Fragebogen geöffnet, importiert oder gespeichert wurde, wird dieser als &amp;quot;ungespeichert&amp;quot; angezeigt.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Gleiches gilt für die Kategorie, welche beim Start mit &amp;quot;ohne Kategorie&amp;quot; angezeigt wird.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameTitle.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im linken Bereich unterhalb der Bezeichnungen befindet sich die Fragebogen-Anzeige.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Diese zeigt den aktuell bearbeiteten Fragebogen samt Fragen, deren Kurzbeschreibung, optionaler Antworten und Abhängigkeiten an.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Die Fragen können per Drag und Drop-Funktion neu angeordnet werden.  Dies legt auch die Reihenfolge für den Export fest.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameTree.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Mithilfe der Pfeile, welche sich rechts von dem Fenster befinden, können gespeicherte Fragen hinzugefügt oder entfernt werden.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im rechten Teil befindet sich die Fragenbibliothek. Fragen können nach Kategorie oder durch die Suche gefiltert werden.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameListJPG.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Button-Funktionen im unteren Bereich:&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnen    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet ein Fenster in dem ein gespeicherter Fragebogen geöffnet werden kann.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Speichern    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Speichert den Stand des aktuellen Fragebogens in der Bibliothek.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Leeren    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Entfernt den aktuellen Stand des Fragebogens.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_FragenKat.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Import    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Importiert einen Fragebogen im JSON-Format und öffnet ihn in der Fragebogen-Anzeige.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Export    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Exportiert den aktuellen Fragebogen im physioForms-spezifischen Format.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_ImpExpJPG.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Bearbeiten    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Wenn eine Frage im aktuellen Fragebogen ausgewählt ist, werden die Einstellungen der Frage geöffnet.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Löschen    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Löscht eine Frage aus dem aktuellen Fragebogen, nicht aus der Bibliothek.    &lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_Fragen.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Neue Frage    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet die Frage-Einstellungen um eine neue Frage zu erstellen.&lt;br /&gt;Diese werden automatisch in der Bibliothek gespeichert.      &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Bibliothek    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet die Bibliothek, in der sich eine Auflistung aller Fragen, Fragebögen, sowie Kategorien für Fragen und Fragebögen befindet.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_Fragen.JPG\&#34; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#34;))
+        self.helpbutton.setText(_translate(&#34;HelpWindow&#34;, &#34;Hilfe schließen&#34;))</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow.retranslateUi"><code class="name flex">
+<span>def <span class="ident">retranslateUi</span></span>(<span>self, HelpWindow)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">    def retranslateUi(self, HelpWindow):
+        _translate = QtCore.QCoreApplication.translate
+        HelpWindow.setWindowTitle(_translate(&#34;HelpWindow&#34;, &#34;physioForms - Hilfe&#34;))
+        self.label.setText(_translate(&#34;HelpWindow&#34;, &#34;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=\&#34;center\&#34;&gt;&lt;span style=\&#34; font-size:18pt; font-weight:600;\&#34;&gt;Hilfe-Übersicht&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#34;))
+        self.helphtml.setHtml(_translate(&#34;HelpWindow&#34;, &#34;&lt;!DOCTYPE HTML PUBLIC \&#34;-//W3C//DTD HTML 4.0//EN\&#34; \&#34;http://www.w3.org/TR/REC-html40/strict.dtd\&#34;&gt;\n&#34;
+&#34;&lt;html&gt;&lt;head&gt;&lt;meta name=\&#34;qrichtext\&#34; content=\&#34;1\&#34; /&gt;&lt;style type=\&#34;text/css\&#34;&gt;\n&#34;
+&#34;p, li { white-space: pre-wrap; }\n&#34;
+&#34;&lt;/style&gt;&lt;/head&gt;&lt;body style=\&#34; font-family:\&#39;MS Shell Dlg 2\&#39;; font-size:8.25pt; font-weight:400; font-style:normal;\&#34;&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:22pt; font-weight:600;\&#34;&gt;Das physioForms-Hauptfenster:&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Nach dem Start von physioForms öffnet sich das Hauptfenster.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im oberen Bereich ist der aktuelle Fragebogen, sowie dessen Kategorie zu sehen.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Wenn noch kein Fragebogen geöffnet, importiert oder gespeichert wurde, wird dieser als &amp;quot;ungespeichert&amp;quot; angezeigt.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Gleiches gilt für die Kategorie, welche beim Start mit &amp;quot;ohne Kategorie&amp;quot; angezeigt wird.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameTitle.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im linken Bereich unterhalb der Bezeichnungen befindet sich die Fragebogen-Anzeige.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Diese zeigt den aktuell bearbeiteten Fragebogen samt Fragen, deren Kurzbeschreibung, optionaler Antworten und Abhängigkeiten an.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Die Fragen können per Drag und Drop-Funktion neu angeordnet werden.  Dies legt auch die Reihenfolge für den Export fest.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameTree.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Mithilfe der Pfeile, welche sich rechts von dem Fenster befinden, können gespeicherte Fragen hinzugefügt oder entfernt werden.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Im rechten Teil befindet sich die Fragenbibliothek. Fragen können nach Kategorie oder durch die Suche gefiltert werden.&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameListJPG.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Button-Funktionen im unteren Bereich:&lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnen    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet ein Fenster in dem ein gespeicherter Fragebogen geöffnet werden kann.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Speichern    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Speichert den Stand des aktuellen Fragebogens in der Bibliothek.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Leeren    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Entfernt den aktuellen Stand des Fragebogens.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_FragenKat.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Import    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Importiert einen Fragebogen im JSON-Format und öffnet ihn in der Fragebogen-Anzeige.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Export    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Exportiert den aktuellen Fragebogen im physioForms-spezifischen Format.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_ImpExpJPG.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Bearbeiten    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Wenn eine Frage im aktuellen Fragebogen ausgewählt ist, werden die Einstellungen der Frage geöffnet.    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Löschen    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Löscht eine Frage aus dem aktuellen Fragebogen, nicht aus der Bibliothek.    &lt;/span&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_Fragen.JPG\&#34; /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;table border=\&#34;0\&#34; style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;\&#34; cellspacing=\&#34;2\&#34; cellpadding=\&#34;0\&#34;&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Button&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt; font-weight:600;\&#34;&gt;Funktion&lt;/span&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Neue Frage    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet die Frage-Einstellungen um eine neue Frage zu erstellen.&lt;br /&gt;Diese werden automatisch in der Bibliothek gespeichert.      &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;\n&#34;
+&#34;&lt;tr&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Bibliothek    &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;\n&#34;
+&#34;&lt;td&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;span style=\&#34; font-size:10pt;\&#34;&gt;Öffnet die Bibliothek, in der sich eine Auflistung aller Fragen, Fragebögen, sowie Kategorien für Fragen und Fragebögen befindet.  &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\n&#34;
+&#34;&lt;p style=\&#34;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\&#34;&gt;&lt;br /&gt;&lt;/p&gt;\n&#34;
+&#34;&lt;p style=\&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\&#34;&gt;&lt;img src=\&#34;:/html/html-files/MainFrameBar_Fragen.JPG\&#34; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#34;))
+        self.helpbutton.setText(_translate(&#34;HelpWindow&#34;, &#34;Hilfe schließen&#34;))</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow.setupUi"><code class="name flex">
+<span>def <span class="ident">setupUi</span></span>(<span>self, HelpWindow)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setupUi(self, HelpWindow):
+    HelpWindow.setObjectName(&#34;HelpWindow&#34;)
+    HelpWindow.resize(820, 815)
+    HelpWindow.setMinimumSize(QtCore.QSize(701, 621))
+    HelpWindow.setStyleSheet(&#34;background-color:rgb(255, 255, 255)&#34;)
+    self.centralwidget = QtWidgets.QWidget(HelpWindow)
+    self.centralwidget.setObjectName(&#34;centralwidget&#34;)
+    self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+    self.gridLayout.setObjectName(&#34;gridLayout&#34;)
+    self.verticalLayout = QtWidgets.QVBoxLayout()
+    self.verticalLayout.setObjectName(&#34;verticalLayout&#34;)
+    self.label = QtWidgets.QLabel(self.centralwidget)
+    font = QtGui.QFont()
+    font.setFamily(&#34;MS Shell Dlg 2&#34;)
+    font.setPointSize(16)
+    font.setBold(True)
+    font.setWeight(75)
+    self.label.setFont(font)
+    self.label.setObjectName(&#34;label&#34;)
+    self.verticalLayout.addWidget(self.label)
+    self.line = QtWidgets.QFrame(self.centralwidget)
+    self.line.setFrameShape(QtWidgets.QFrame.HLine)
+    self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+    self.line.setObjectName(&#34;line&#34;)
+    self.verticalLayout.addWidget(self.line)
+    spacerItem = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+    self.verticalLayout.addItem(spacerItem)
+    self.helphtml = QtWidgets.QTextBrowser(self.centralwidget)
+    self.helphtml.setMinimumSize(QtCore.QSize(800, 700))
+    self.helphtml.setMaximumSize(QtCore.QSize(800, 700))
+    self.helphtml.setFrameShape(QtWidgets.QFrame.Box)
+    self.helphtml.setFrameShadow(QtWidgets.QFrame.Raised)
+    self.helphtml.setLineWidth(0)
+    self.helphtml.setObjectName(&#34;helphtml&#34;)
+    self.verticalLayout.addWidget(self.helphtml)
+    self.line_2 = QtWidgets.QFrame(self.centralwidget)
+    self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+    self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+    self.line_2.setObjectName(&#34;line_2&#34;)
+    self.verticalLayout.addWidget(self.line_2)
+    self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+    self.horizontalLayout_2.setObjectName(&#34;horizontalLayout_2&#34;)
+    spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+    self.horizontalLayout_2.addItem(spacerItem1)
+    self.helpbutton = QtWidgets.QPushButton(self.centralwidget)
+    self.helpbutton.setObjectName(&#34;helpbutton&#34;)
+    self.horizontalLayout_2.addWidget(self.helpbutton)
+    spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+    self.horizontalLayout_2.addItem(spacerItem2)
+    self.verticalLayout.addLayout(self.horizontalLayout_2)
+    self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+    HelpWindow.setCentralWidget(self.centralwidget)
+
+    self.retranslateUi(HelpWindow)
+    QtCore.QMetaObject.connectSlotsByName(HelpWindow)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PhysioForms.designerFiles" href="index.html">PhysioForms.designerFiles</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow" href="#PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow">Ui_HelpWindow</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow.retranslateUi" href="#PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow.retranslateUi">retranslateUi</a></code></li>
+<li><code><a title="PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow.setupUi" href="#PhysioForms.designerFiles.DesignerHelpWindow.Ui_HelpWindow.setupUi">setupUi</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

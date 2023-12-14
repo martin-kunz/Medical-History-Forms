@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>PhysioForms.GUI.SaveQuestion API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PhysioForms.GUI.SaveQuestion</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import sys
+
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtWidgets import QLineEdit, QPushButton, QHBoxLayout
+
+from PhysioForms import QuestionType
+from PhysioForms.Question import Question
+from PhysioForms.QuestionCategory import QuestionCategory
+from PhysioForms.designerFiles.DesignerSaveQuestion import Ui_MainWindow
+
+iconPicturePath = &#34;./GUI/pictures/icon-annette-boehm-square.png&#34;
+plusPicturePath = &#34;GUI/pictures/plus.png&#34;
+xPicturePath = &#34;GUI/pictures/x.png&#34;
+
+
+class SaveQuestion(QtWidgets.QMainWindow):
+    &#34;&#34;&#34;
+    Class SaveQuestion to show window where a new question can be created or an existing one can be edited
+
+    &#34;&#34;&#34;
+    RowPositionOptions = 4
+
+    def __init__(self, parent: QtWidgets.QMainWindow, question: Question = None,
+                 parentLibrary: QtWidgets.QMainWindow = None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        &#34;&#34;&#34;
+        Constructor
+        :param parent: Here MainFrame
+        :param question: Question we want to save
+        :param parentLibrary: Library
+        &#34;&#34;&#34;
+
+        self.setWindowModality(Qt.ApplicationModal)
+
+        self.parent = parent
+        self.library = parentLibrary
+
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        self.allQuestionTypes = self.parent.questionTypes
+
+        self.currentQuestion = question
+
+        self.btnadd = QPushButton()
+        self.icon_button = QIcon(plusPicturePath)
+        self.btnadd.setIcon(self.icon_button)
+
+        self.icon_button = QIcon(xPicturePath)
+        self.btnremove = QPushButton()
+        self.btnremove.setIcon(self.icon_button)
+
+        self.btnadd.clicked.connect(self.add_field)
+
+        self.ui.AbbrechButton.clicked.connect(self.cancelClicked)
+        self.ui.SpeicherButton.clicked.connect(self.saveQuestion)
+
+        # Import Icon
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        SaveQuestion.setWindowIcon(self, icon)
+
+        self.ui.lineEdit_beschreibung.setPlaceholderText(&#34;Pflichtfeld&#34;)
+        self.ui.lineEdit_kurzbeschreibung.setPlaceholderText(&#34;Pflichtfeld&#34;)
+
+        # Fill questiontypes combobox
+        for types in self.parent.questionController.types:
+            self.ui.comboBox_fragentyp.addItem(types.displayName)
+
+        # Fill categories combobox
+        for category in self.parent.questionController.categories():
+            self.ui.comboBox_kategorie.addItem(category.category)
+
+        # Fill relatedQuestioncombobox
+        self.ui.dropdown_relatedQuestion.addItem(&#34;&#34;)
+        for relatedQuestion in self.parent.questionController.questions():
+            if len(relatedQuestion.options) != 0:
+                self.ui.dropdown_relatedQuestion.addItem(relatedQuestion.abbreviation)
+
+        # InstallEventFilter on relatedquestion combobox
+        self.ui.dropdown_relatedQuestion.currentIndexChanged.connect(self.relatedQuestionChanged)
+        self.ui.comboBox_fragentyp.currentIndexChanged.connect(self.questionTypeChanged)
+
+        if self.currentQuestion is None:
+            self.createNoOptions()
+            self.ui.comboBox_fragentyp.setCurrentIndex(2)
+        else:
+            self.ui.comboBox_kategorie.setCurrentIndex(self.currentQuestion.category.id - 1)
+            self.ui.comboBox_fragentyp.setCurrentIndex(self.currentQuestion.type.id - 1)
+            self.ui.lineEdit_beschreibung.setText(question.text)
+            self.ui.lineEdit_kurzbeschreibung.setText(question.abbreviation)
+
+            if len(self.currentQuestion.options) &gt; 0:
+                self.createWithOptions()
+                # Insert first text
+                self.options[0].setText(self.currentQuestion.options[0])
+                # Add options field and insert text
+                for i in range(1, len(self.currentQuestion.options)):
+                    self.add_field()
+                    self.options[i].setText(self.currentQuestion.options[i])
+            # Question necessary
+            if self.currentQuestion.required:
+                self.ui.checkBox_pflichtfrage.setChecked(True)
+            else:
+                self.ui.checkBox_pflichtfrage.setChecked(False)
+            # Question allows comment
+            if self.currentQuestion.comment:
+                self.ui.checkBox_kommentar.setChecked(True)
+            else:
+                self.ui.checkBox_kommentar.setChecked(False)
+            # Question allows score
+            if self.currentQuestion.score:
+                self.ui.checkBox_auswertbar.setChecked(True)
+            else:
+                self.ui.checkBox_auswertbar.setChecked(False)
+            # Dependent on Question
+            if self.currentQuestion.dependent_on != &#34;none&#34;:
+                index = self.ui.dropdown_relatedQuestion.findText(self.currentQuestion.dependent_on)
+                self.ui.dropdown_relatedQuestion.setCurrentIndex(index)
+                self.relatedQuestionChanged()
+
+                # Set the right index for expected answer
+                index = self.ui.dropdown_necessaryAnswer.findText(self.currentQuestion.expected_answer)
+                self.ui.dropdown_necessaryAnswer.setCurrentIndex(index)
+            else:
+                self.ui.dropdown_relatedQuestion.setCurrentIndex(0)
+
+    def createNoOptions(self):
+        &#34;&#34;&#34;
+        Changes the design to fit a selection without options
+        &#34;&#34;&#34;
+        length = self.ui.formLayout.rowCount()
+        # Delete all entries in options
+        self.options = []
+        # Delte all rows with options
+        while length &gt; 9:
+            self.ui.formLayout.removeRow(4)
+            length -= 1
+
+    def createWithOptions(self):
+        &#34;&#34;&#34;
+        Changes the design to fit a selection with options
+        &#34;&#34;&#34;
+        # Clear everything to be sure
+        self.createNoOptions()
+        # List to save the QLineEdits for options
+        self.options = []
+
+        self.btnadd = QPushButton()
+        self.icon_button = QIcon(plusPicturePath)
+        self.btnadd.setIcon(self.icon_button)
+
+        # First option without minus
+        self.optiontext = QLineEdit(self)
+        self.options.append(self.optiontext)
+
+        self.btnadd.clicked.connect(self.add_field)
+
+        self.layout_first_option = QHBoxLayout()
+        self.layout_first_option.addWidget(self.optiontext)
+        self.layout_first_option.addWidget(self.btnadd)
+
+        self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, self.layout_first_option)
+
+    def cancelClicked(self):
+        &#34;&#34;&#34;
+        Closes the window
+        &#34;&#34;&#34;
+        self.close()
+
+    def questionTypeChanged(self):
+        &#34;&#34;&#34;
+        If the questiontype combobox is changed a signal is emitted and this function is called
+        it then changes our design to support our user
+        &#34;&#34;&#34;
+        currentQuestionType = self.findQuestionType(self.allQuestionTypes,
+                                                    self.ui.comboBox_fragentyp.currentIndex() + 1)
+        if currentQuestionType.options == 1:
+            self.createWithOptions()
+        else:
+            self.createNoOptions()
+
+    def relatedQuestionChanged(self):
+        &#34;&#34;&#34;
+        If the related question combobox is changed a signal is emitted and this function is called.
+        It then iterates over all questions and finds the possible answers in our answer combobox
+        &#34;&#34;&#34;
+        abbrv = self.ui.dropdown_relatedQuestion.currentText()
+
+        questions = self.parent.questionController.questions()
+
+        self.ui.dropdown_necessaryAnswer.clear()
+
+        for question in questions:
+            if question.abbreviation == abbrv:
+                if question.abbreviation == self.ui.lineEdit_kurzbeschreibung.text():
+                    self.parent.popUp(&#39;Warnung&#39;, &#39;Sie können nicht auf die Frage selbst verweisen!&#39;)
+                    return
+                else:
+                    self.ui.dropdown_necessaryAnswer.addItems(question.options)
+                    return
+
+    def saveQuestion(self):
+        &#34;&#34;&#34;
+        Collects all data from our window and stores them
+        into a new question object. Later sends this to its parent
+        MainFrame so our Data can be changed there aswell
+        &#34;&#34;&#34;
+        description = self.ui.lineEdit_beschreibung.text()
+        abbrevation = self.ui.lineEdit_kurzbeschreibung.text()
+        requiered = self.ui.checkBox_pflichtfrage.isChecked()
+        comment = self.ui.checkBox_kommentar.isChecked()
+        score = self.ui.checkBox_auswertbar.isChecked()
+        dependent_on = self.ui.dropdown_relatedQuestion.currentText()
+        expected_answer = self.ui.dropdown_necessaryAnswer.currentText()
+
+        if (not description) | (not abbrevation):
+            self.parent.popUp(&#39;Warnung&#39;, &#39;Notwendige Felder nicht gefüllt&#39;)
+            return
+
+        options = []
+        for option in self.options:
+            if not option.text():
+                self.parent.popUp(&#39;Warnung&#39;, &#39;Eins der Optionsfelder ist derzeitig leer!&#39;)
+                return
+            else:
+                options.append(option.text())
+
+        # Fill empty fields with None
+        if not dependent_on:
+            dependent_on = &#34;none&#34;
+        # Fill empty fields with None
+        if not expected_answer:
+            expected_answer = &#34;none&#34;
+
+        # Question = None -&gt; no ID -&gt; -1
+        if self.currentQuestion is None:
+            ids = -1
+        else:
+            ids = self.currentQuestion.id
+
+        newQuestionType = self.findQuestionType(self.allQuestionTypes, self.ui.comboBox_fragentyp.currentIndex() + 1)
+        newQuestionCategory = self.findCategory(self.ui.comboBox_kategorie.currentIndex() + 1)
+        newQuestion = Question(text=description, type=newQuestionType, options=options, required=requiered,
+                               dependent_on=dependent_on, expected_answer=expected_answer, abbreviation=abbrevation,
+                               score=score, comment=comment, id=ids, category=newQuestionCategory)
+
+        self.parent.editQuestionItem(newQuestion)
+        if self.library is not None:
+            self.library.updateAll()
+        self.close()
+
+    def add_field(self):
+        # Insert first Row with delete Button and delete prior row
+        priorOption = self.options.pop(self.RowPositionOptions - 4)
+        priorOptionText = priorOption.text()
+        self.ui.formLayout.removeRow(self.RowPositionOptions)
+
+        # Layoutoptions with minus, objects have to be recreated because of removeRow
+        btnremove = QPushButton()
+        btnremove.clicked.connect(self.remove_field)
+        icon_button = QIcon(xPicturePath)
+        btnremove.setIcon(icon_button)
+
+        option = QLineEdit()
+        option.setText(priorOptionText)
+
+        layout_options_minus = QHBoxLayout()
+        layout_options_minus.addWidget(option)
+        layout_options_minus.addWidget(btnremove)
+
+        self.options.append(option)
+
+        self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_options_minus)
+
+        # Increase the rowCount and create the necessary layoutoption with plus and minus
+        self.RowPositionOptions += 1
+
+        icon_button = QIcon(xPicturePath)
+        btnremove = QPushButton()
+        btnremove.setIcon(icon_button)
+        btnremove.clicked.connect(self.remove_field)
+
+        btnadd = QPushButton()
+        icon_button = QIcon(plusPicturePath)
+        btnadd.setIcon(icon_button)
+
+        option = QLineEdit()
+
+        layout_last_options = QHBoxLayout()
+        layout_last_options.addWidget(option)
+        layout_last_options.addWidget(btnadd)
+        layout_last_options.addWidget(btnremove)
+        btnadd.clicked.connect(self.add_field)
+
+        self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+        self.options.append(option)
+
+    def remove_field(self):
+        &#34;&#34;&#34;
+        3 Cases:
+        Delete with only 2 rows left -&gt; Start again
+        Delete row in the middle -&gt; delteRow
+        Delte lowest row -&gt; second lowest row has to be updated
+        &#34;&#34;&#34;
+        sender = self.sender()
+        rowToDelete = int(round((sender.pos().y() - 135) / 50)) + 3
+
+        if len(self.options) &gt; 1:
+            # Delete last row
+            if (rowToDelete == 5) &amp; (len(self.options) == 2) | ((rowToDelete == 4) &amp; (len(self.options) == 2)):
+                priorPreOption = self.options.pop(1)
+                priorOption = self.options.pop(0)
+                priorPreOptionText = priorPreOption.text()
+                priorOptionText = priorOption.text()
+
+                btnadd = QPushButton()
+                icon_button = QIcon(plusPicturePath)
+                btnadd.setIcon(icon_button)
+
+                option = QLineEdit()
+                # Add first or last line depending on what line was removed
+                if rowToDelete == 5:
+                    option.setText(priorOptionText)
+                else:
+                    option.setText(priorPreOptionText)
+                self.options.append(option)
+
+                layout_last_options = QHBoxLayout()
+                layout_last_options.addWidget(option)
+                layout_last_options.addWidget(btnadd)
+                btnadd.clicked.connect(self.add_field)
+
+                # Remove the 2 rows
+                self.ui.formLayout.removeRow(self.RowPositionOptions)
+                self.ui.formLayout.removeRow(self.RowPositionOptions - 1)
+
+                self.RowPositionOptions -= 1
+                self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+            elif len(self.options) == rowToDelete - 3:
+                icon_button = QIcon(xPicturePath)
+
+                icon_button = QIcon(xPicturePath)
+                btnremove = QPushButton()
+                btnremove.setIcon(icon_button)
+                btnremove.clicked.connect(self.remove_field)
+
+                btnadd = QPushButton()
+                icon_button = QIcon(plusPicturePath)
+                btnadd.setIcon(icon_button)
+
+                self.options.pop(len(self.options) - 1)
+                priorOption = self.options.pop(len(self.options) - 1)
+                priorText = priorOption.text()
+                option = QLineEdit()
+                option.setText(priorText)
+                self.options.append(option)
+
+                layout_last_options = QHBoxLayout()
+                layout_last_options.addWidget(option)
+                layout_last_options.addWidget(btnadd)
+                layout_last_options.addWidget(btnremove)
+                btnadd.clicked.connect(self.add_field)
+
+                self.ui.formLayout.removeRow(self.RowPositionOptions)
+                self.RowPositionOptions -= 1
+                self.ui.formLayout.removeRow(self.RowPositionOptions)
+                self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+            else:
+                self.RowPositionOptions -= 1
+                self.options.pop(rowToDelete - 4)
+                self.ui.formLayout.removeRow(rowToDelete)
+
+    def findQuestionType(self, questionTypes: list, id: int) -&gt; QuestionType:
+        &#34;&#34;&#34;
+        Finds the fitting questionType for the id
+        :param questionTypes: Types of all questions in our database
+        :param id: The index that is selected in our frame
+        :return: Returns the type of question
+        &#34;&#34;&#34;
+        for type in questionTypes:
+            if type.id == id:
+                return type
+
+    def findCategory(self, id: int) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Finds the fitting category
+        :param id: The index that is selected in our frame
+        :return: Returns the type of question category
+        &#34;&#34;&#34;
+        for category in self.parent.questionController.categories():
+            if category.id == id:
+                return category</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion"><code class="flex name class">
+<span>class <span class="ident">SaveQuestion</span></span>
+<span>(</span><span>parent: PyQt5.QtWidgets.QMainWindow, question: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a> = None, parentLibrary: PyQt5.QtWidgets.QMainWindow = None, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class SaveQuestion to show window where a new question can be created or an existing one can be edited</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SaveQuestion(QtWidgets.QMainWindow):
+    &#34;&#34;&#34;
+    Class SaveQuestion to show window where a new question can be created or an existing one can be edited
+
+    &#34;&#34;&#34;
+    RowPositionOptions = 4
+
+    def __init__(self, parent: QtWidgets.QMainWindow, question: Question = None,
+                 parentLibrary: QtWidgets.QMainWindow = None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        &#34;&#34;&#34;
+        Constructor
+        :param parent: Here MainFrame
+        :param question: Question we want to save
+        :param parentLibrary: Library
+        &#34;&#34;&#34;
+
+        self.setWindowModality(Qt.ApplicationModal)
+
+        self.parent = parent
+        self.library = parentLibrary
+
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        self.allQuestionTypes = self.parent.questionTypes
+
+        self.currentQuestion = question
+
+        self.btnadd = QPushButton()
+        self.icon_button = QIcon(plusPicturePath)
+        self.btnadd.setIcon(self.icon_button)
+
+        self.icon_button = QIcon(xPicturePath)
+        self.btnremove = QPushButton()
+        self.btnremove.setIcon(self.icon_button)
+
+        self.btnadd.clicked.connect(self.add_field)
+
+        self.ui.AbbrechButton.clicked.connect(self.cancelClicked)
+        self.ui.SpeicherButton.clicked.connect(self.saveQuestion)
+
+        # Import Icon
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        SaveQuestion.setWindowIcon(self, icon)
+
+        self.ui.lineEdit_beschreibung.setPlaceholderText(&#34;Pflichtfeld&#34;)
+        self.ui.lineEdit_kurzbeschreibung.setPlaceholderText(&#34;Pflichtfeld&#34;)
+
+        # Fill questiontypes combobox
+        for types in self.parent.questionController.types:
+            self.ui.comboBox_fragentyp.addItem(types.displayName)
+
+        # Fill categories combobox
+        for category in self.parent.questionController.categories():
+            self.ui.comboBox_kategorie.addItem(category.category)
+
+        # Fill relatedQuestioncombobox
+        self.ui.dropdown_relatedQuestion.addItem(&#34;&#34;)
+        for relatedQuestion in self.parent.questionController.questions():
+            if len(relatedQuestion.options) != 0:
+                self.ui.dropdown_relatedQuestion.addItem(relatedQuestion.abbreviation)
+
+        # InstallEventFilter on relatedquestion combobox
+        self.ui.dropdown_relatedQuestion.currentIndexChanged.connect(self.relatedQuestionChanged)
+        self.ui.comboBox_fragentyp.currentIndexChanged.connect(self.questionTypeChanged)
+
+        if self.currentQuestion is None:
+            self.createNoOptions()
+            self.ui.comboBox_fragentyp.setCurrentIndex(2)
+        else:
+            self.ui.comboBox_kategorie.setCurrentIndex(self.currentQuestion.category.id - 1)
+            self.ui.comboBox_fragentyp.setCurrentIndex(self.currentQuestion.type.id - 1)
+            self.ui.lineEdit_beschreibung.setText(question.text)
+            self.ui.lineEdit_kurzbeschreibung.setText(question.abbreviation)
+
+            if len(self.currentQuestion.options) &gt; 0:
+                self.createWithOptions()
+                # Insert first text
+                self.options[0].setText(self.currentQuestion.options[0])
+                # Add options field and insert text
+                for i in range(1, len(self.currentQuestion.options)):
+                    self.add_field()
+                    self.options[i].setText(self.currentQuestion.options[i])
+            # Question necessary
+            if self.currentQuestion.required:
+                self.ui.checkBox_pflichtfrage.setChecked(True)
+            else:
+                self.ui.checkBox_pflichtfrage.setChecked(False)
+            # Question allows comment
+            if self.currentQuestion.comment:
+                self.ui.checkBox_kommentar.setChecked(True)
+            else:
+                self.ui.checkBox_kommentar.setChecked(False)
+            # Question allows score
+            if self.currentQuestion.score:
+                self.ui.checkBox_auswertbar.setChecked(True)
+            else:
+                self.ui.checkBox_auswertbar.setChecked(False)
+            # Dependent on Question
+            if self.currentQuestion.dependent_on != &#34;none&#34;:
+                index = self.ui.dropdown_relatedQuestion.findText(self.currentQuestion.dependent_on)
+                self.ui.dropdown_relatedQuestion.setCurrentIndex(index)
+                self.relatedQuestionChanged()
+
+                # Set the right index for expected answer
+                index = self.ui.dropdown_necessaryAnswer.findText(self.currentQuestion.expected_answer)
+                self.ui.dropdown_necessaryAnswer.setCurrentIndex(index)
+            else:
+                self.ui.dropdown_relatedQuestion.setCurrentIndex(0)
+
+    def createNoOptions(self):
+        &#34;&#34;&#34;
+        Changes the design to fit a selection without options
+        &#34;&#34;&#34;
+        length = self.ui.formLayout.rowCount()
+        # Delete all entries in options
+        self.options = []
+        # Delte all rows with options
+        while length &gt; 9:
+            self.ui.formLayout.removeRow(4)
+            length -= 1
+
+    def createWithOptions(self):
+        &#34;&#34;&#34;
+        Changes the design to fit a selection with options
+        &#34;&#34;&#34;
+        # Clear everything to be sure
+        self.createNoOptions()
+        # List to save the QLineEdits for options
+        self.options = []
+
+        self.btnadd = QPushButton()
+        self.icon_button = QIcon(plusPicturePath)
+        self.btnadd.setIcon(self.icon_button)
+
+        # First option without minus
+        self.optiontext = QLineEdit(self)
+        self.options.append(self.optiontext)
+
+        self.btnadd.clicked.connect(self.add_field)
+
+        self.layout_first_option = QHBoxLayout()
+        self.layout_first_option.addWidget(self.optiontext)
+        self.layout_first_option.addWidget(self.btnadd)
+
+        self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, self.layout_first_option)
+
+    def cancelClicked(self):
+        &#34;&#34;&#34;
+        Closes the window
+        &#34;&#34;&#34;
+        self.close()
+
+    def questionTypeChanged(self):
+        &#34;&#34;&#34;
+        If the questiontype combobox is changed a signal is emitted and this function is called
+        it then changes our design to support our user
+        &#34;&#34;&#34;
+        currentQuestionType = self.findQuestionType(self.allQuestionTypes,
+                                                    self.ui.comboBox_fragentyp.currentIndex() + 1)
+        if currentQuestionType.options == 1:
+            self.createWithOptions()
+        else:
+            self.createNoOptions()
+
+    def relatedQuestionChanged(self):
+        &#34;&#34;&#34;
+        If the related question combobox is changed a signal is emitted and this function is called.
+        It then iterates over all questions and finds the possible answers in our answer combobox
+        &#34;&#34;&#34;
+        abbrv = self.ui.dropdown_relatedQuestion.currentText()
+
+        questions = self.parent.questionController.questions()
+
+        self.ui.dropdown_necessaryAnswer.clear()
+
+        for question in questions:
+            if question.abbreviation == abbrv:
+                if question.abbreviation == self.ui.lineEdit_kurzbeschreibung.text():
+                    self.parent.popUp(&#39;Warnung&#39;, &#39;Sie können nicht auf die Frage selbst verweisen!&#39;)
+                    return
+                else:
+                    self.ui.dropdown_necessaryAnswer.addItems(question.options)
+                    return
+
+    def saveQuestion(self):
+        &#34;&#34;&#34;
+        Collects all data from our window and stores them
+        into a new question object. Later sends this to its parent
+        MainFrame so our Data can be changed there aswell
+        &#34;&#34;&#34;
+        description = self.ui.lineEdit_beschreibung.text()
+        abbrevation = self.ui.lineEdit_kurzbeschreibung.text()
+        requiered = self.ui.checkBox_pflichtfrage.isChecked()
+        comment = self.ui.checkBox_kommentar.isChecked()
+        score = self.ui.checkBox_auswertbar.isChecked()
+        dependent_on = self.ui.dropdown_relatedQuestion.currentText()
+        expected_answer = self.ui.dropdown_necessaryAnswer.currentText()
+
+        if (not description) | (not abbrevation):
+            self.parent.popUp(&#39;Warnung&#39;, &#39;Notwendige Felder nicht gefüllt&#39;)
+            return
+
+        options = []
+        for option in self.options:
+            if not option.text():
+                self.parent.popUp(&#39;Warnung&#39;, &#39;Eins der Optionsfelder ist derzeitig leer!&#39;)
+                return
+            else:
+                options.append(option.text())
+
+        # Fill empty fields with None
+        if not dependent_on:
+            dependent_on = &#34;none&#34;
+        # Fill empty fields with None
+        if not expected_answer:
+            expected_answer = &#34;none&#34;
+
+        # Question = None -&gt; no ID -&gt; -1
+        if self.currentQuestion is None:
+            ids = -1
+        else:
+            ids = self.currentQuestion.id
+
+        newQuestionType = self.findQuestionType(self.allQuestionTypes, self.ui.comboBox_fragentyp.currentIndex() + 1)
+        newQuestionCategory = self.findCategory(self.ui.comboBox_kategorie.currentIndex() + 1)
+        newQuestion = Question(text=description, type=newQuestionType, options=options, required=requiered,
+                               dependent_on=dependent_on, expected_answer=expected_answer, abbreviation=abbrevation,
+                               score=score, comment=comment, id=ids, category=newQuestionCategory)
+
+        self.parent.editQuestionItem(newQuestion)
+        if self.library is not None:
+            self.library.updateAll()
+        self.close()
+
+    def add_field(self):
+        # Insert first Row with delete Button and delete prior row
+        priorOption = self.options.pop(self.RowPositionOptions - 4)
+        priorOptionText = priorOption.text()
+        self.ui.formLayout.removeRow(self.RowPositionOptions)
+
+        # Layoutoptions with minus, objects have to be recreated because of removeRow
+        btnremove = QPushButton()
+        btnremove.clicked.connect(self.remove_field)
+        icon_button = QIcon(xPicturePath)
+        btnremove.setIcon(icon_button)
+
+        option = QLineEdit()
+        option.setText(priorOptionText)
+
+        layout_options_minus = QHBoxLayout()
+        layout_options_minus.addWidget(option)
+        layout_options_minus.addWidget(btnremove)
+
+        self.options.append(option)
+
+        self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_options_minus)
+
+        # Increase the rowCount and create the necessary layoutoption with plus and minus
+        self.RowPositionOptions += 1
+
+        icon_button = QIcon(xPicturePath)
+        btnremove = QPushButton()
+        btnremove.setIcon(icon_button)
+        btnremove.clicked.connect(self.remove_field)
+
+        btnadd = QPushButton()
+        icon_button = QIcon(plusPicturePath)
+        btnadd.setIcon(icon_button)
+
+        option = QLineEdit()
+
+        layout_last_options = QHBoxLayout()
+        layout_last_options.addWidget(option)
+        layout_last_options.addWidget(btnadd)
+        layout_last_options.addWidget(btnremove)
+        btnadd.clicked.connect(self.add_field)
+
+        self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+        self.options.append(option)
+
+    def remove_field(self):
+        &#34;&#34;&#34;
+        3 Cases:
+        Delete with only 2 rows left -&gt; Start again
+        Delete row in the middle -&gt; delteRow
+        Delte lowest row -&gt; second lowest row has to be updated
+        &#34;&#34;&#34;
+        sender = self.sender()
+        rowToDelete = int(round((sender.pos().y() - 135) / 50)) + 3
+
+        if len(self.options) &gt; 1:
+            # Delete last row
+            if (rowToDelete == 5) &amp; (len(self.options) == 2) | ((rowToDelete == 4) &amp; (len(self.options) == 2)):
+                priorPreOption = self.options.pop(1)
+                priorOption = self.options.pop(0)
+                priorPreOptionText = priorPreOption.text()
+                priorOptionText = priorOption.text()
+
+                btnadd = QPushButton()
+                icon_button = QIcon(plusPicturePath)
+                btnadd.setIcon(icon_button)
+
+                option = QLineEdit()
+                # Add first or last line depending on what line was removed
+                if rowToDelete == 5:
+                    option.setText(priorOptionText)
+                else:
+                    option.setText(priorPreOptionText)
+                self.options.append(option)
+
+                layout_last_options = QHBoxLayout()
+                layout_last_options.addWidget(option)
+                layout_last_options.addWidget(btnadd)
+                btnadd.clicked.connect(self.add_field)
+
+                # Remove the 2 rows
+                self.ui.formLayout.removeRow(self.RowPositionOptions)
+                self.ui.formLayout.removeRow(self.RowPositionOptions - 1)
+
+                self.RowPositionOptions -= 1
+                self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+            elif len(self.options) == rowToDelete - 3:
+                icon_button = QIcon(xPicturePath)
+
+                icon_button = QIcon(xPicturePath)
+                btnremove = QPushButton()
+                btnremove.setIcon(icon_button)
+                btnremove.clicked.connect(self.remove_field)
+
+                btnadd = QPushButton()
+                icon_button = QIcon(plusPicturePath)
+                btnadd.setIcon(icon_button)
+
+                self.options.pop(len(self.options) - 1)
+                priorOption = self.options.pop(len(self.options) - 1)
+                priorText = priorOption.text()
+                option = QLineEdit()
+                option.setText(priorText)
+                self.options.append(option)
+
+                layout_last_options = QHBoxLayout()
+                layout_last_options.addWidget(option)
+                layout_last_options.addWidget(btnadd)
+                layout_last_options.addWidget(btnremove)
+                btnadd.clicked.connect(self.add_field)
+
+                self.ui.formLayout.removeRow(self.RowPositionOptions)
+                self.RowPositionOptions -= 1
+                self.ui.formLayout.removeRow(self.RowPositionOptions)
+                self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+            else:
+                self.RowPositionOptions -= 1
+                self.options.pop(rowToDelete - 4)
+                self.ui.formLayout.removeRow(rowToDelete)
+
+    def findQuestionType(self, questionTypes: list, id: int) -&gt; QuestionType:
+        &#34;&#34;&#34;
+        Finds the fitting questionType for the id
+        :param questionTypes: Types of all questions in our database
+        :param id: The index that is selected in our frame
+        :return: Returns the type of question
+        &#34;&#34;&#34;
+        for type in questionTypes:
+            if type.id == id:
+                return type
+
+    def findCategory(self, id: int) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Finds the fitting category
+        :param id: The index that is selected in our frame
+        :return: Returns the type of question category
+        &#34;&#34;&#34;
+        for category in self.parent.questionController.categories():
+            if category.id == id:
+                return category</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QMainWindow</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.RowPositionOptions"><code class="name">var <span class="ident">RowPositionOptions</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.add_field"><code class="name flex">
+<span>def <span class="ident">add_field</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_field(self):
+    # Insert first Row with delete Button and delete prior row
+    priorOption = self.options.pop(self.RowPositionOptions - 4)
+    priorOptionText = priorOption.text()
+    self.ui.formLayout.removeRow(self.RowPositionOptions)
+
+    # Layoutoptions with minus, objects have to be recreated because of removeRow
+    btnremove = QPushButton()
+    btnremove.clicked.connect(self.remove_field)
+    icon_button = QIcon(xPicturePath)
+    btnremove.setIcon(icon_button)
+
+    option = QLineEdit()
+    option.setText(priorOptionText)
+
+    layout_options_minus = QHBoxLayout()
+    layout_options_minus.addWidget(option)
+    layout_options_minus.addWidget(btnremove)
+
+    self.options.append(option)
+
+    self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_options_minus)
+
+    # Increase the rowCount and create the necessary layoutoption with plus and minus
+    self.RowPositionOptions += 1
+
+    icon_button = QIcon(xPicturePath)
+    btnremove = QPushButton()
+    btnremove.setIcon(icon_button)
+    btnremove.clicked.connect(self.remove_field)
+
+    btnadd = QPushButton()
+    icon_button = QIcon(plusPicturePath)
+    btnadd.setIcon(icon_button)
+
+    option = QLineEdit()
+
+    layout_last_options = QHBoxLayout()
+    layout_last_options.addWidget(option)
+    layout_last_options.addWidget(btnadd)
+    layout_last_options.addWidget(btnremove)
+    btnadd.clicked.connect(self.add_field)
+
+    self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+    self.options.append(option)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.cancelClicked"><code class="name flex">
+<span>def <span class="ident">cancelClicked</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Closes the window</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cancelClicked(self):
+    &#34;&#34;&#34;
+    Closes the window
+    &#34;&#34;&#34;
+    self.close()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.createNoOptions"><code class="name flex">
+<span>def <span class="ident">createNoOptions</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes the design to fit a selection without options</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def createNoOptions(self):
+    &#34;&#34;&#34;
+    Changes the design to fit a selection without options
+    &#34;&#34;&#34;
+    length = self.ui.formLayout.rowCount()
+    # Delete all entries in options
+    self.options = []
+    # Delte all rows with options
+    while length &gt; 9:
+        self.ui.formLayout.removeRow(4)
+        length -= 1</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.createWithOptions"><code class="name flex">
+<span>def <span class="ident">createWithOptions</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes the design to fit a selection with options</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def createWithOptions(self):
+    &#34;&#34;&#34;
+    Changes the design to fit a selection with options
+    &#34;&#34;&#34;
+    # Clear everything to be sure
+    self.createNoOptions()
+    # List to save the QLineEdits for options
+    self.options = []
+
+    self.btnadd = QPushButton()
+    self.icon_button = QIcon(plusPicturePath)
+    self.btnadd.setIcon(self.icon_button)
+
+    # First option without minus
+    self.optiontext = QLineEdit(self)
+    self.options.append(self.optiontext)
+
+    self.btnadd.clicked.connect(self.add_field)
+
+    self.layout_first_option = QHBoxLayout()
+    self.layout_first_option.addWidget(self.optiontext)
+    self.layout_first_option.addWidget(self.btnadd)
+
+    self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, self.layout_first_option)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.findCategory"><code class="name flex">
+<span>def <span class="ident">findCategory</span></span>(<span>self, id: int) ‑> <a title="PhysioForms.QuestionCategory.QuestionCategory" href="../QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Finds the fitting category
+:param id: The index that is selected in our frame
+:return: Returns the type of question category</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def findCategory(self, id: int) -&gt; QuestionCategory:
+    &#34;&#34;&#34;
+    Finds the fitting category
+    :param id: The index that is selected in our frame
+    :return: Returns the type of question category
+    &#34;&#34;&#34;
+    for category in self.parent.questionController.categories():
+        if category.id == id:
+            return category</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.findQuestionType"><code class="name flex">
+<span>def <span class="ident">findQuestionType</span></span>(<span>self, questionTypes: list, id: int) ‑> <module '<a title="PhysioForms.QuestionType" href="../QuestionType.html">PhysioForms.QuestionType</a>' from 'D:\\Studium\\A_Semester\\SwT-P\\Final\\swtp\\<a title="PhysioForms" href="../index.html">PhysioForms</a>\\QuestionType.py'></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Finds the fitting questionType for the id
+:param questionTypes: Types of all questions in our database
+:param id: The index that is selected in our frame
+:return: Returns the type of question</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def findQuestionType(self, questionTypes: list, id: int) -&gt; QuestionType:
+    &#34;&#34;&#34;
+    Finds the fitting questionType for the id
+    :param questionTypes: Types of all questions in our database
+    :param id: The index that is selected in our frame
+    :return: Returns the type of question
+    &#34;&#34;&#34;
+    for type in questionTypes:
+        if type.id == id:
+            return type</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.questionTypeChanged"><code class="name flex">
+<span>def <span class="ident">questionTypeChanged</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>If the questiontype combobox is changed a signal is emitted and this function is called
+it then changes our design to support our user</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def questionTypeChanged(self):
+    &#34;&#34;&#34;
+    If the questiontype combobox is changed a signal is emitted and this function is called
+    it then changes our design to support our user
+    &#34;&#34;&#34;
+    currentQuestionType = self.findQuestionType(self.allQuestionTypes,
+                                                self.ui.comboBox_fragentyp.currentIndex() + 1)
+    if currentQuestionType.options == 1:
+        self.createWithOptions()
+    else:
+        self.createNoOptions()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.relatedQuestionChanged"><code class="name flex">
+<span>def <span class="ident">relatedQuestionChanged</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>If the related question combobox is changed a signal is emitted and this function is called.
+It then iterates over all questions and finds the possible answers in our answer combobox</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def relatedQuestionChanged(self):
+    &#34;&#34;&#34;
+    If the related question combobox is changed a signal is emitted and this function is called.
+    It then iterates over all questions and finds the possible answers in our answer combobox
+    &#34;&#34;&#34;
+    abbrv = self.ui.dropdown_relatedQuestion.currentText()
+
+    questions = self.parent.questionController.questions()
+
+    self.ui.dropdown_necessaryAnswer.clear()
+
+    for question in questions:
+        if question.abbreviation == abbrv:
+            if question.abbreviation == self.ui.lineEdit_kurzbeschreibung.text():
+                self.parent.popUp(&#39;Warnung&#39;, &#39;Sie können nicht auf die Frage selbst verweisen!&#39;)
+                return
+            else:
+                self.ui.dropdown_necessaryAnswer.addItems(question.options)
+                return</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.remove_field"><code class="name flex">
+<span>def <span class="ident">remove_field</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>3 Cases:
+Delete with only 2 rows left -&gt; Start again
+Delete row in the middle -&gt; delteRow
+Delte lowest row -&gt; second lowest row has to be updated</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_field(self):
+    &#34;&#34;&#34;
+    3 Cases:
+    Delete with only 2 rows left -&gt; Start again
+    Delete row in the middle -&gt; delteRow
+    Delte lowest row -&gt; second lowest row has to be updated
+    &#34;&#34;&#34;
+    sender = self.sender()
+    rowToDelete = int(round((sender.pos().y() - 135) / 50)) + 3
+
+    if len(self.options) &gt; 1:
+        # Delete last row
+        if (rowToDelete == 5) &amp; (len(self.options) == 2) | ((rowToDelete == 4) &amp; (len(self.options) == 2)):
+            priorPreOption = self.options.pop(1)
+            priorOption = self.options.pop(0)
+            priorPreOptionText = priorPreOption.text()
+            priorOptionText = priorOption.text()
+
+            btnadd = QPushButton()
+            icon_button = QIcon(plusPicturePath)
+            btnadd.setIcon(icon_button)
+
+            option = QLineEdit()
+            # Add first or last line depending on what line was removed
+            if rowToDelete == 5:
+                option.setText(priorOptionText)
+            else:
+                option.setText(priorPreOptionText)
+            self.options.append(option)
+
+            layout_last_options = QHBoxLayout()
+            layout_last_options.addWidget(option)
+            layout_last_options.addWidget(btnadd)
+            btnadd.clicked.connect(self.add_field)
+
+            # Remove the 2 rows
+            self.ui.formLayout.removeRow(self.RowPositionOptions)
+            self.ui.formLayout.removeRow(self.RowPositionOptions - 1)
+
+            self.RowPositionOptions -= 1
+            self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+        elif len(self.options) == rowToDelete - 3:
+            icon_button = QIcon(xPicturePath)
+
+            icon_button = QIcon(xPicturePath)
+            btnremove = QPushButton()
+            btnremove.setIcon(icon_button)
+            btnremove.clicked.connect(self.remove_field)
+
+            btnadd = QPushButton()
+            icon_button = QIcon(plusPicturePath)
+            btnadd.setIcon(icon_button)
+
+            self.options.pop(len(self.options) - 1)
+            priorOption = self.options.pop(len(self.options) - 1)
+            priorText = priorOption.text()
+            option = QLineEdit()
+            option.setText(priorText)
+            self.options.append(option)
+
+            layout_last_options = QHBoxLayout()
+            layout_last_options.addWidget(option)
+            layout_last_options.addWidget(btnadd)
+            layout_last_options.addWidget(btnremove)
+            btnadd.clicked.connect(self.add_field)
+
+            self.ui.formLayout.removeRow(self.RowPositionOptions)
+            self.RowPositionOptions -= 1
+            self.ui.formLayout.removeRow(self.RowPositionOptions)
+            self.ui.formLayout.insertRow(self.RowPositionOptions, &#34;Optionen:&#34;, layout_last_options)
+
+        else:
+            self.RowPositionOptions -= 1
+            self.options.pop(rowToDelete - 4)
+            self.ui.formLayout.removeRow(rowToDelete)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.SaveQuestion.SaveQuestion.saveQuestion"><code class="name flex">
+<span>def <span class="ident">saveQuestion</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Collects all data from our window and stores them
+into a new question object. Later sends this to its parent
+MainFrame so our Data can be changed there aswell</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveQuestion(self):
+    &#34;&#34;&#34;
+    Collects all data from our window and stores them
+    into a new question object. Later sends this to its parent
+    MainFrame so our Data can be changed there aswell
+    &#34;&#34;&#34;
+    description = self.ui.lineEdit_beschreibung.text()
+    abbrevation = self.ui.lineEdit_kurzbeschreibung.text()
+    requiered = self.ui.checkBox_pflichtfrage.isChecked()
+    comment = self.ui.checkBox_kommentar.isChecked()
+    score = self.ui.checkBox_auswertbar.isChecked()
+    dependent_on = self.ui.dropdown_relatedQuestion.currentText()
+    expected_answer = self.ui.dropdown_necessaryAnswer.currentText()
+
+    if (not description) | (not abbrevation):
+        self.parent.popUp(&#39;Warnung&#39;, &#39;Notwendige Felder nicht gefüllt&#39;)
+        return
+
+    options = []
+    for option in self.options:
+        if not option.text():
+            self.parent.popUp(&#39;Warnung&#39;, &#39;Eins der Optionsfelder ist derzeitig leer!&#39;)
+            return
+        else:
+            options.append(option.text())
+
+    # Fill empty fields with None
+    if not dependent_on:
+        dependent_on = &#34;none&#34;
+    # Fill empty fields with None
+    if not expected_answer:
+        expected_answer = &#34;none&#34;
+
+    # Question = None -&gt; no ID -&gt; -1
+    if self.currentQuestion is None:
+        ids = -1
+    else:
+        ids = self.currentQuestion.id
+
+    newQuestionType = self.findQuestionType(self.allQuestionTypes, self.ui.comboBox_fragentyp.currentIndex() + 1)
+    newQuestionCategory = self.findCategory(self.ui.comboBox_kategorie.currentIndex() + 1)
+    newQuestion = Question(text=description, type=newQuestionType, options=options, required=requiered,
+                           dependent_on=dependent_on, expected_answer=expected_answer, abbreviation=abbrevation,
+                           score=score, comment=comment, id=ids, category=newQuestionCategory)
+
+    self.parent.editQuestionItem(newQuestion)
+    if self.library is not None:
+        self.library.updateAll()
+    self.close()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PhysioForms.GUI" href="index.html">PhysioForms.GUI</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion">SaveQuestion</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.RowPositionOptions" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.RowPositionOptions">RowPositionOptions</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.add_field" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.add_field">add_field</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.cancelClicked" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.cancelClicked">cancelClicked</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.createNoOptions" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.createNoOptions">createNoOptions</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.createWithOptions" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.createWithOptions">createWithOptions</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.findCategory" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.findCategory">findCategory</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.findQuestionType" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.findQuestionType">findQuestionType</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.questionTypeChanged" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.questionTypeChanged">questionTypeChanged</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.relatedQuestionChanged" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.relatedQuestionChanged">relatedQuestionChanged</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.remove_field" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.remove_field">remove_field</a></code></li>
+<li><code><a title="PhysioForms.GUI.SaveQuestion.SaveQuestion.saveQuestion" href="#PhysioForms.GUI.SaveQuestion.SaveQuestion.saveQuestion">saveQuestion</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

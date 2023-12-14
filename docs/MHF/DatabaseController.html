@@ -1,0 +1,2305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>PhysioForms.DatabaseController API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PhysioForms.DatabaseController</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# coding=utf-8
+
+__author__ = &#34;Niklas Goessl&#34;
+__version__ = &#34;0.1&#34;
+
+import json
+import threading
+import time
+from pathlib import Path
+
+from PhysioForms.Question import Question
+from PhysioForms.QuestionCategory import QuestionCategory
+from PhysioForms.QuestionType import QuestionType
+from PhysioForms.Questionnaire import Questionnaire
+from PhysioForms.QuestionnaireCategory import QuestionnaireCategory
+from PhysioForms.Database.DatabaseMySQL import DatabaseMySQL
+from PhysioForms.Database.DatabaseSQLite import DatabaseSQLite
+
+
+class DatabaseController:
+    &#34;&#34;&#34;
+    DatabaseController class will handle connections between PhysioForms and any SQL databases
+    &#34;&#34;&#34;
+
+    def __init__(self, logger, pathSQLiteDatabase: Path):
+        &#34;&#34;&#34;
+        Constructor
+        :keyword logger: logger Object
+        :keyword pathSQLiteDatabase: path of databasefile e.g. data/physioforms.db
+        &#34;&#34;&#34;
+        self.logger = logger
+        self.pathSQLiteDatabase = pathSQLiteDatabase
+        self.mysqlDisconnect = False
+
+        lstQuestionTypes = [(&#34;radio&#34;, &#34;Auswahl&#34;, 1),
+                            (&#34;select&#34;, &#34;Dropdown&#34;, 1),
+                            (&#34;text&#34;, &#34;Freitext&#34;, 0),
+                            (&#34;textarea&#34;, &#34;Mehrzeiliger Freitext&#34;, 0),
+                            (&#34;number&#34;, &#34;Zahl&#34;, 0),
+                            (&#34;date&#34;, &#34;Datum&#34;, 0),
+                            (&#34;heading&#34;, &#34;Überschrift&#34;, 0)]
+
+        try:
+            self.databaseSQLite = DatabaseSQLite(self.logger, self.pathSQLiteDatabase, lstQuestionTypes)
+            self.databaseMySQL = None
+
+            self.syncDatabasesThreadEvent = threading.Event()
+            self.syncDatabasesRequired = []
+
+        except Exception as e:
+            self.logger.error(&#34;Error while init DatabaseController:&#34; + str(e))
+            raise
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+    def connectToExtern(self, host: str, port: int, user: str, password: str, database: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Constructor
+        :keyword host: IPAddress MySQL Server
+        :keyword port: Port MySQL Server
+        :keyword user: Username MySQL Server
+        :keyword password: Password MySQL Server
+        :keyword database: name of database
+        &#34;&#34;&#34;
+        try:
+            self.databaseMySQL = DatabaseMySQL(self.logger, host, port, user, password, database)
+
+            self.syncDatabasesThread = threading.Thread(target=self.syncDatabases, daemon=True, args=(
+                self.syncDatabasesThreadEvent, self.databaseMySQL)).start()
+
+            self.syncDatabasesRequired.append(&#34;tb_question_types&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        except Exception as e:
+            self.logger.error(&#34;Error while connectToExtern:&#34; + str(e))
+            raise
+
+        return True
+
+    def disconnectFromExtern(self):
+        &#34;&#34;&#34;
+        Method to disconnect from extern database
+        &#34;&#34;&#34;
+        self.mysqlDisconnect = True
+        self.syncDatabasesRequired.clear()
+        self.syncDatabasesThreadEvent.set()
+        self.databaseMySQL = None
+
+    def addQuestion(self, question: Question) -&gt; Question:
+        &#34;&#34;&#34;
+        Methode to add a new question to the database
+        :param question: object of question
+        :return: question object include id
+        &#34;&#34;&#34;
+        try:
+
+            dependentOnID = -1
+            for currentQuestion in self.getQuestions():
+                if currentQuestion.abbreviation == question.dependent_on:
+                    dependentOnID = currentQuestion.id
+
+            question.id = self.databaseSQLite.addQuestion(text=question.text, questionType=question.type.id,
+                                                          options=json.dumps(question.options),
+                                                          required=question.required, dependent_on=dependentOnID,
+                                                          expectedAnswer=question.expected_answer,
+                                                          abbrv=question.abbreviation,
+                                                          score=question.score, comment=question.comment,
+                                                          category=question.category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return question
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestion:&#34; + str(e))
+            raise
+
+    def editQuestion(self, question: Question) -&gt; Question:
+        &#34;&#34;&#34;
+        Methode to alter a exist question in database
+        :param question:  altered object of question
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            dependentOnID = -1
+            for row in self.getQuestions():
+                if row.abbreviation == question.dependent_on:
+                    dependentOnID = row.id
+
+            self.databaseSQLite.changeQuestion(id_question=question.id, text=question.text,
+                                               questionType=question.type.id,
+                                               options=json.dumps(question.options), required=question.required,
+                                               dependent_on=dependentOnID, expectedAnswer=question.expected_answer,
+                                               abbrv=question.abbreviation, score=question.score,
+                                               comment=question.comment,
+                                               category=question.category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return question
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestion:&#34; + str(e))
+            raise
+
+    def removeQuestion(self, question: Question) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist question in database
+        :param question:  current object of question
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeQuestion(questionId=question.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestion:&#34; + str(e))
+            raise
+
+    def getQuestions(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all questions from database
+        :return: list of question objects
+        &#34;&#34;&#34;
+        lstQuestions = []
+        lstTypes = self.getTypes()
+        lstQuestionCategorys = self.getQuestionCategories()
+        lstQuestionRows = self.databaseSQLite.getQuestions()
+
+        for row in lstQuestionRows:
+
+            currentType = None
+            for questionType in lstTypes:
+                if questionType.id == row[2]:
+                    currentType = questionType
+                    break
+
+            currentCategory = None
+            for category in lstQuestionCategorys:
+                if category.id == row[10]:
+                    currentCategory = category
+                    break
+
+            currentDependentOn = &#34;none&#34;
+            if row[5] != -1:
+                for questionRow in lstQuestionRows:
+                    if questionRow[0] == row[5]:
+                        currentDependentOn = questionRow[7]
+                        break
+
+            question = Question(id=row[0], text=row[1], type=currentType, options=json.loads(row[3]),
+                                required=bool(row[4]),
+                                dependent_on=currentDependentOn, expected_answer=row[6], abbreviation=row[7],
+                                score=bool(row[8]),
+                                comment=bool(row[9]), category=currentCategory)
+            lstQuestions.append(question)
+
+        return lstQuestions
+
+    def getQuestionById(self, questionId: int):
+        &#34;&#34;&#34;
+        Method to get one question by id
+        :param questionId: id of question
+        :return: question object
+        &#34;&#34;&#34;
+        for question in self.getQuestions():
+            if question.id == questionId:
+                return question
+        return None
+
+    def addQuestionnaire(self, questionnaire: Questionnaire) -&gt; [Questionnaire, list]:
+        &#34;&#34;&#34;
+        Methode to add a new questionnaire to the database
+        :param questionnaire: object of questionnaire
+        :return: questionnaire object include id´s, errorlist = list of questions which already in table
+        &#34;&#34;&#34;
+        position = 0
+        errorList = []
+
+        try:
+
+            questionnaire.id = self.databaseSQLite.addQuestionnaire(name=questionnaire.name,
+                                                                    description=questionnaire.description,
+                                                                    category=questionnaire.category.id)
+
+            for question in questionnaire.questions:
+
+                position += 1
+
+                try:
+                    if question.id == -1:
+                        question = self.addQuestion(question)
+
+                    self.__addCollection(id_Q=question.id, id_QA=questionnaire.id, position=position,
+                                         required=question.required)
+
+                except Exception as e:
+                    self.logger.info(&#34;Question already exist in tb_questions:&#34; + str(e))
+                    errorList.append(question)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+                self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return questionnaire, errorList
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestionnaire:&#34; + str(e))
+            raise
+
+    def editQuestionnaire(self, questionnaire: Questionnaire, purge: bool = False) -&gt; [Questionnaire, list]:
+        &#34;&#34;&#34;
+        Methode to alter a exist questionnaire in database
+        :param questionnaire:  altered object of questionnaire
+        :param purge: true= remove question; false= remove only collection
+        :return: questionnaire object include id´s, errorlist = list of questions which already in table
+        &#34;&#34;&#34;
+        position = 0
+        errorList = []
+
+        try:
+
+            for question in questionnaire.questions:
+
+                self.databaseSQLite.c.execute(&#39;SELECT COUNT(*) FROM tb_collections WHERE id_Q=?&#39;, (question.id,))
+                count = self.databaseSQLite.c.fetchone()[0]
+
+                self.__removeCollection(id_Q=question.id, id_QA=questionnaire.id)
+
+                if count == 1 and purge:
+                    self.removeQuestion(question=question)
+
+            self.databaseSQLite.changeQuestionnaire(id_questionnaire=questionnaire.id, name=questionnaire.name,
+                                                    description=questionnaire.description,
+                                                    category=questionnaire.category.id)
+
+            for question in questionnaire.questions:
+
+                position += 1
+
+                try:
+                    if question.id == -1:
+                        question = self.addQuestion(question)
+
+                    self.__addCollection(id_Q=question.id, id_QA=questionnaire.id, position=position,
+                                         required=question.required)
+
+                except Exception as e:
+                    self.logger.info(&#34;Question already exist in tb_questions:&#34; + str(e))
+                    errorList.append(question)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+                self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return questionnaire, errorList
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestionnaire:&#34; + str(e))
+            raise
+
+    def removeQuestionnaire(self, questionnaire: Questionnaire, purge: bool = False) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist questionnaire in database
+        :param questionnaire:  current object of questionnaire
+        :param purge: true= remove all; false= remove only collections and questionnaire
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            for question in questionnaire.questions:
+
+                self.databaseSQLite.c.execute(&#39;SELECT COUNT(*) FROM tb_collections WHERE id_Q=?&#39;, (question.id,))
+                count = self.databaseSQLite.c.fetchone()[0]
+
+                self.__removeCollection(id_Q=question.id, id_QA=questionnaire.id)
+
+                if count == 1 and purge:
+                    self.removeQuestion(question=question)
+
+            self.databaseSQLite.removeQuestionnaire(questionnaireId=questionnaire.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+                self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionnaire:&#34; + str(e))
+            raise
+
+    def getQuestionnaires(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all questionnaires from database
+        :return: list of questionnaire objects
+        &#34;&#34;&#34;
+        lstQuestionnaireCategory = self.getQuestionnaireCategories()
+        lstQuestions = self.getQuestions()
+        lstColletionRows = self.databaseSQLite.getCollections()
+
+        lstQuestionnaires = []
+
+        for questionnaireRow in self.databaseSQLite.getQuestionnaire():
+
+            currentCategory = None
+            for category in lstQuestionnaireCategory:
+                if category.id == questionnaireRow[3]:
+                    currentCategory = category
+                    break
+
+            currentQuestions = []
+            for collectionRow in lstColletionRows:
+                if collectionRow[1] == questionnaireRow[0]:
+
+                    for question in lstQuestions:
+                        if question.id == collectionRow[0]:
+                            currentQuestions.insert(collectionRow[2], question)
+
+            lstQuestionnaires.append(Questionnaire(id=questionnaireRow[0], name=questionnaireRow[1],
+                                                   description=questionnaireRow[2], questions=currentQuestions,
+                                                   category=currentCategory,
+                                                   creationDate=questionnaireRow[4], lastEdited=questionnaireRow[5]))
+
+        return lstQuestionnaires
+
+    def getQuestionnaire(self, questionnaire: Questionnaire) -&gt; Questionnaire:
+        &#34;&#34;&#34;
+        Methode to get one special questionnaires from database
+        :return: questionnaire object; if not exist = new Questionnare
+        &#34;&#34;&#34;
+        for questionnaireObject in self.getQuestionnaires():
+            if questionnaire.id == questionnaireObject.id:
+                return questionnaireObject
+
+        return questionnaire
+
+    def __addCollection(self, id_Q: int, id_QA: int, position: int, required: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to add a new collection to the database
+        TODO: Parameter anpassen
+        :return: new category id
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.addCollection(id_Q=id_Q, id_QA=id_QA, position=position, required=required)
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while __addCollection:&#34; + str(e))
+            raise
+
+    def __removeCollection(self, id_Q: int, id_QA: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist collection in database
+        TODO: Parameter anpassen
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeCollection(id_Q=id_Q, id_QA=id_QA)
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionCategory:&#34; + str(e))
+            raise
+
+    def addQuestionCategory(self, category: QuestionCategory) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Methode to add a new category to the database
+        :param category: object of category
+        :return: QuestionCategory object include id
+        &#34;&#34;&#34;
+        try:
+
+            category.id = self.databaseSQLite.addQuestionCategory(name=category.category,
+                                                                  description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestionCategory:&#34; + str(e))
+            raise
+
+    def editQuestionCategory(self, category: QuestionCategory) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Methode to alter a exist category in database
+        :param category:  altered object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.changeQuestionCategory(id_categoryQ=category.id, name=category.category,
+                                                       description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestionCategory:&#34; + str(e))
+            raise
+
+    def removeQuestionCategory(self, category: QuestionCategory) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist category in database
+        :param category:  current object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeQuestionCategory(categoryId=category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionCategory:&#34; + str(e))
+            raise
+
+    def getQuestionCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all Categories from database
+        :return: list of category objects
+        &#34;&#34;&#34;
+
+        lstQuestionCategories = []
+
+        for row in self.databaseSQLite.getQuestionCategories():
+            category = QuestionCategory(id=row[0], category=row[1], description=row[2])
+            lstQuestionCategories.append(category)
+
+        return lstQuestionCategories
+
+    def addQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; QuestionnaireCategory:
+        &#34;&#34;&#34;
+        Methode to add a new category to the database
+        :param category: object of category
+        :return: QuestionnaireCategory object include id
+        &#34;&#34;&#34;
+        try:
+
+            category.id = self.databaseSQLite.addQuestionnaireCategory(name=category.category,
+                                                                       description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestionnaireCategory:&#34; + str(e))
+            raise
+
+    def editQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; QuestionnaireCategory:
+        &#34;&#34;&#34;
+        Methode to alter a exist category in database
+        :param category:  altered object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.changeQuestionnaireCategory(id_categoryQA=category.id, name=category.category,
+                                                            description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestionnaireCategory:&#34; + str(e))
+            raise
+
+    def removeQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist category in database
+        :param category:  current object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeQuestionnaireCategory(categoryId=category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionnaireCategory:&#34; + str(e))
+            raise
+
+    def getQuestionnaireCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all Categories from database
+        :return: list of category objects
+        &#34;&#34;&#34;
+        lstQuestionnaireCategories = []
+
+        for row in self.databaseSQLite.getQuestionnaireCategories():
+            category = QuestionCategory(id=row[0], category=row[1], description=row[2])
+            lstQuestionnaireCategories.append(category)
+
+        return lstQuestionnaireCategories
+
+    def getTypes(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all types from database
+        :return: list of types objects
+        &#34;&#34;&#34;
+        lstTypes = []
+
+        for row in self.databaseSQLite.getTypes():
+            questionType = QuestionType(id=row[0], typeName=row[1], displayName=row[2], options=bool(row[3]))
+            lstTypes.append(questionType)
+
+        return lstTypes
+
+    def syncDatabases(self, event, destinationDatabase):
+        &#34;&#34;&#34;
+        Method to sync two databases
+        :param event: Threadevent
+        :param destinationDatabase: destination database
+        &#34;&#34;&#34;
+        time.sleep(5)
+
+        databaseSQLite = DatabaseSQLite(self.logger, self.pathSQLiteDatabase)
+
+        t = threading.currentThread()
+
+        while not self.mysqlDisconnect:
+            if event.wait():
+
+                while len(self.syncDatabasesRequired) &gt; 0:
+
+                    try:
+
+                        nextRequired = self.syncDatabasesRequired.pop()
+
+                        if nextRequired == &#34;tb_question_types&#34;:
+
+                            destinationDatabase.clearTypes()
+
+                            for row in databaseSQLite.getTypes():
+                                destinationDatabase.addType(row[0], row[1], row[2], row[3])
+
+                        elif nextRequired == &#34;tb_question_categories&#34;:
+
+                            destinationDatabase.clearQuestionCategories()
+
+                            for row in databaseSQLite.getQuestionCategories():
+                                destinationDatabase.addQuestionCategory(row[0], row[1], row[2])
+
+                        elif nextRequired == &#34;tb_questionnaire_categories&#34;:
+
+                            destinationDatabase.clearQuestionnaireCategories()
+
+                            for row in databaseSQLite.getQuestionnaireCategories():
+                                destinationDatabase.addQuestionnaireCategory(row[0], row[1], row[2])
+
+                        elif nextRequired == &#34;tb_questions&#34;:
+
+                            destinationDatabase.clearQuestions()
+
+                            for row in databaseSQLite.getQuestions():
+                                destinationDatabase.addQuestion(row[0], row[1], row[2], row[3], row[4], row[5], row[6],
+                                                                row[7], row[8], row[9], row[10])
+
+                        elif nextRequired == &#34;tb_questionnaires&#34;:
+
+                            destinationDatabase.clearQuestionnaires()
+
+                            for row in databaseSQLite.getQuestionnaire():
+                                destinationDatabase.addQuestionnaire(row[0], row[1], row[2], row[3])
+
+                        elif nextRequired == &#34;tb_collections&#34;:
+
+                            destinationDatabase.clearCollections()
+
+                            for row in databaseSQLite.getCollections():
+                                destinationDatabase.addCollection(row[0], row[1], row[2], row[3])
+
+                    except Exception as e:
+                        self.logger.warning(&#34;Warning while sync databases: &#34; + str(e))
+
+                event.clear()
+
+        self.mysqlDisconnect = False</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PhysioForms.DatabaseController.DatabaseController"><code class="flex name class">
+<span>class <span class="ident">DatabaseController</span></span>
+<span>(</span><span>logger, pathSQLiteDatabase: pathlib.Path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DatabaseController class will handle connections between PhysioForms and any SQL databases</p>
+<p>Constructor
+:keyword logger: logger Object
+:keyword pathSQLiteDatabase: path of databasefile e.g. data/physioforms.db</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DatabaseController:
+    &#34;&#34;&#34;
+    DatabaseController class will handle connections between PhysioForms and any SQL databases
+    &#34;&#34;&#34;
+
+    def __init__(self, logger, pathSQLiteDatabase: Path):
+        &#34;&#34;&#34;
+        Constructor
+        :keyword logger: logger Object
+        :keyword pathSQLiteDatabase: path of databasefile e.g. data/physioforms.db
+        &#34;&#34;&#34;
+        self.logger = logger
+        self.pathSQLiteDatabase = pathSQLiteDatabase
+        self.mysqlDisconnect = False
+
+        lstQuestionTypes = [(&#34;radio&#34;, &#34;Auswahl&#34;, 1),
+                            (&#34;select&#34;, &#34;Dropdown&#34;, 1),
+                            (&#34;text&#34;, &#34;Freitext&#34;, 0),
+                            (&#34;textarea&#34;, &#34;Mehrzeiliger Freitext&#34;, 0),
+                            (&#34;number&#34;, &#34;Zahl&#34;, 0),
+                            (&#34;date&#34;, &#34;Datum&#34;, 0),
+                            (&#34;heading&#34;, &#34;Überschrift&#34;, 0)]
+
+        try:
+            self.databaseSQLite = DatabaseSQLite(self.logger, self.pathSQLiteDatabase, lstQuestionTypes)
+            self.databaseMySQL = None
+
+            self.syncDatabasesThreadEvent = threading.Event()
+            self.syncDatabasesRequired = []
+
+        except Exception as e:
+            self.logger.error(&#34;Error while init DatabaseController:&#34; + str(e))
+            raise
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+    def connectToExtern(self, host: str, port: int, user: str, password: str, database: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Constructor
+        :keyword host: IPAddress MySQL Server
+        :keyword port: Port MySQL Server
+        :keyword user: Username MySQL Server
+        :keyword password: Password MySQL Server
+        :keyword database: name of database
+        &#34;&#34;&#34;
+        try:
+            self.databaseMySQL = DatabaseMySQL(self.logger, host, port, user, password, database)
+
+            self.syncDatabasesThread = threading.Thread(target=self.syncDatabases, daemon=True, args=(
+                self.syncDatabasesThreadEvent, self.databaseMySQL)).start()
+
+            self.syncDatabasesRequired.append(&#34;tb_question_types&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        except Exception as e:
+            self.logger.error(&#34;Error while connectToExtern:&#34; + str(e))
+            raise
+
+        return True
+
+    def disconnectFromExtern(self):
+        &#34;&#34;&#34;
+        Method to disconnect from extern database
+        &#34;&#34;&#34;
+        self.mysqlDisconnect = True
+        self.syncDatabasesRequired.clear()
+        self.syncDatabasesThreadEvent.set()
+        self.databaseMySQL = None
+
+    def addQuestion(self, question: Question) -&gt; Question:
+        &#34;&#34;&#34;
+        Methode to add a new question to the database
+        :param question: object of question
+        :return: question object include id
+        &#34;&#34;&#34;
+        try:
+
+            dependentOnID = -1
+            for currentQuestion in self.getQuestions():
+                if currentQuestion.abbreviation == question.dependent_on:
+                    dependentOnID = currentQuestion.id
+
+            question.id = self.databaseSQLite.addQuestion(text=question.text, questionType=question.type.id,
+                                                          options=json.dumps(question.options),
+                                                          required=question.required, dependent_on=dependentOnID,
+                                                          expectedAnswer=question.expected_answer,
+                                                          abbrv=question.abbreviation,
+                                                          score=question.score, comment=question.comment,
+                                                          category=question.category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return question
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestion:&#34; + str(e))
+            raise
+
+    def editQuestion(self, question: Question) -&gt; Question:
+        &#34;&#34;&#34;
+        Methode to alter a exist question in database
+        :param question:  altered object of question
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            dependentOnID = -1
+            for row in self.getQuestions():
+                if row.abbreviation == question.dependent_on:
+                    dependentOnID = row.id
+
+            self.databaseSQLite.changeQuestion(id_question=question.id, text=question.text,
+                                               questionType=question.type.id,
+                                               options=json.dumps(question.options), required=question.required,
+                                               dependent_on=dependentOnID, expectedAnswer=question.expected_answer,
+                                               abbrv=question.abbreviation, score=question.score,
+                                               comment=question.comment,
+                                               category=question.category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return question
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestion:&#34; + str(e))
+            raise
+
+    def removeQuestion(self, question: Question) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist question in database
+        :param question:  current object of question
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeQuestion(questionId=question.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestion:&#34; + str(e))
+            raise
+
+    def getQuestions(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all questions from database
+        :return: list of question objects
+        &#34;&#34;&#34;
+        lstQuestions = []
+        lstTypes = self.getTypes()
+        lstQuestionCategorys = self.getQuestionCategories()
+        lstQuestionRows = self.databaseSQLite.getQuestions()
+
+        for row in lstQuestionRows:
+
+            currentType = None
+            for questionType in lstTypes:
+                if questionType.id == row[2]:
+                    currentType = questionType
+                    break
+
+            currentCategory = None
+            for category in lstQuestionCategorys:
+                if category.id == row[10]:
+                    currentCategory = category
+                    break
+
+            currentDependentOn = &#34;none&#34;
+            if row[5] != -1:
+                for questionRow in lstQuestionRows:
+                    if questionRow[0] == row[5]:
+                        currentDependentOn = questionRow[7]
+                        break
+
+            question = Question(id=row[0], text=row[1], type=currentType, options=json.loads(row[3]),
+                                required=bool(row[4]),
+                                dependent_on=currentDependentOn, expected_answer=row[6], abbreviation=row[7],
+                                score=bool(row[8]),
+                                comment=bool(row[9]), category=currentCategory)
+            lstQuestions.append(question)
+
+        return lstQuestions
+
+    def getQuestionById(self, questionId: int):
+        &#34;&#34;&#34;
+        Method to get one question by id
+        :param questionId: id of question
+        :return: question object
+        &#34;&#34;&#34;
+        for question in self.getQuestions():
+            if question.id == questionId:
+                return question
+        return None
+
+    def addQuestionnaire(self, questionnaire: Questionnaire) -&gt; [Questionnaire, list]:
+        &#34;&#34;&#34;
+        Methode to add a new questionnaire to the database
+        :param questionnaire: object of questionnaire
+        :return: questionnaire object include id´s, errorlist = list of questions which already in table
+        &#34;&#34;&#34;
+        position = 0
+        errorList = []
+
+        try:
+
+            questionnaire.id = self.databaseSQLite.addQuestionnaire(name=questionnaire.name,
+                                                                    description=questionnaire.description,
+                                                                    category=questionnaire.category.id)
+
+            for question in questionnaire.questions:
+
+                position += 1
+
+                try:
+                    if question.id == -1:
+                        question = self.addQuestion(question)
+
+                    self.__addCollection(id_Q=question.id, id_QA=questionnaire.id, position=position,
+                                         required=question.required)
+
+                except Exception as e:
+                    self.logger.info(&#34;Question already exist in tb_questions:&#34; + str(e))
+                    errorList.append(question)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+                self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return questionnaire, errorList
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestionnaire:&#34; + str(e))
+            raise
+
+    def editQuestionnaire(self, questionnaire: Questionnaire, purge: bool = False) -&gt; [Questionnaire, list]:
+        &#34;&#34;&#34;
+        Methode to alter a exist questionnaire in database
+        :param questionnaire:  altered object of questionnaire
+        :param purge: true= remove question; false= remove only collection
+        :return: questionnaire object include id´s, errorlist = list of questions which already in table
+        &#34;&#34;&#34;
+        position = 0
+        errorList = []
+
+        try:
+
+            for question in questionnaire.questions:
+
+                self.databaseSQLite.c.execute(&#39;SELECT COUNT(*) FROM tb_collections WHERE id_Q=?&#39;, (question.id,))
+                count = self.databaseSQLite.c.fetchone()[0]
+
+                self.__removeCollection(id_Q=question.id, id_QA=questionnaire.id)
+
+                if count == 1 and purge:
+                    self.removeQuestion(question=question)
+
+            self.databaseSQLite.changeQuestionnaire(id_questionnaire=questionnaire.id, name=questionnaire.name,
+                                                    description=questionnaire.description,
+                                                    category=questionnaire.category.id)
+
+            for question in questionnaire.questions:
+
+                position += 1
+
+                try:
+                    if question.id == -1:
+                        question = self.addQuestion(question)
+
+                    self.__addCollection(id_Q=question.id, id_QA=questionnaire.id, position=position,
+                                         required=question.required)
+
+                except Exception as e:
+                    self.logger.info(&#34;Question already exist in tb_questions:&#34; + str(e))
+                    errorList.append(question)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+                self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return questionnaire, errorList
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestionnaire:&#34; + str(e))
+            raise
+
+    def removeQuestionnaire(self, questionnaire: Questionnaire, purge: bool = False) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist questionnaire in database
+        :param questionnaire:  current object of questionnaire
+        :param purge: true= remove all; false= remove only collections and questionnaire
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            for question in questionnaire.questions:
+
+                self.databaseSQLite.c.execute(&#39;SELECT COUNT(*) FROM tb_collections WHERE id_Q=?&#39;, (question.id,))
+                count = self.databaseSQLite.c.fetchone()[0]
+
+                self.__removeCollection(id_Q=question.id, id_QA=questionnaire.id)
+
+                if count == 1 and purge:
+                    self.removeQuestion(question=question)
+
+            self.databaseSQLite.removeQuestionnaire(questionnaireId=questionnaire.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+                self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionnaire:&#34; + str(e))
+            raise
+
+    def getQuestionnaires(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all questionnaires from database
+        :return: list of questionnaire objects
+        &#34;&#34;&#34;
+        lstQuestionnaireCategory = self.getQuestionnaireCategories()
+        lstQuestions = self.getQuestions()
+        lstColletionRows = self.databaseSQLite.getCollections()
+
+        lstQuestionnaires = []
+
+        for questionnaireRow in self.databaseSQLite.getQuestionnaire():
+
+            currentCategory = None
+            for category in lstQuestionnaireCategory:
+                if category.id == questionnaireRow[3]:
+                    currentCategory = category
+                    break
+
+            currentQuestions = []
+            for collectionRow in lstColletionRows:
+                if collectionRow[1] == questionnaireRow[0]:
+
+                    for question in lstQuestions:
+                        if question.id == collectionRow[0]:
+                            currentQuestions.insert(collectionRow[2], question)
+
+            lstQuestionnaires.append(Questionnaire(id=questionnaireRow[0], name=questionnaireRow[1],
+                                                   description=questionnaireRow[2], questions=currentQuestions,
+                                                   category=currentCategory,
+                                                   creationDate=questionnaireRow[4], lastEdited=questionnaireRow[5]))
+
+        return lstQuestionnaires
+
+    def getQuestionnaire(self, questionnaire: Questionnaire) -&gt; Questionnaire:
+        &#34;&#34;&#34;
+        Methode to get one special questionnaires from database
+        :return: questionnaire object; if not exist = new Questionnare
+        &#34;&#34;&#34;
+        for questionnaireObject in self.getQuestionnaires():
+            if questionnaire.id == questionnaireObject.id:
+                return questionnaireObject
+
+        return questionnaire
+
+    def __addCollection(self, id_Q: int, id_QA: int, position: int, required: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to add a new collection to the database
+        TODO: Parameter anpassen
+        :return: new category id
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.addCollection(id_Q=id_Q, id_QA=id_QA, position=position, required=required)
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while __addCollection:&#34; + str(e))
+            raise
+
+    def __removeCollection(self, id_Q: int, id_QA: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist collection in database
+        TODO: Parameter anpassen
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeCollection(id_Q=id_Q, id_QA=id_QA)
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionCategory:&#34; + str(e))
+            raise
+
+    def addQuestionCategory(self, category: QuestionCategory) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Methode to add a new category to the database
+        :param category: object of category
+        :return: QuestionCategory object include id
+        &#34;&#34;&#34;
+        try:
+
+            category.id = self.databaseSQLite.addQuestionCategory(name=category.category,
+                                                                  description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestionCategory:&#34; + str(e))
+            raise
+
+    def editQuestionCategory(self, category: QuestionCategory) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Methode to alter a exist category in database
+        :param category:  altered object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.changeQuestionCategory(id_categoryQ=category.id, name=category.category,
+                                                       description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestionCategory:&#34; + str(e))
+            raise
+
+    def removeQuestionCategory(self, category: QuestionCategory) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist category in database
+        :param category:  current object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeQuestionCategory(categoryId=category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionCategory:&#34; + str(e))
+            raise
+
+    def getQuestionCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all Categories from database
+        :return: list of category objects
+        &#34;&#34;&#34;
+
+        lstQuestionCategories = []
+
+        for row in self.databaseSQLite.getQuestionCategories():
+            category = QuestionCategory(id=row[0], category=row[1], description=row[2])
+            lstQuestionCategories.append(category)
+
+        return lstQuestionCategories
+
+    def addQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; QuestionnaireCategory:
+        &#34;&#34;&#34;
+        Methode to add a new category to the database
+        :param category: object of category
+        :return: QuestionnaireCategory object include id
+        &#34;&#34;&#34;
+        try:
+
+            category.id = self.databaseSQLite.addQuestionnaireCategory(name=category.category,
+                                                                       description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while addQuestionnaireCategory:&#34; + str(e))
+            raise
+
+    def editQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; QuestionnaireCategory:
+        &#34;&#34;&#34;
+        Methode to alter a exist category in database
+        :param category:  altered object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.changeQuestionnaireCategory(id_categoryQA=category.id, name=category.category,
+                                                            description=category.description)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return category
+
+        except Exception as e:
+            self.logger.error(&#34;Error while editQuestionnaireCategory:&#34; + str(e))
+            raise
+
+    def removeQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; bool:
+        &#34;&#34;&#34;
+        Methode to remove a exist category in database
+        :param category:  current object of category
+        :return: True if done / raise exception
+        &#34;&#34;&#34;
+        try:
+
+            self.databaseSQLite.removeQuestionnaireCategory(categoryId=category.id)
+
+            # invoke to sync database
+            if self.databaseMySQL:
+                self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+                self.syncDatabasesThreadEvent.set()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while removeQuestionnaireCategory:&#34; + str(e))
+            raise
+
+    def getQuestionnaireCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all Categories from database
+        :return: list of category objects
+        &#34;&#34;&#34;
+        lstQuestionnaireCategories = []
+
+        for row in self.databaseSQLite.getQuestionnaireCategories():
+            category = QuestionCategory(id=row[0], category=row[1], description=row[2])
+            lstQuestionnaireCategories.append(category)
+
+        return lstQuestionnaireCategories
+
+    def getTypes(self) -&gt; list:
+        &#34;&#34;&#34;
+        Methode to get all types from database
+        :return: list of types objects
+        &#34;&#34;&#34;
+        lstTypes = []
+
+        for row in self.databaseSQLite.getTypes():
+            questionType = QuestionType(id=row[0], typeName=row[1], displayName=row[2], options=bool(row[3]))
+            lstTypes.append(questionType)
+
+        return lstTypes
+
+    def syncDatabases(self, event, destinationDatabase):
+        &#34;&#34;&#34;
+        Method to sync two databases
+        :param event: Threadevent
+        :param destinationDatabase: destination database
+        &#34;&#34;&#34;
+        time.sleep(5)
+
+        databaseSQLite = DatabaseSQLite(self.logger, self.pathSQLiteDatabase)
+
+        t = threading.currentThread()
+
+        while not self.mysqlDisconnect:
+            if event.wait():
+
+                while len(self.syncDatabasesRequired) &gt; 0:
+
+                    try:
+
+                        nextRequired = self.syncDatabasesRequired.pop()
+
+                        if nextRequired == &#34;tb_question_types&#34;:
+
+                            destinationDatabase.clearTypes()
+
+                            for row in databaseSQLite.getTypes():
+                                destinationDatabase.addType(row[0], row[1], row[2], row[3])
+
+                        elif nextRequired == &#34;tb_question_categories&#34;:
+
+                            destinationDatabase.clearQuestionCategories()
+
+                            for row in databaseSQLite.getQuestionCategories():
+                                destinationDatabase.addQuestionCategory(row[0], row[1], row[2])
+
+                        elif nextRequired == &#34;tb_questionnaire_categories&#34;:
+
+                            destinationDatabase.clearQuestionnaireCategories()
+
+                            for row in databaseSQLite.getQuestionnaireCategories():
+                                destinationDatabase.addQuestionnaireCategory(row[0], row[1], row[2])
+
+                        elif nextRequired == &#34;tb_questions&#34;:
+
+                            destinationDatabase.clearQuestions()
+
+                            for row in databaseSQLite.getQuestions():
+                                destinationDatabase.addQuestion(row[0], row[1], row[2], row[3], row[4], row[5], row[6],
+                                                                row[7], row[8], row[9], row[10])
+
+                        elif nextRequired == &#34;tb_questionnaires&#34;:
+
+                            destinationDatabase.clearQuestionnaires()
+
+                            for row in databaseSQLite.getQuestionnaire():
+                                destinationDatabase.addQuestionnaire(row[0], row[1], row[2], row[3])
+
+                        elif nextRequired == &#34;tb_collections&#34;:
+
+                            destinationDatabase.clearCollections()
+
+                            for row in databaseSQLite.getCollections():
+                                destinationDatabase.addCollection(row[0], row[1], row[2], row[3])
+
+                    except Exception as e:
+                        self.logger.warning(&#34;Warning while sync databases: &#34; + str(e))
+
+                event.clear()
+
+        self.mysqlDisconnect = False</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.DatabaseController.DatabaseController.addQuestion"><code class="name flex">
+<span>def <span class="ident">addQuestion</span></span>(<span>self, question: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>) ‑> <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to add a new question to the database
+:param question: object of question
+:return: question object include id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestion(self, question: Question) -&gt; Question:
+    &#34;&#34;&#34;
+    Methode to add a new question to the database
+    :param question: object of question
+    :return: question object include id
+    &#34;&#34;&#34;
+    try:
+
+        dependentOnID = -1
+        for currentQuestion in self.getQuestions():
+            if currentQuestion.abbreviation == question.dependent_on:
+                dependentOnID = currentQuestion.id
+
+        question.id = self.databaseSQLite.addQuestion(text=question.text, questionType=question.type.id,
+                                                      options=json.dumps(question.options),
+                                                      required=question.required, dependent_on=dependentOnID,
+                                                      expectedAnswer=question.expected_answer,
+                                                      abbrv=question.abbreviation,
+                                                      score=question.score, comment=question.comment,
+                                                      category=question.category.id)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return question
+
+    except Exception as e:
+        self.logger.error(&#34;Error while addQuestion:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.addQuestionCategory"><code class="name flex">
+<span>def <span class="ident">addQuestionCategory</span></span>(<span>self, category: <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a>) ‑> <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to add a new category to the database
+:param category: object of category
+:return: QuestionCategory object include id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionCategory(self, category: QuestionCategory) -&gt; QuestionCategory:
+    &#34;&#34;&#34;
+    Methode to add a new category to the database
+    :param category: object of category
+    :return: QuestionCategory object include id
+    &#34;&#34;&#34;
+    try:
+
+        category.id = self.databaseSQLite.addQuestionCategory(name=category.category,
+                                                              description=category.description)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return category
+
+    except Exception as e:
+        self.logger.error(&#34;Error while addQuestionCategory:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.addQuestionnaire"><code class="name flex">
+<span>def <span class="ident">addQuestionnaire</span></span>(<span>self, questionnaire: <a title="PhysioForms.Questionnaire.Questionnaire" href="Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a>) ‑> [<class '<a title="PhysioForms.Questionnaire.Questionnaire" href="Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a>'>, <class 'list'>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to add a new questionnaire to the database
+:param questionnaire: object of questionnaire
+:return: questionnaire object include id´s, errorlist = list of questions which already in table</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionnaire(self, questionnaire: Questionnaire) -&gt; [Questionnaire, list]:
+    &#34;&#34;&#34;
+    Methode to add a new questionnaire to the database
+    :param questionnaire: object of questionnaire
+    :return: questionnaire object include id´s, errorlist = list of questions which already in table
+    &#34;&#34;&#34;
+    position = 0
+    errorList = []
+
+    try:
+
+        questionnaire.id = self.databaseSQLite.addQuestionnaire(name=questionnaire.name,
+                                                                description=questionnaire.description,
+                                                                category=questionnaire.category.id)
+
+        for question in questionnaire.questions:
+
+            position += 1
+
+            try:
+                if question.id == -1:
+                    question = self.addQuestion(question)
+
+                self.__addCollection(id_Q=question.id, id_QA=questionnaire.id, position=position,
+                                     required=question.required)
+
+            except Exception as e:
+                self.logger.info(&#34;Question already exist in tb_questions:&#34; + str(e))
+                errorList.append(question)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return questionnaire, errorList
+
+    except Exception as e:
+        self.logger.error(&#34;Error while addQuestionnaire:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.addQuestionnaireCategory"><code class="name flex">
+<span>def <span class="ident">addQuestionnaireCategory</span></span>(<span>self, category: <a title="PhysioForms.QuestionnaireCategory.QuestionnaireCategory" href="QuestionnaireCategory.html#PhysioForms.QuestionnaireCategory.QuestionnaireCategory">QuestionnaireCategory</a>) ‑> <a title="PhysioForms.QuestionnaireCategory.QuestionnaireCategory" href="QuestionnaireCategory.html#PhysioForms.QuestionnaireCategory.QuestionnaireCategory">QuestionnaireCategory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to add a new category to the database
+:param category: object of category
+:return: QuestionnaireCategory object include id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; QuestionnaireCategory:
+    &#34;&#34;&#34;
+    Methode to add a new category to the database
+    :param category: object of category
+    :return: QuestionnaireCategory object include id
+    &#34;&#34;&#34;
+    try:
+
+        category.id = self.databaseSQLite.addQuestionnaireCategory(name=category.category,
+                                                                   description=category.description)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return category
+
+    except Exception as e:
+        self.logger.error(&#34;Error while addQuestionnaireCategory:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.connectToExtern"><code class="name flex">
+<span>def <span class="ident">connectToExtern</span></span>(<span>self, host: str, port: int, user: str, password: str, database: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Constructor
+:keyword host: IPAddress MySQL Server
+:keyword port: Port MySQL Server
+:keyword user: Username MySQL Server
+:keyword password: Password MySQL Server
+:keyword database: name of database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def connectToExtern(self, host: str, port: int, user: str, password: str, database: str) -&gt; bool:
+    &#34;&#34;&#34;
+    Constructor
+    :keyword host: IPAddress MySQL Server
+    :keyword port: Port MySQL Server
+    :keyword user: Username MySQL Server
+    :keyword password: Password MySQL Server
+    :keyword database: name of database
+    &#34;&#34;&#34;
+    try:
+        self.databaseMySQL = DatabaseMySQL(self.logger, host, port, user, password, database)
+
+        self.syncDatabasesThread = threading.Thread(target=self.syncDatabases, daemon=True, args=(
+            self.syncDatabasesThreadEvent, self.databaseMySQL)).start()
+
+        self.syncDatabasesRequired.append(&#34;tb_question_types&#34;)
+        self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+        self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+        self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+        self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+        self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+        self.syncDatabasesThreadEvent.set()
+
+    except Exception as e:
+        self.logger.error(&#34;Error while connectToExtern:&#34; + str(e))
+        raise
+
+    return True</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.disconnectFromExtern"><code class="name flex">
+<span>def <span class="ident">disconnectFromExtern</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to disconnect from extern database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def disconnectFromExtern(self):
+    &#34;&#34;&#34;
+    Method to disconnect from extern database
+    &#34;&#34;&#34;
+    self.mysqlDisconnect = True
+    self.syncDatabasesRequired.clear()
+    self.syncDatabasesThreadEvent.set()
+    self.databaseMySQL = None</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.editQuestion"><code class="name flex">
+<span>def <span class="ident">editQuestion</span></span>(<span>self, question: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>) ‑> <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to alter a exist question in database
+:param question:
+altered object of question
+:return: True if done / raise exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editQuestion(self, question: Question) -&gt; Question:
+    &#34;&#34;&#34;
+    Methode to alter a exist question in database
+    :param question:  altered object of question
+    :return: True if done / raise exception
+    &#34;&#34;&#34;
+    try:
+
+        dependentOnID = -1
+        for row in self.getQuestions():
+            if row.abbreviation == question.dependent_on:
+                dependentOnID = row.id
+
+        self.databaseSQLite.changeQuestion(id_question=question.id, text=question.text,
+                                           questionType=question.type.id,
+                                           options=json.dumps(question.options), required=question.required,
+                                           dependent_on=dependentOnID, expectedAnswer=question.expected_answer,
+                                           abbrv=question.abbreviation, score=question.score,
+                                           comment=question.comment,
+                                           category=question.category.id)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return question
+
+    except Exception as e:
+        self.logger.error(&#34;Error while editQuestion:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.editQuestionCategory"><code class="name flex">
+<span>def <span class="ident">editQuestionCategory</span></span>(<span>self, category: <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a>) ‑> <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to alter a exist category in database
+:param category:
+altered object of category
+:return: True if done / raise exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editQuestionCategory(self, category: QuestionCategory) -&gt; QuestionCategory:
+    &#34;&#34;&#34;
+    Methode to alter a exist category in database
+    :param category:  altered object of category
+    :return: True if done / raise exception
+    &#34;&#34;&#34;
+    try:
+
+        self.databaseSQLite.changeQuestionCategory(id_categoryQ=category.id, name=category.category,
+                                                   description=category.description)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return category
+
+    except Exception as e:
+        self.logger.error(&#34;Error while editQuestionCategory:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.editQuestionnaire"><code class="name flex">
+<span>def <span class="ident">editQuestionnaire</span></span>(<span>self, questionnaire: <a title="PhysioForms.Questionnaire.Questionnaire" href="Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a>, purge: bool = False) ‑> [<class '<a title="PhysioForms.Questionnaire.Questionnaire" href="Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a>'>, <class 'list'>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to alter a exist questionnaire in database
+:param questionnaire:
+altered object of questionnaire
+:param purge: true= remove question; false= remove only collection
+:return: questionnaire object include id´s, errorlist = list of questions which already in table</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editQuestionnaire(self, questionnaire: Questionnaire, purge: bool = False) -&gt; [Questionnaire, list]:
+    &#34;&#34;&#34;
+    Methode to alter a exist questionnaire in database
+    :param questionnaire:  altered object of questionnaire
+    :param purge: true= remove question; false= remove only collection
+    :return: questionnaire object include id´s, errorlist = list of questions which already in table
+    &#34;&#34;&#34;
+    position = 0
+    errorList = []
+
+    try:
+
+        for question in questionnaire.questions:
+
+            self.databaseSQLite.c.execute(&#39;SELECT COUNT(*) FROM tb_collections WHERE id_Q=?&#39;, (question.id,))
+            count = self.databaseSQLite.c.fetchone()[0]
+
+            self.__removeCollection(id_Q=question.id, id_QA=questionnaire.id)
+
+            if count == 1 and purge:
+                self.removeQuestion(question=question)
+
+        self.databaseSQLite.changeQuestionnaire(id_questionnaire=questionnaire.id, name=questionnaire.name,
+                                                description=questionnaire.description,
+                                                category=questionnaire.category.id)
+
+        for question in questionnaire.questions:
+
+            position += 1
+
+            try:
+                if question.id == -1:
+                    question = self.addQuestion(question)
+
+                self.__addCollection(id_Q=question.id, id_QA=questionnaire.id, position=position,
+                                     required=question.required)
+
+            except Exception as e:
+                self.logger.info(&#34;Question already exist in tb_questions:&#34; + str(e))
+                errorList.append(question)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return questionnaire, errorList
+
+    except Exception as e:
+        self.logger.error(&#34;Error while editQuestionnaire:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.editQuestionnaireCategory"><code class="name flex">
+<span>def <span class="ident">editQuestionnaireCategory</span></span>(<span>self, category: <a title="PhysioForms.QuestionnaireCategory.QuestionnaireCategory" href="QuestionnaireCategory.html#PhysioForms.QuestionnaireCategory.QuestionnaireCategory">QuestionnaireCategory</a>) ‑> <a title="PhysioForms.QuestionnaireCategory.QuestionnaireCategory" href="QuestionnaireCategory.html#PhysioForms.QuestionnaireCategory.QuestionnaireCategory">QuestionnaireCategory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to alter a exist category in database
+:param category:
+altered object of category
+:return: True if done / raise exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; QuestionnaireCategory:
+    &#34;&#34;&#34;
+    Methode to alter a exist category in database
+    :param category:  altered object of category
+    :return: True if done / raise exception
+    &#34;&#34;&#34;
+    try:
+
+        self.databaseSQLite.changeQuestionnaireCategory(id_categoryQA=category.id, name=category.category,
+                                                        description=category.description)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return category
+
+    except Exception as e:
+        self.logger.error(&#34;Error while editQuestionnaireCategory:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.getQuestionById"><code class="name flex">
+<span>def <span class="ident">getQuestionById</span></span>(<span>self, questionId: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to get one question by id
+:param questionId: id of question
+:return: question object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionById(self, questionId: int):
+    &#34;&#34;&#34;
+    Method to get one question by id
+    :param questionId: id of question
+    :return: question object
+    &#34;&#34;&#34;
+    for question in self.getQuestions():
+        if question.id == questionId:
+            return question
+    return None</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.getQuestionCategories"><code class="name flex">
+<span>def <span class="ident">getQuestionCategories</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to get all Categories from database
+:return: list of category objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionCategories(self) -&gt; list:
+    &#34;&#34;&#34;
+    Methode to get all Categories from database
+    :return: list of category objects
+    &#34;&#34;&#34;
+
+    lstQuestionCategories = []
+
+    for row in self.databaseSQLite.getQuestionCategories():
+        category = QuestionCategory(id=row[0], category=row[1], description=row[2])
+        lstQuestionCategories.append(category)
+
+    return lstQuestionCategories</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.getQuestionnaire"><code class="name flex">
+<span>def <span class="ident">getQuestionnaire</span></span>(<span>self, questionnaire: <a title="PhysioForms.Questionnaire.Questionnaire" href="Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a>) ‑> <a title="PhysioForms.Questionnaire.Questionnaire" href="Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to get one special questionnaires from database
+:return: questionnaire object; if not exist = new Questionnare</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionnaire(self, questionnaire: Questionnaire) -&gt; Questionnaire:
+    &#34;&#34;&#34;
+    Methode to get one special questionnaires from database
+    :return: questionnaire object; if not exist = new Questionnare
+    &#34;&#34;&#34;
+    for questionnaireObject in self.getQuestionnaires():
+        if questionnaire.id == questionnaireObject.id:
+            return questionnaireObject
+
+    return questionnaire</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.getQuestionnaireCategories"><code class="name flex">
+<span>def <span class="ident">getQuestionnaireCategories</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to get all Categories from database
+:return: list of category objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionnaireCategories(self) -&gt; list:
+    &#34;&#34;&#34;
+    Methode to get all Categories from database
+    :return: list of category objects
+    &#34;&#34;&#34;
+    lstQuestionnaireCategories = []
+
+    for row in self.databaseSQLite.getQuestionnaireCategories():
+        category = QuestionCategory(id=row[0], category=row[1], description=row[2])
+        lstQuestionnaireCategories.append(category)
+
+    return lstQuestionnaireCategories</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.getQuestionnaires"><code class="name flex">
+<span>def <span class="ident">getQuestionnaires</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to get all questionnaires from database
+:return: list of questionnaire objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionnaires(self) -&gt; list:
+    &#34;&#34;&#34;
+    Methode to get all questionnaires from database
+    :return: list of questionnaire objects
+    &#34;&#34;&#34;
+    lstQuestionnaireCategory = self.getQuestionnaireCategories()
+    lstQuestions = self.getQuestions()
+    lstColletionRows = self.databaseSQLite.getCollections()
+
+    lstQuestionnaires = []
+
+    for questionnaireRow in self.databaseSQLite.getQuestionnaire():
+
+        currentCategory = None
+        for category in lstQuestionnaireCategory:
+            if category.id == questionnaireRow[3]:
+                currentCategory = category
+                break
+
+        currentQuestions = []
+        for collectionRow in lstColletionRows:
+            if collectionRow[1] == questionnaireRow[0]:
+
+                for question in lstQuestions:
+                    if question.id == collectionRow[0]:
+                        currentQuestions.insert(collectionRow[2], question)
+
+        lstQuestionnaires.append(Questionnaire(id=questionnaireRow[0], name=questionnaireRow[1],
+                                               description=questionnaireRow[2], questions=currentQuestions,
+                                               category=currentCategory,
+                                               creationDate=questionnaireRow[4], lastEdited=questionnaireRow[5]))
+
+    return lstQuestionnaires</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.getQuestions"><code class="name flex">
+<span>def <span class="ident">getQuestions</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to get all questions from database
+:return: list of question objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestions(self) -&gt; list:
+    &#34;&#34;&#34;
+    Methode to get all questions from database
+    :return: list of question objects
+    &#34;&#34;&#34;
+    lstQuestions = []
+    lstTypes = self.getTypes()
+    lstQuestionCategorys = self.getQuestionCategories()
+    lstQuestionRows = self.databaseSQLite.getQuestions()
+
+    for row in lstQuestionRows:
+
+        currentType = None
+        for questionType in lstTypes:
+            if questionType.id == row[2]:
+                currentType = questionType
+                break
+
+        currentCategory = None
+        for category in lstQuestionCategorys:
+            if category.id == row[10]:
+                currentCategory = category
+                break
+
+        currentDependentOn = &#34;none&#34;
+        if row[5] != -1:
+            for questionRow in lstQuestionRows:
+                if questionRow[0] == row[5]:
+                    currentDependentOn = questionRow[7]
+                    break
+
+        question = Question(id=row[0], text=row[1], type=currentType, options=json.loads(row[3]),
+                            required=bool(row[4]),
+                            dependent_on=currentDependentOn, expected_answer=row[6], abbreviation=row[7],
+                            score=bool(row[8]),
+                            comment=bool(row[9]), category=currentCategory)
+        lstQuestions.append(question)
+
+    return lstQuestions</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.getTypes"><code class="name flex">
+<span>def <span class="ident">getTypes</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to get all types from database
+:return: list of types objects</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getTypes(self) -&gt; list:
+    &#34;&#34;&#34;
+    Methode to get all types from database
+    :return: list of types objects
+    &#34;&#34;&#34;
+    lstTypes = []
+
+    for row in self.databaseSQLite.getTypes():
+        questionType = QuestionType(id=row[0], typeName=row[1], displayName=row[2], options=bool(row[3]))
+        lstTypes.append(questionType)
+
+    return lstTypes</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.removeQuestion"><code class="name flex">
+<span>def <span class="ident">removeQuestion</span></span>(<span>self, question: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to remove a exist question in database
+:param question:
+current object of question
+:return: True if done / raise exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestion(self, question: Question) -&gt; bool:
+    &#34;&#34;&#34;
+    Methode to remove a exist question in database
+    :param question:  current object of question
+    :return: True if done / raise exception
+    &#34;&#34;&#34;
+    try:
+
+        self.databaseSQLite.removeQuestion(questionId=question.id)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questions&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return True
+
+    except Exception as e:
+        self.logger.error(&#34;Error while removeQuestion:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.removeQuestionCategory"><code class="name flex">
+<span>def <span class="ident">removeQuestionCategory</span></span>(<span>self, category: <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to remove a exist category in database
+:param category:
+current object of category
+:return: True if done / raise exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionCategory(self, category: QuestionCategory) -&gt; bool:
+    &#34;&#34;&#34;
+    Methode to remove a exist category in database
+    :param category:  current object of category
+    :return: True if done / raise exception
+    &#34;&#34;&#34;
+    try:
+
+        self.databaseSQLite.removeQuestionCategory(categoryId=category.id)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_question_categories&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return True
+
+    except Exception as e:
+        self.logger.error(&#34;Error while removeQuestionCategory:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.removeQuestionnaire"><code class="name flex">
+<span>def <span class="ident">removeQuestionnaire</span></span>(<span>self, questionnaire: <a title="PhysioForms.Questionnaire.Questionnaire" href="Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a>, purge: bool = False) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to remove a exist questionnaire in database
+:param questionnaire:
+current object of questionnaire
+:param purge: true= remove all; false= remove only collections and questionnaire
+:return: True if done / raise exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionnaire(self, questionnaire: Questionnaire, purge: bool = False) -&gt; bool:
+    &#34;&#34;&#34;
+    Methode to remove a exist questionnaire in database
+    :param questionnaire:  current object of questionnaire
+    :param purge: true= remove all; false= remove only collections and questionnaire
+    :return: True if done / raise exception
+    &#34;&#34;&#34;
+    try:
+
+        for question in questionnaire.questions:
+
+            self.databaseSQLite.c.execute(&#39;SELECT COUNT(*) FROM tb_collections WHERE id_Q=?&#39;, (question.id,))
+            count = self.databaseSQLite.c.fetchone()[0]
+
+            self.__removeCollection(id_Q=question.id, id_QA=questionnaire.id)
+
+            if count == 1 and purge:
+                self.removeQuestion(question=question)
+
+        self.databaseSQLite.removeQuestionnaire(questionnaireId=questionnaire.id)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questionnaires&#34;)
+            self.syncDatabasesRequired.append(&#34;tb_collections&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return True
+
+    except Exception as e:
+        self.logger.error(&#34;Error while removeQuestionnaire:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.removeQuestionnaireCategory"><code class="name flex">
+<span>def <span class="ident">removeQuestionnaireCategory</span></span>(<span>self, category: <a title="PhysioForms.QuestionnaireCategory.QuestionnaireCategory" href="QuestionnaireCategory.html#PhysioForms.QuestionnaireCategory.QuestionnaireCategory">QuestionnaireCategory</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methode to remove a exist category in database
+:param category:
+current object of category
+:return: True if done / raise exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionnaireCategory(self, category: QuestionnaireCategory) -&gt; bool:
+    &#34;&#34;&#34;
+    Methode to remove a exist category in database
+    :param category:  current object of category
+    :return: True if done / raise exception
+    &#34;&#34;&#34;
+    try:
+
+        self.databaseSQLite.removeQuestionnaireCategory(categoryId=category.id)
+
+        # invoke to sync database
+        if self.databaseMySQL:
+            self.syncDatabasesRequired.append(&#34;tb_questionnaire_categories&#34;)
+            self.syncDatabasesThreadEvent.set()
+
+        return True
+
+    except Exception as e:
+        self.logger.error(&#34;Error while removeQuestionnaireCategory:&#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.DatabaseController.DatabaseController.syncDatabases"><code class="name flex">
+<span>def <span class="ident">syncDatabases</span></span>(<span>self, event, destinationDatabase)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to sync two databases
+:param event: Threadevent
+:param destinationDatabase: destination database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def syncDatabases(self, event, destinationDatabase):
+    &#34;&#34;&#34;
+    Method to sync two databases
+    :param event: Threadevent
+    :param destinationDatabase: destination database
+    &#34;&#34;&#34;
+    time.sleep(5)
+
+    databaseSQLite = DatabaseSQLite(self.logger, self.pathSQLiteDatabase)
+
+    t = threading.currentThread()
+
+    while not self.mysqlDisconnect:
+        if event.wait():
+
+            while len(self.syncDatabasesRequired) &gt; 0:
+
+                try:
+
+                    nextRequired = self.syncDatabasesRequired.pop()
+
+                    if nextRequired == &#34;tb_question_types&#34;:
+
+                        destinationDatabase.clearTypes()
+
+                        for row in databaseSQLite.getTypes():
+                            destinationDatabase.addType(row[0], row[1], row[2], row[3])
+
+                    elif nextRequired == &#34;tb_question_categories&#34;:
+
+                        destinationDatabase.clearQuestionCategories()
+
+                        for row in databaseSQLite.getQuestionCategories():
+                            destinationDatabase.addQuestionCategory(row[0], row[1], row[2])
+
+                    elif nextRequired == &#34;tb_questionnaire_categories&#34;:
+
+                        destinationDatabase.clearQuestionnaireCategories()
+
+                        for row in databaseSQLite.getQuestionnaireCategories():
+                            destinationDatabase.addQuestionnaireCategory(row[0], row[1], row[2])
+
+                    elif nextRequired == &#34;tb_questions&#34;:
+
+                        destinationDatabase.clearQuestions()
+
+                        for row in databaseSQLite.getQuestions():
+                            destinationDatabase.addQuestion(row[0], row[1], row[2], row[3], row[4], row[5], row[6],
+                                                            row[7], row[8], row[9], row[10])
+
+                    elif nextRequired == &#34;tb_questionnaires&#34;:
+
+                        destinationDatabase.clearQuestionnaires()
+
+                        for row in databaseSQLite.getQuestionnaire():
+                            destinationDatabase.addQuestionnaire(row[0], row[1], row[2], row[3])
+
+                    elif nextRequired == &#34;tb_collections&#34;:
+
+                        destinationDatabase.clearCollections()
+
+                        for row in databaseSQLite.getCollections():
+                            destinationDatabase.addCollection(row[0], row[1], row[2], row[3])
+
+                except Exception as e:
+                    self.logger.warning(&#34;Warning while sync databases: &#34; + str(e))
+
+            event.clear()
+
+    self.mysqlDisconnect = False</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PhysioForms" href="index.html">PhysioForms</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PhysioForms.DatabaseController.DatabaseController" href="#PhysioForms.DatabaseController.DatabaseController">DatabaseController</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.addQuestion" href="#PhysioForms.DatabaseController.DatabaseController.addQuestion">addQuestion</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.addQuestionCategory" href="#PhysioForms.DatabaseController.DatabaseController.addQuestionCategory">addQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.addQuestionnaire" href="#PhysioForms.DatabaseController.DatabaseController.addQuestionnaire">addQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.addQuestionnaireCategory" href="#PhysioForms.DatabaseController.DatabaseController.addQuestionnaireCategory">addQuestionnaireCategory</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.connectToExtern" href="#PhysioForms.DatabaseController.DatabaseController.connectToExtern">connectToExtern</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.disconnectFromExtern" href="#PhysioForms.DatabaseController.DatabaseController.disconnectFromExtern">disconnectFromExtern</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.editQuestion" href="#PhysioForms.DatabaseController.DatabaseController.editQuestion">editQuestion</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.editQuestionCategory" href="#PhysioForms.DatabaseController.DatabaseController.editQuestionCategory">editQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.editQuestionnaire" href="#PhysioForms.DatabaseController.DatabaseController.editQuestionnaire">editQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.editQuestionnaireCategory" href="#PhysioForms.DatabaseController.DatabaseController.editQuestionnaireCategory">editQuestionnaireCategory</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.getQuestionById" href="#PhysioForms.DatabaseController.DatabaseController.getQuestionById">getQuestionById</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.getQuestionCategories" href="#PhysioForms.DatabaseController.DatabaseController.getQuestionCategories">getQuestionCategories</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.getQuestionnaire" href="#PhysioForms.DatabaseController.DatabaseController.getQuestionnaire">getQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.getQuestionnaireCategories" href="#PhysioForms.DatabaseController.DatabaseController.getQuestionnaireCategories">getQuestionnaireCategories</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.getQuestionnaires" href="#PhysioForms.DatabaseController.DatabaseController.getQuestionnaires">getQuestionnaires</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.getQuestions" href="#PhysioForms.DatabaseController.DatabaseController.getQuestions">getQuestions</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.getTypes" href="#PhysioForms.DatabaseController.DatabaseController.getTypes">getTypes</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.removeQuestion" href="#PhysioForms.DatabaseController.DatabaseController.removeQuestion">removeQuestion</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.removeQuestionCategory" href="#PhysioForms.DatabaseController.DatabaseController.removeQuestionCategory">removeQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.removeQuestionnaire" href="#PhysioForms.DatabaseController.DatabaseController.removeQuestionnaire">removeQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.removeQuestionnaireCategory" href="#PhysioForms.DatabaseController.DatabaseController.removeQuestionnaireCategory">removeQuestionnaireCategory</a></code></li>
+<li><code><a title="PhysioForms.DatabaseController.DatabaseController.syncDatabases" href="#PhysioForms.DatabaseController.DatabaseController.syncDatabases">syncDatabases</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

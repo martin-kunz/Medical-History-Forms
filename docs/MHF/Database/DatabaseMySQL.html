@@ -1,0 +1,1518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>PhysioForms.Database.DatabaseMySQL API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PhysioForms.Database.DatabaseMySQL</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# coding=utf-8
+
+__author__ = &#34;Niklas Goessl&#34;
+__version__ = &#34;0.1&#34;
+
+import threading
+import time
+
+import mysql.connector
+
+from PhysioForms.Database.DatabaseExceptions import DatabaseNotConnectedError
+
+
+class DatabaseMySQL:
+    &#34;&#34;&#34;
+    DatabaseController class will handle connections between PhysioForms and a MySQL database
+    &#34;&#34;&#34;
+
+    def __init__(self, logger, host: str, port: int, user: str, password: str, database: str):
+        &#34;&#34;&#34;
+        Constructor
+        :keyword logger logger Object
+        :keyword host IPAddress MySQL Server
+        :keyword port Port MySQL Server
+        :keyword user Username MySQL Server
+        :keyword password Password MySQL Server
+        :keyword database name of database
+        &#34;&#34;&#34;
+        self.logger = logger
+        self.host: str = host
+        self.port: int = port
+        self.user: str = user
+        self.password = password
+        self.database: str = database
+
+        self.mysqlRun: bool = True
+        self.connected: bool = False
+
+        self.__connect(True)
+
+        self.checkThread = threading.Thread(target=self.__checkConnection, daemon=True).start()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.disconnet()
+
+    def __connect(self, first: bool = False):
+        &#34;&#34;&#34;
+        Method to connect to MySQL database, if not available try to reconnect all 5 seconds
+        &#34;&#34;&#34;
+        while True:
+
+            try:
+                self.conn = mysql.connector.connect(
+                    host=self.host,
+                    port=self.port,
+                    user=self.user,
+                    password=self.password,
+                    database=self.database
+                )
+                self.c = self.conn.cursor()
+
+                self.__createTables()
+
+                return
+
+            except Exception as e:
+                self.logger.error(&#34;Error while connection to MySQL database, try to reconnect in 5 seconds: &#34; + str(e))
+
+                if first:
+                    raise
+
+                time.sleep(5)
+
+    def disconnet(self):
+        &#34;&#34;&#34;
+        Method to disconnect from MySQL database
+        &#34;&#34;&#34;
+        self.mysqlRun = False
+        self.connected = True
+        time.sleep(2)
+
+        try:
+            self.conn.close()
+        except Exception as e:
+            self.logger.error(&#34;Error while disconnect MySQL database: &#34; + str(e))
+            raise
+
+    def __checkConnection(self):
+        &#34;&#34;&#34;
+        Method to check if the MySQL database connected
+        If not connected, the method try to connect
+        &#34;&#34;&#34;
+        while self.mysqlRun:
+
+            try:
+                self.c.execute(&#39;SELECT * FROM tb_questions LIMIT 1&#39;)
+                self.c.fetchone()
+                self.connected = True
+
+            except Exception as e:
+                self.logger.error(&#34;Error: MySQL Database are disconnected: &#34; + str(e))
+                self.connected = False
+                self.__connect()
+
+            time.sleep(1)
+
+    def __createTables(self):
+        &#34;&#34;&#34;
+        Methode to create all needed Tables if they are not exist
+        &#34;&#34;&#34;
+        try:
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_types(&#39;
+                &#39;id_type INT PRIMARY KEY,&#39;
+                &#39;typeName VARCHAR(255) NOT NULL,&#39;
+                &#39;displayName VARCHAR(255) NOT NULL,&#39;
+                &#39;options BOOLEAN NOT NULL&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_categories(&#39;
+                &#39;id_categoryQ INT PRIMARY KEY,&#39;
+                &#39;name VARCHAR(255) UNIQUE NOT NULL,&#39;
+                &#39;description VARCHAR(255)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaire_categories(&#39;
+                &#39;id_categoryQA INT PRIMARY KEY,&#39;
+                &#39;name VARCHAR(255) UNIQUE NOT NULL,&#39;
+                &#39;description VARCHAR(255)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questions(&#39;
+                &#39;id_question INT PRIMARY KEY,&#39;
+                &#39;text LONGTEXT NOT NULL,&#39;
+                &#39;type INT NOT NULL,&#39;
+                &#39;options VARCHAR(255) NOT NULL,&#39;
+                &#39;required BOOLEAN NOT NULL,&#39;
+                &#39;dependentOn INT NOT NULL,&#39;
+                &#39;expectedAnswer VARCHAR(255) NOT NULL,&#39;
+                &#39;abbrv VARCHAR(255) UNIQUE NOT NULL,&#39;
+                &#39;score BOOLEAN NOT NULL,&#39;
+                &#39;comment BOOLEAN NOT NULL,&#39;
+                &#39;category INT NOT NULL&#39;
+                # &#39;FOREIGN KEY(type) REFERENCES tb_question_types(id_type),&#39;
+                # &#39;FOREIGN KEY(dependentOn) REFERENCES tb_questions(id_question),&#39;
+                # &#39;FOREIGN KEY(category) REFERENCES tb_question_Categories(id_categoryQ)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaires(&#39;
+                &#39;id_questionnaire INT PRIMARY KEY,&#39;
+                &#39;name VARCHAR(255) NOT NULL,&#39;
+                &#39;description VARCHAR(255),&#39;
+                &#39;category INT NOT NULL,&#39;
+                &#39;created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,&#39;
+                &#39;lastChanged TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP&#39;
+                # &#39;FOREIGN KEY(category) REFERENCES tb_questionnaire_Categories(id_categoryQA)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_collections(&#39;
+                &#39;id_Q INT NOT NULL,&#39;
+                &#39;id_QA INT NOT NULL,&#39;
+                &#39;position INT NOT NULL,&#39;
+                &#39;required BOOLEAN NOT NULL,&#39;
+                &#39;PRIMARY KEY (id_Q, id_QA)&#39;
+                # &#39;FOREIGN KEY(id_Q) REFERENCES tb_questions(id_question),&#39;
+                # &#39;FOREIGN KEY(id_QA) REFERENCES tb_questionnaires(id_questionnaire)&#39;
+                &#39;)&#39;
+            )
+
+        except Exception as e:
+            self.logger.error(&#34;Error while create tables in MySQL database: &#34; + str(e))
+            raise
+
+    def addQuestion(self, idQuestion: int, text: str, questionType: int, options: str, required: int, dependent_on: int,
+                    expectedAnswer: str,
+                    abbrv: str, score: int, comment: int, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new question into the tb_questions table
+        :param idQuestion: id of question
+        :param text: text of question
+        :param questionType: type id ov question
+        :param options: options of question (JSON)
+        :param required: if question required or not
+        :param dependent_on: dependent on question id
+        :param expectedAnswer: option of dependent on question
+        :param abbrv: unique abbreviation of question
+        :param score: if question score or not
+        :param comment: if question comment or not
+        :param category: category id of question
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questions(id_question, text, type, options, required, dependentON, expectedAnswer, abbrv, score, comment, category) VALUES ( %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s, %s)&#39;,
+                    (idQuestion, text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score,
+                     comment,
+                     category))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questions: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestions(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_questions table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questions&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_questions: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addQuestionCategory(self, idCategoryQ: int, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_question_Categories table
+        :param idCategoryQ: id of QuestionCategory
+        :param name: name of QuestionCategory
+        :param description: description of QuestionCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_question_Categories(id_categoryQ, name, description) VALUES ( %s,  %s, %s)&#39;,
+                    (idCategoryQ, name, description))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestionCategories(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_question_Categories table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_question_Categories&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_question_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addQuestionnaireCategory(self, idCategoryQA: int, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_questionnaire_Categories table
+        :param idCategoryQA: id of QuestionnaireCategory
+        :param name: name of QuestionnaireCategory
+        :param description: description of QuestionnaireCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questionnaire_Categories(id_categoryQA, name, description) VALUES ( %s,  %s, %s)&#39;,
+                    (idCategoryQA, name, description))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestionnaireCategories(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_questionnaire_Categories table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaire_Categories&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addCollection(self, idQ: int, id_QA: int, position: int, required: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new collection into the tb_collections table
+        :param idQ: id of question
+        :param id_QA: id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_collections(id_Q, id_QA, position, required) VALUES ( %s,  %s,  %s,  %s)&#39;,
+                    (idQ, id_QA, position, required))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_collections: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearCollections(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_collections table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_collections&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_collections: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addType(self, idType: int, name: str, displayName: str, options: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new type into the tb_question_types table
+        :param idType: id of type
+        :param name: name of type
+        :param displayName: displayName of type
+        :param options: 1=true, 0=false
+        :return: new row id
+        &#34;&#34;&#34;
+
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_question_types(id_type, typeName, displayName, options) VALUES ( %s,  %s,  %s, %s)&#39;,
+                    (idType, name, displayName, options))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_types: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearTypes(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_question_types table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_question_types&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_question_types: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addQuestionnaire(self, idQuestionnaire: int, name: str, description: str, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new questionnaire into the tb_questionnaires table
+        :param idQuestionnaire: id of questionnaire
+        :param name: name of questionnaire
+        :param description: description of questionnaire
+        :param category: category id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questionnaires(id_questionnaire, name, description, category) VALUES ( %s,  %s,  %s, %s)&#39;,
+                    (idQuestionnaire, name, description, category))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questionnaires: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestionnaires(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_questionnaires table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaires&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_questionnaires: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL"><code class="flex name class">
+<span>class <span class="ident">DatabaseMySQL</span></span>
+<span>(</span><span>logger, host: str, port: int, user: str, password: str, database: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DatabaseController class will handle connections between PhysioForms and a MySQL database</p>
+<p>Constructor
+:keyword logger logger Object
+:keyword host IPAddress MySQL Server
+:keyword port Port MySQL Server
+:keyword user Username MySQL Server
+:keyword password Password MySQL Server
+:keyword database name of database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DatabaseMySQL:
+    &#34;&#34;&#34;
+    DatabaseController class will handle connections between PhysioForms and a MySQL database
+    &#34;&#34;&#34;
+
+    def __init__(self, logger, host: str, port: int, user: str, password: str, database: str):
+        &#34;&#34;&#34;
+        Constructor
+        :keyword logger logger Object
+        :keyword host IPAddress MySQL Server
+        :keyword port Port MySQL Server
+        :keyword user Username MySQL Server
+        :keyword password Password MySQL Server
+        :keyword database name of database
+        &#34;&#34;&#34;
+        self.logger = logger
+        self.host: str = host
+        self.port: int = port
+        self.user: str = user
+        self.password = password
+        self.database: str = database
+
+        self.mysqlRun: bool = True
+        self.connected: bool = False
+
+        self.__connect(True)
+
+        self.checkThread = threading.Thread(target=self.__checkConnection, daemon=True).start()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.disconnet()
+
+    def __connect(self, first: bool = False):
+        &#34;&#34;&#34;
+        Method to connect to MySQL database, if not available try to reconnect all 5 seconds
+        &#34;&#34;&#34;
+        while True:
+
+            try:
+                self.conn = mysql.connector.connect(
+                    host=self.host,
+                    port=self.port,
+                    user=self.user,
+                    password=self.password,
+                    database=self.database
+                )
+                self.c = self.conn.cursor()
+
+                self.__createTables()
+
+                return
+
+            except Exception as e:
+                self.logger.error(&#34;Error while connection to MySQL database, try to reconnect in 5 seconds: &#34; + str(e))
+
+                if first:
+                    raise
+
+                time.sleep(5)
+
+    def disconnet(self):
+        &#34;&#34;&#34;
+        Method to disconnect from MySQL database
+        &#34;&#34;&#34;
+        self.mysqlRun = False
+        self.connected = True
+        time.sleep(2)
+
+        try:
+            self.conn.close()
+        except Exception as e:
+            self.logger.error(&#34;Error while disconnect MySQL database: &#34; + str(e))
+            raise
+
+    def __checkConnection(self):
+        &#34;&#34;&#34;
+        Method to check if the MySQL database connected
+        If not connected, the method try to connect
+        &#34;&#34;&#34;
+        while self.mysqlRun:
+
+            try:
+                self.c.execute(&#39;SELECT * FROM tb_questions LIMIT 1&#39;)
+                self.c.fetchone()
+                self.connected = True
+
+            except Exception as e:
+                self.logger.error(&#34;Error: MySQL Database are disconnected: &#34; + str(e))
+                self.connected = False
+                self.__connect()
+
+            time.sleep(1)
+
+    def __createTables(self):
+        &#34;&#34;&#34;
+        Methode to create all needed Tables if they are not exist
+        &#34;&#34;&#34;
+        try:
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_types(&#39;
+                &#39;id_type INT PRIMARY KEY,&#39;
+                &#39;typeName VARCHAR(255) NOT NULL,&#39;
+                &#39;displayName VARCHAR(255) NOT NULL,&#39;
+                &#39;options BOOLEAN NOT NULL&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_categories(&#39;
+                &#39;id_categoryQ INT PRIMARY KEY,&#39;
+                &#39;name VARCHAR(255) UNIQUE NOT NULL,&#39;
+                &#39;description VARCHAR(255)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaire_categories(&#39;
+                &#39;id_categoryQA INT PRIMARY KEY,&#39;
+                &#39;name VARCHAR(255) UNIQUE NOT NULL,&#39;
+                &#39;description VARCHAR(255)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questions(&#39;
+                &#39;id_question INT PRIMARY KEY,&#39;
+                &#39;text LONGTEXT NOT NULL,&#39;
+                &#39;type INT NOT NULL,&#39;
+                &#39;options VARCHAR(255) NOT NULL,&#39;
+                &#39;required BOOLEAN NOT NULL,&#39;
+                &#39;dependentOn INT NOT NULL,&#39;
+                &#39;expectedAnswer VARCHAR(255) NOT NULL,&#39;
+                &#39;abbrv VARCHAR(255) UNIQUE NOT NULL,&#39;
+                &#39;score BOOLEAN NOT NULL,&#39;
+                &#39;comment BOOLEAN NOT NULL,&#39;
+                &#39;category INT NOT NULL&#39;
+                # &#39;FOREIGN KEY(type) REFERENCES tb_question_types(id_type),&#39;
+                # &#39;FOREIGN KEY(dependentOn) REFERENCES tb_questions(id_question),&#39;
+                # &#39;FOREIGN KEY(category) REFERENCES tb_question_Categories(id_categoryQ)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaires(&#39;
+                &#39;id_questionnaire INT PRIMARY KEY,&#39;
+                &#39;name VARCHAR(255) NOT NULL,&#39;
+                &#39;description VARCHAR(255),&#39;
+                &#39;category INT NOT NULL,&#39;
+                &#39;created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,&#39;
+                &#39;lastChanged TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP&#39;
+                # &#39;FOREIGN KEY(category) REFERENCES tb_questionnaire_Categories(id_categoryQA)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_collections(&#39;
+                &#39;id_Q INT NOT NULL,&#39;
+                &#39;id_QA INT NOT NULL,&#39;
+                &#39;position INT NOT NULL,&#39;
+                &#39;required BOOLEAN NOT NULL,&#39;
+                &#39;PRIMARY KEY (id_Q, id_QA)&#39;
+                # &#39;FOREIGN KEY(id_Q) REFERENCES tb_questions(id_question),&#39;
+                # &#39;FOREIGN KEY(id_QA) REFERENCES tb_questionnaires(id_questionnaire)&#39;
+                &#39;)&#39;
+            )
+
+        except Exception as e:
+            self.logger.error(&#34;Error while create tables in MySQL database: &#34; + str(e))
+            raise
+
+    def addQuestion(self, idQuestion: int, text: str, questionType: int, options: str, required: int, dependent_on: int,
+                    expectedAnswer: str,
+                    abbrv: str, score: int, comment: int, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new question into the tb_questions table
+        :param idQuestion: id of question
+        :param text: text of question
+        :param questionType: type id ov question
+        :param options: options of question (JSON)
+        :param required: if question required or not
+        :param dependent_on: dependent on question id
+        :param expectedAnswer: option of dependent on question
+        :param abbrv: unique abbreviation of question
+        :param score: if question score or not
+        :param comment: if question comment or not
+        :param category: category id of question
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questions(id_question, text, type, options, required, dependentON, expectedAnswer, abbrv, score, comment, category) VALUES ( %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s, %s)&#39;,
+                    (idQuestion, text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score,
+                     comment,
+                     category))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questions: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestions(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_questions table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questions&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_questions: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addQuestionCategory(self, idCategoryQ: int, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_question_Categories table
+        :param idCategoryQ: id of QuestionCategory
+        :param name: name of QuestionCategory
+        :param description: description of QuestionCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_question_Categories(id_categoryQ, name, description) VALUES ( %s,  %s, %s)&#39;,
+                    (idCategoryQ, name, description))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestionCategories(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_question_Categories table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_question_Categories&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_question_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addQuestionnaireCategory(self, idCategoryQA: int, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_questionnaire_Categories table
+        :param idCategoryQA: id of QuestionnaireCategory
+        :param name: name of QuestionnaireCategory
+        :param description: description of QuestionnaireCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questionnaire_Categories(id_categoryQA, name, description) VALUES ( %s,  %s, %s)&#39;,
+                    (idCategoryQA, name, description))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestionnaireCategories(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_questionnaire_Categories table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaire_Categories&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addCollection(self, idQ: int, id_QA: int, position: int, required: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new collection into the tb_collections table
+        :param idQ: id of question
+        :param id_QA: id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_collections(id_Q, id_QA, position, required) VALUES ( %s,  %s,  %s,  %s)&#39;,
+                    (idQ, id_QA, position, required))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_collections: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearCollections(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_collections table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_collections&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_collections: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addType(self, idType: int, name: str, displayName: str, options: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new type into the tb_question_types table
+        :param idType: id of type
+        :param name: name of type
+        :param displayName: displayName of type
+        :param options: 1=true, 0=false
+        :return: new row id
+        &#34;&#34;&#34;
+
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_question_types(id_type, typeName, displayName, options) VALUES ( %s,  %s,  %s, %s)&#39;,
+                    (idType, name, displayName, options))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_types: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearTypes(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_question_types table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_question_types&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_question_types: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def addQuestionnaire(self, idQuestionnaire: int, name: str, description: str, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new questionnaire into the tb_questionnaires table
+        :param idQuestionnaire: id of questionnaire
+        :param name: name of questionnaire
+        :param description: description of questionnaire
+        :param category: category id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questionnaires(id_questionnaire, name, description, category) VALUES ( %s,  %s,  %s, %s)&#39;,
+                    (idQuestionnaire, name, description, category))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questionnaires: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)
+
+    def clearQuestionnaires(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to clear the tb_questionnaires table
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaires&#39;)
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while clear database rows from tb_questionnaires: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;MySQL database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addCollection"><code class="name flex">
+<span>def <span class="ident">addCollection</span></span>(<span>self, idQ: int, id_QA: int, position: int, required: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new collection into the tb_collections table
+:param idQ: id of question
+:param id_QA: id of questionnaire
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCollection(self, idQ: int, id_QA: int, position: int, required: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new collection into the tb_collections table
+    :param idQ: id of question
+    :param id_QA: id of questionnaire
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;INSERT INTO tb_collections(id_Q, id_QA, position, required) VALUES ( %s,  %s,  %s,  %s)&#39;,
+                (idQ, id_QA, position, required))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_collections: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestion"><code class="name flex">
+<span>def <span class="ident">addQuestion</span></span>(<span>self, idQuestion: int, text: str, questionType: int, options: str, required: int, dependent_on: int, expectedAnswer: str, abbrv: str, score: int, comment: int, category: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new question into the tb_questions table
+:param idQuestion: id of question
+:param text: text of question
+:param questionType: type id ov question
+:param options: options of question (JSON)
+:param required: if question required or not
+:param dependent_on: dependent on question id
+:param expectedAnswer: option of dependent on question
+:param abbrv: unique abbreviation of question
+:param score: if question score or not
+:param comment: if question comment or not
+:param category: category id of question
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestion(self, idQuestion: int, text: str, questionType: int, options: str, required: int, dependent_on: int,
+                expectedAnswer: str,
+                abbrv: str, score: int, comment: int, category: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new question into the tb_questions table
+    :param idQuestion: id of question
+    :param text: text of question
+    :param questionType: type id ov question
+    :param options: options of question (JSON)
+    :param required: if question required or not
+    :param dependent_on: dependent on question id
+    :param expectedAnswer: option of dependent on question
+    :param abbrv: unique abbreviation of question
+    :param score: if question score or not
+    :param comment: if question comment or not
+    :param category: category id of question
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;INSERT INTO tb_questions(id_question, text, type, options, required, dependentON, expectedAnswer, abbrv, score, comment, category) VALUES ( %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s,  %s, %s)&#39;,
+                (idQuestion, text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score,
+                 comment,
+                 category))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_questions: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionCategory"><code class="name flex">
+<span>def <span class="ident">addQuestionCategory</span></span>(<span>self, idCategoryQ: int, name: str, description: str) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new category into the tb_question_Categories table
+:param idCategoryQ: id of QuestionCategory
+:param name: name of QuestionCategory
+:param description: description of QuestionCategory
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionCategory(self, idCategoryQ: int, name: str, description: str) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new category into the tb_question_Categories table
+    :param idCategoryQ: id of QuestionCategory
+    :param name: name of QuestionCategory
+    :param description: description of QuestionCategory
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;INSERT INTO tb_question_Categories(id_categoryQ, name, description) VALUES ( %s,  %s, %s)&#39;,
+                (idCategoryQ, name, description))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_question_Categories: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionnaire"><code class="name flex">
+<span>def <span class="ident">addQuestionnaire</span></span>(<span>self, idQuestionnaire: int, name: str, description: str, category: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new questionnaire into the tb_questionnaires table
+:param idQuestionnaire: id of questionnaire
+:param name: name of questionnaire
+:param description: description of questionnaire
+:param category: category id of questionnaire
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionnaire(self, idQuestionnaire: int, name: str, description: str, category: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new questionnaire into the tb_questionnaires table
+    :param idQuestionnaire: id of questionnaire
+    :param name: name of questionnaire
+    :param description: description of questionnaire
+    :param category: category id of questionnaire
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;INSERT INTO tb_questionnaires(id_questionnaire, name, description, category) VALUES ( %s,  %s,  %s, %s)&#39;,
+                (idQuestionnaire, name, description, category))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_questionnaires: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionnaireCategory"><code class="name flex">
+<span>def <span class="ident">addQuestionnaireCategory</span></span>(<span>self, idCategoryQA: int, name: str, description: str) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new category into the tb_questionnaire_Categories table
+:param idCategoryQA: id of QuestionnaireCategory
+:param name: name of QuestionnaireCategory
+:param description: description of QuestionnaireCategory
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionnaireCategory(self, idCategoryQA: int, name: str, description: str) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new category into the tb_questionnaire_Categories table
+    :param idCategoryQA: id of QuestionnaireCategory
+    :param name: name of QuestionnaireCategory
+    :param description: description of QuestionnaireCategory
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;INSERT INTO tb_questionnaire_Categories(id_categoryQA, name, description) VALUES ( %s,  %s, %s)&#39;,
+                (idCategoryQA, name, description))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_Categories: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addType"><code class="name flex">
+<span>def <span class="ident">addType</span></span>(<span>self, idType: int, name: str, displayName: str, options: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new type into the tb_question_types table
+:param idType: id of type
+:param name: name of type
+:param displayName: displayName of type
+:param options: 1=true, 0=false
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addType(self, idType: int, name: str, displayName: str, options: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new type into the tb_question_types table
+    :param idType: id of type
+    :param name: name of type
+    :param displayName: displayName of type
+    :param options: 1=true, 0=false
+    :return: new row id
+    &#34;&#34;&#34;
+
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;INSERT INTO tb_question_types(id_type, typeName, displayName, options) VALUES ( %s,  %s,  %s, %s)&#39;,
+                (idType, name, displayName, options))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_question_types: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearCollections"><code class="name flex">
+<span>def <span class="ident">clearCollections</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to clear the tb_collections table
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clearCollections(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to clear the tb_collections table
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_collections&#39;)
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while clear database rows from tb_collections: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionCategories"><code class="name flex">
+<span>def <span class="ident">clearQuestionCategories</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to clear the tb_question_Categories table
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clearQuestionCategories(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to clear the tb_question_Categories table
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_question_Categories&#39;)
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while clear database rows from tb_question_Categories: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionnaireCategories"><code class="name flex">
+<span>def <span class="ident">clearQuestionnaireCategories</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to clear the tb_questionnaire_Categories table
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clearQuestionnaireCategories(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to clear the tb_questionnaire_Categories table
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_questionnaire_Categories&#39;)
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while clear database rows from tb_Categories: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionnaires"><code class="name flex">
+<span>def <span class="ident">clearQuestionnaires</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to clear the tb_questionnaires table
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clearQuestionnaires(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to clear the tb_questionnaires table
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_questionnaires&#39;)
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while clear database rows from tb_questionnaires: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestions"><code class="name flex">
+<span>def <span class="ident">clearQuestions</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to clear the tb_questions table
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clearQuestions(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to clear the tb_questions table
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_questions&#39;)
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while clear database rows from tb_questions: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearTypes"><code class="name flex">
+<span>def <span class="ident">clearTypes</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to clear the tb_question_types table
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clearTypes(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to clear the tb_question_types table
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_question_types&#39;)
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while clear database rows from tb_question_types: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;MySQL database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;MySQL database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.disconnet"><code class="name flex">
+<span>def <span class="ident">disconnet</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to disconnect from MySQL database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def disconnet(self):
+    &#34;&#34;&#34;
+    Method to disconnect from MySQL database
+    &#34;&#34;&#34;
+    self.mysqlRun = False
+    self.connected = True
+    time.sleep(2)
+
+    try:
+        self.conn.close()
+    except Exception as e:
+        self.logger.error(&#34;Error while disconnect MySQL database: &#34; + str(e))
+        raise</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PhysioForms.Database" href="index.html">PhysioForms.Database</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL">DatabaseMySQL</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addCollection" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addCollection">addCollection</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestion" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestion">addQuestion</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionCategory" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionCategory">addQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionnaire" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionnaire">addQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionnaireCategory" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addQuestionnaireCategory">addQuestionnaireCategory</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addType" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.addType">addType</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearCollections" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearCollections">clearCollections</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionCategories" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionCategories">clearQuestionCategories</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionnaireCategories" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionnaireCategories">clearQuestionnaireCategories</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionnaires" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestionnaires">clearQuestionnaires</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestions" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearQuestions">clearQuestions</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearTypes" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.clearTypes">clearTypes</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.disconnet" href="#PhysioForms.Database.DatabaseMySQL.DatabaseMySQL.disconnet">disconnet</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

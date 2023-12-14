@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>PhysioForms.QuestionController API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PhysioForms.QuestionController</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import logging
+from PhysioForms.Question import Question
+from PhysioForms.QuestionCategory import QuestionCategory
+from PhysioForms.DatabaseController import DatabaseController
+
+
+class QuestionController:
+    &#34;&#34;&#34;
+    Class providing all operations connected to question objects
+    &#34;&#34;&#34;
+
+    def __init__(self, database: DatabaseController, logger: logging.Logger, path=None):
+        &#34;&#34;&#34;
+        Constructor
+        :param database: Database
+        :param logger: Logger
+        :param path: Path
+        &#34;&#34;&#34;
+        self.observer = None
+        self.database = database
+        self.logger = logger
+        self.path = path
+        self.types = self.database.getTypes()
+
+    def addQuestionCategory(self, newCategory: QuestionCategory) -&gt; [bool, QuestionCategory]:
+        &#34;&#34;&#34;
+        Method to add given question category to the database
+        :param newCategory: New question category object to be added
+        :return: Tuple consisting of True and the new question category if saving was successful
+        &#34;&#34;&#34;
+        try:
+            cat = self.database.addQuestionCategory(category=newCategory)
+            return True, cat
+        except Exception as exp:
+            self.logger.error(f&#39;Error while adding new question category: {exp}&#39;)
+            raise
+
+    def categories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to get all question categories from the database
+        :return: List of question categories from database
+        &#34;&#34;&#34;
+        return self.database.getQuestionCategories()
+
+    def findByName(self, key: str, category: QuestionCategory = None) -&gt; list:
+        &#34;&#34;&#34;
+        Method to search for a substring / keyword in the question text of questions.
+        Also checks if passed for category.
+        :param category: If present the category which is filtered else looking in all questions.
+        :param key: Keyword that should appear in the question text
+        :return: List of questions that contain the keyword
+        &#34;&#34;&#34;
+        try:
+            filteredQuestions: list = []
+            for question in self.questions():
+                if category:
+                    if key:
+                        if question.category.id == category.id:
+                            if key.lower() in question.text.lower():
+                                filteredQuestions.append(question)
+                    else:
+                        if question.category.id == category.id:
+                            filteredQuestions.append(question)
+                else:
+                    if key:
+                        if key.lower() in question.text.lower():
+                            filteredQuestions.append(question)
+                    else:
+                        filteredQuestions = self.questions()
+            return filteredQuestions
+        except Exception as exp:
+            self.logger.error(f&#39;Error while finding question: {exp}&#39;)
+            raise
+
+    def getCategoryByID(self, catID: int) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Method to get the question category with given id.
+        :param catID: Category ID
+        :return: Specific category with the associated ID
+        &#34;&#34;&#34;
+        try:
+            for category in self.categories():
+                if category.id == catID:
+                    return category
+        except Exception as exp:
+            self.logger.error(f&#39;Error while getting Question category: {exp}&#39;)
+            raise
+
+    def getDependencies(self, questionToCheck: Question) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to check for existing questions depend on the given one.
+        :param questionToCheck: the question to check
+        :return: True or False depending on the existence of a depending question
+        &#34;&#34;&#34;
+        for question in self.questions():
+            if questionToCheck.abbreviation == question.dependent_on:
+                return True
+        return False
+
+    def getDependentQuestion(self, questionToCheck: Question):
+        &#34;&#34;&#34;
+        Method to get a question that given question is dependent on
+        :param questionToCheck: the question to check the dependency
+        :return: the object of the question or None object
+        &#34;&#34;&#34;
+        if questionToCheck.dependent_on != &#34;none&#34;:
+            for question in self.questions():
+                if question.abbreviation == questionToCheck.dependent_on:
+                    return question
+        else:
+            return None
+
+    def notify(self, data: Question):
+        &#34;&#34;&#34;
+        Method to inform connected observer about changes
+        :param data: the object changed
+        :return:
+        &#34;&#34;&#34;
+        self.observer.update(data)
+
+    def questions(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to get all questions from the database
+        :return: List of questions from database
+        &#34;&#34;&#34;
+        return self.database.getQuestions()
+
+    def removeQuestion(self, data: Question) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove given question from the database
+        :param data: Question to be removed
+        :return: True, if removing the question was successful, False otherwise
+        &#34;&#34;&#34;
+        try:
+            self.database.removeQuestion(question=data)
+            return True
+        except Exception as exp:
+            self.logger.error(f&#39;Error while removing question: {exp}&#39;)
+            return False
+
+    def removeQuestionCategory(self, questionCategory: QuestionCategory) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a question category from the database.
+        :param questionCategory: Question category to be deleted from the database
+        :return: True if the deletion was successful, False otherwise
+        &#34;&#34;&#34;
+        try:
+            self.database.removeQuestionCategory(category=questionCategory)
+            return True
+        except Exception as exp:
+            self.logger.error(f&#39;Error while getting Question category: {exp}&#39;)
+            return False
+
+    def saveQuestion(self, data: Question) -&gt; [bool, Question]:
+        &#34;&#34;&#34;
+        Method to save given question to the database. Checks if the question has been saved before taking the id.
+        :param data: Question to be saved
+        :return: Tuple of boolean and question ID
+        &#34;&#34;&#34;
+        if data.id != -1:
+            res = self.database.editQuestion(question=data)
+            self.notify(data)
+            return res, data
+        else:
+            try:
+                target = self.database.addQuestion(question=data)
+                return True, target
+            except Exception as exp:
+                self.logger.error(f&#39;Error while saving question: {exp}&#39;)
+                return False, data
+
+    def setObserver(self, observer):
+        &#34;&#34;&#34;
+        Method to set the observer for the controller
+        :param observer: the observer assigned to this controller
+        :return:
+        &#34;&#34;&#34;
+        self.observer = observer</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PhysioForms.QuestionController.QuestionController"><code class="flex name class">
+<span>class <span class="ident">QuestionController</span></span>
+<span>(</span><span>database: <a title="PhysioForms.DatabaseController.DatabaseController" href="DatabaseController.html#PhysioForms.DatabaseController.DatabaseController">DatabaseController</a>, logger: logging.Logger, path=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class providing all operations connected to question objects</p>
+<p>Constructor
+:param database: Database
+:param logger: Logger
+:param path: Path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class QuestionController:
+    &#34;&#34;&#34;
+    Class providing all operations connected to question objects
+    &#34;&#34;&#34;
+
+    def __init__(self, database: DatabaseController, logger: logging.Logger, path=None):
+        &#34;&#34;&#34;
+        Constructor
+        :param database: Database
+        :param logger: Logger
+        :param path: Path
+        &#34;&#34;&#34;
+        self.observer = None
+        self.database = database
+        self.logger = logger
+        self.path = path
+        self.types = self.database.getTypes()
+
+    def addQuestionCategory(self, newCategory: QuestionCategory) -&gt; [bool, QuestionCategory]:
+        &#34;&#34;&#34;
+        Method to add given question category to the database
+        :param newCategory: New question category object to be added
+        :return: Tuple consisting of True and the new question category if saving was successful
+        &#34;&#34;&#34;
+        try:
+            cat = self.database.addQuestionCategory(category=newCategory)
+            return True, cat
+        except Exception as exp:
+            self.logger.error(f&#39;Error while adding new question category: {exp}&#39;)
+            raise
+
+    def categories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to get all question categories from the database
+        :return: List of question categories from database
+        &#34;&#34;&#34;
+        return self.database.getQuestionCategories()
+
+    def findByName(self, key: str, category: QuestionCategory = None) -&gt; list:
+        &#34;&#34;&#34;
+        Method to search for a substring / keyword in the question text of questions.
+        Also checks if passed for category.
+        :param category: If present the category which is filtered else looking in all questions.
+        :param key: Keyword that should appear in the question text
+        :return: List of questions that contain the keyword
+        &#34;&#34;&#34;
+        try:
+            filteredQuestions: list = []
+            for question in self.questions():
+                if category:
+                    if key:
+                        if question.category.id == category.id:
+                            if key.lower() in question.text.lower():
+                                filteredQuestions.append(question)
+                    else:
+                        if question.category.id == category.id:
+                            filteredQuestions.append(question)
+                else:
+                    if key:
+                        if key.lower() in question.text.lower():
+                            filteredQuestions.append(question)
+                    else:
+                        filteredQuestions = self.questions()
+            return filteredQuestions
+        except Exception as exp:
+            self.logger.error(f&#39;Error while finding question: {exp}&#39;)
+            raise
+
+    def getCategoryByID(self, catID: int) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Method to get the question category with given id.
+        :param catID: Category ID
+        :return: Specific category with the associated ID
+        &#34;&#34;&#34;
+        try:
+            for category in self.categories():
+                if category.id == catID:
+                    return category
+        except Exception as exp:
+            self.logger.error(f&#39;Error while getting Question category: {exp}&#39;)
+            raise
+
+    def getDependencies(self, questionToCheck: Question) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to check for existing questions depend on the given one.
+        :param questionToCheck: the question to check
+        :return: True or False depending on the existence of a depending question
+        &#34;&#34;&#34;
+        for question in self.questions():
+            if questionToCheck.abbreviation == question.dependent_on:
+                return True
+        return False
+
+    def getDependentQuestion(self, questionToCheck: Question):
+        &#34;&#34;&#34;
+        Method to get a question that given question is dependent on
+        :param questionToCheck: the question to check the dependency
+        :return: the object of the question or None object
+        &#34;&#34;&#34;
+        if questionToCheck.dependent_on != &#34;none&#34;:
+            for question in self.questions():
+                if question.abbreviation == questionToCheck.dependent_on:
+                    return question
+        else:
+            return None
+
+    def notify(self, data: Question):
+        &#34;&#34;&#34;
+        Method to inform connected observer about changes
+        :param data: the object changed
+        :return:
+        &#34;&#34;&#34;
+        self.observer.update(data)
+
+    def questions(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to get all questions from the database
+        :return: List of questions from database
+        &#34;&#34;&#34;
+        return self.database.getQuestions()
+
+    def removeQuestion(self, data: Question) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove given question from the database
+        :param data: Question to be removed
+        :return: True, if removing the question was successful, False otherwise
+        &#34;&#34;&#34;
+        try:
+            self.database.removeQuestion(question=data)
+            return True
+        except Exception as exp:
+            self.logger.error(f&#39;Error while removing question: {exp}&#39;)
+            return False
+
+    def removeQuestionCategory(self, questionCategory: QuestionCategory) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a question category from the database.
+        :param questionCategory: Question category to be deleted from the database
+        :return: True if the deletion was successful, False otherwise
+        &#34;&#34;&#34;
+        try:
+            self.database.removeQuestionCategory(category=questionCategory)
+            return True
+        except Exception as exp:
+            self.logger.error(f&#39;Error while getting Question category: {exp}&#39;)
+            return False
+
+    def saveQuestion(self, data: Question) -&gt; [bool, Question]:
+        &#34;&#34;&#34;
+        Method to save given question to the database. Checks if the question has been saved before taking the id.
+        :param data: Question to be saved
+        :return: Tuple of boolean and question ID
+        &#34;&#34;&#34;
+        if data.id != -1:
+            res = self.database.editQuestion(question=data)
+            self.notify(data)
+            return res, data
+        else:
+            try:
+                target = self.database.addQuestion(question=data)
+                return True, target
+            except Exception as exp:
+                self.logger.error(f&#39;Error while saving question: {exp}&#39;)
+                return False, data
+
+    def setObserver(self, observer):
+        &#34;&#34;&#34;
+        Method to set the observer for the controller
+        :param observer: the observer assigned to this controller
+        :return:
+        &#34;&#34;&#34;
+        self.observer = observer</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.QuestionController.QuestionController.addQuestionCategory"><code class="name flex">
+<span>def <span class="ident">addQuestionCategory</span></span>(<span>self, newCategory: <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a>) ‑> [<class 'bool'>, <class '<a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a>'>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add given question category to the database
+:param newCategory: New question category object to be added
+:return: Tuple consisting of True and the new question category if saving was successful</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionCategory(self, newCategory: QuestionCategory) -&gt; [bool, QuestionCategory]:
+    &#34;&#34;&#34;
+    Method to add given question category to the database
+    :param newCategory: New question category object to be added
+    :return: Tuple consisting of True and the new question category if saving was successful
+    &#34;&#34;&#34;
+    try:
+        cat = self.database.addQuestionCategory(category=newCategory)
+        return True, cat
+    except Exception as exp:
+        self.logger.error(f&#39;Error while adding new question category: {exp}&#39;)
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.categories"><code class="name flex">
+<span>def <span class="ident">categories</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to get all question categories from the database
+:return: List of question categories from database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def categories(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to get all question categories from the database
+    :return: List of question categories from database
+    &#34;&#34;&#34;
+    return self.database.getQuestionCategories()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.findByName"><code class="name flex">
+<span>def <span class="ident">findByName</span></span>(<span>self, key: str, category: <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a> = None) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to search for a substring / keyword in the question text of questions.
+Also checks if passed for category.
+:param category: If present the category which is filtered else looking in all questions.
+:param key: Keyword that should appear in the question text
+:return: List of questions that contain the keyword</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def findByName(self, key: str, category: QuestionCategory = None) -&gt; list:
+    &#34;&#34;&#34;
+    Method to search for a substring / keyword in the question text of questions.
+    Also checks if passed for category.
+    :param category: If present the category which is filtered else looking in all questions.
+    :param key: Keyword that should appear in the question text
+    :return: List of questions that contain the keyword
+    &#34;&#34;&#34;
+    try:
+        filteredQuestions: list = []
+        for question in self.questions():
+            if category:
+                if key:
+                    if question.category.id == category.id:
+                        if key.lower() in question.text.lower():
+                            filteredQuestions.append(question)
+                else:
+                    if question.category.id == category.id:
+                        filteredQuestions.append(question)
+            else:
+                if key:
+                    if key.lower() in question.text.lower():
+                        filteredQuestions.append(question)
+                else:
+                    filteredQuestions = self.questions()
+        return filteredQuestions
+    except Exception as exp:
+        self.logger.error(f&#39;Error while finding question: {exp}&#39;)
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.getCategoryByID"><code class="name flex">
+<span>def <span class="ident">getCategoryByID</span></span>(<span>self, catID: int) ‑> <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to get the question category with given id.
+:param catID: Category ID
+:return: Specific category with the associated ID</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCategoryByID(self, catID: int) -&gt; QuestionCategory:
+    &#34;&#34;&#34;
+    Method to get the question category with given id.
+    :param catID: Category ID
+    :return: Specific category with the associated ID
+    &#34;&#34;&#34;
+    try:
+        for category in self.categories():
+            if category.id == catID:
+                return category
+    except Exception as exp:
+        self.logger.error(f&#39;Error while getting Question category: {exp}&#39;)
+        raise</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.getDependencies"><code class="name flex">
+<span>def <span class="ident">getDependencies</span></span>(<span>self, questionToCheck: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to check for existing questions depend on the given one.
+:param questionToCheck: the question to check
+:return: True or False depending on the existence of a depending question</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getDependencies(self, questionToCheck: Question) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to check for existing questions depend on the given one.
+    :param questionToCheck: the question to check
+    :return: True or False depending on the existence of a depending question
+    &#34;&#34;&#34;
+    for question in self.questions():
+        if questionToCheck.abbreviation == question.dependent_on:
+            return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.getDependentQuestion"><code class="name flex">
+<span>def <span class="ident">getDependentQuestion</span></span>(<span>self, questionToCheck: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to get a question that given question is dependent on
+:param questionToCheck: the question to check the dependency
+:return: the object of the question or None object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getDependentQuestion(self, questionToCheck: Question):
+    &#34;&#34;&#34;
+    Method to get a question that given question is dependent on
+    :param questionToCheck: the question to check the dependency
+    :return: the object of the question or None object
+    &#34;&#34;&#34;
+    if questionToCheck.dependent_on != &#34;none&#34;:
+        for question in self.questions():
+            if question.abbreviation == questionToCheck.dependent_on:
+                return question
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.notify"><code class="name flex">
+<span>def <span class="ident">notify</span></span>(<span>self, data: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to inform connected observer about changes
+:param data: the object changed
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def notify(self, data: Question):
+    &#34;&#34;&#34;
+    Method to inform connected observer about changes
+    :param data: the object changed
+    :return:
+    &#34;&#34;&#34;
+    self.observer.update(data)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.questions"><code class="name flex">
+<span>def <span class="ident">questions</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to get all questions from the database
+:return: List of questions from database</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def questions(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to get all questions from the database
+    :return: List of questions from database
+    &#34;&#34;&#34;
+    return self.database.getQuestions()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.removeQuestion"><code class="name flex">
+<span>def <span class="ident">removeQuestion</span></span>(<span>self, data: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to remove given question from the database
+:param data: Question to be removed
+:return: True, if removing the question was successful, False otherwise</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestion(self, data: Question) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to remove given question from the database
+    :param data: Question to be removed
+    :return: True, if removing the question was successful, False otherwise
+    &#34;&#34;&#34;
+    try:
+        self.database.removeQuestion(question=data)
+        return True
+    except Exception as exp:
+        self.logger.error(f&#39;Error while removing question: {exp}&#39;)
+        return False</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.removeQuestionCategory"><code class="name flex">
+<span>def <span class="ident">removeQuestionCategory</span></span>(<span>self, questionCategory: <a title="PhysioForms.QuestionCategory.QuestionCategory" href="QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to remove a question category from the database.
+:param questionCategory: Question category to be deleted from the database
+:return: True if the deletion was successful, False otherwise</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionCategory(self, questionCategory: QuestionCategory) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to remove a question category from the database.
+    :param questionCategory: Question category to be deleted from the database
+    :return: True if the deletion was successful, False otherwise
+    &#34;&#34;&#34;
+    try:
+        self.database.removeQuestionCategory(category=questionCategory)
+        return True
+    except Exception as exp:
+        self.logger.error(f&#39;Error while getting Question category: {exp}&#39;)
+        return False</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.saveQuestion"><code class="name flex">
+<span>def <span class="ident">saveQuestion</span></span>(<span>self, data: <a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>) ‑> [<class 'bool'>, <class '<a title="PhysioForms.Question.Question" href="Question.html#PhysioForms.Question.Question">Question</a>'>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to save given question to the database. Checks if the question has been saved before taking the id.
+:param data: Question to be saved
+:return: Tuple of boolean and question ID</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveQuestion(self, data: Question) -&gt; [bool, Question]:
+    &#34;&#34;&#34;
+    Method to save given question to the database. Checks if the question has been saved before taking the id.
+    :param data: Question to be saved
+    :return: Tuple of boolean and question ID
+    &#34;&#34;&#34;
+    if data.id != -1:
+        res = self.database.editQuestion(question=data)
+        self.notify(data)
+        return res, data
+    else:
+        try:
+            target = self.database.addQuestion(question=data)
+            return True, target
+        except Exception as exp:
+            self.logger.error(f&#39;Error while saving question: {exp}&#39;)
+            return False, data</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.QuestionController.QuestionController.setObserver"><code class="name flex">
+<span>def <span class="ident">setObserver</span></span>(<span>self, observer)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to set the observer for the controller
+:param observer: the observer assigned to this controller
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setObserver(self, observer):
+    &#34;&#34;&#34;
+    Method to set the observer for the controller
+    :param observer: the observer assigned to this controller
+    :return:
+    &#34;&#34;&#34;
+    self.observer = observer</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PhysioForms" href="index.html">PhysioForms</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PhysioForms.QuestionController.QuestionController" href="#PhysioForms.QuestionController.QuestionController">QuestionController</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.QuestionController.QuestionController.addQuestionCategory" href="#PhysioForms.QuestionController.QuestionController.addQuestionCategory">addQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.categories" href="#PhysioForms.QuestionController.QuestionController.categories">categories</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.findByName" href="#PhysioForms.QuestionController.QuestionController.findByName">findByName</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.getCategoryByID" href="#PhysioForms.QuestionController.QuestionController.getCategoryByID">getCategoryByID</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.getDependencies" href="#PhysioForms.QuestionController.QuestionController.getDependencies">getDependencies</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.getDependentQuestion" href="#PhysioForms.QuestionController.QuestionController.getDependentQuestion">getDependentQuestion</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.notify" href="#PhysioForms.QuestionController.QuestionController.notify">notify</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.questions" href="#PhysioForms.QuestionController.QuestionController.questions">questions</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.removeQuestion" href="#PhysioForms.QuestionController.QuestionController.removeQuestion">removeQuestion</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.removeQuestionCategory" href="#PhysioForms.QuestionController.QuestionController.removeQuestionCategory">removeQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.saveQuestion" href="#PhysioForms.QuestionController.QuestionController.saveQuestion">saveQuestion</a></code></li>
+<li><code><a title="PhysioForms.QuestionController.QuestionController.setObserver" href="#PhysioForms.QuestionController.QuestionController.setObserver">setObserver</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

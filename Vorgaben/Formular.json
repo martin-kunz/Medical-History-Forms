@@ -1,0 +1,484 @@
+{
+  "question": [
+    {
+      "number": "1",
+      "text": "Wie ist ihr aktueller Familienstand?",
+      "type": "select",
+      "options": {
+        "ledig": "ledig",
+        "in einer festen Beziehung": "in einer festen Beziehung",
+        "verheiratet": "verheiratet",
+        "verwitwet": "verwitwet",
+        "keine Angabe": "keine Angabe"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Familienstand",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "2",
+      "text": "Mit wem leben Sie zur Zeitzusammen?",
+      "type": "text",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Zusammenleben",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "3",
+      "text": "Wie sind Ihre derzeitigen Wohnverhältnisse?",
+      "type": "select",
+      "options": {
+        "Eigentumswohnung": "Eigentumswohnung",
+        "Mietswohnung": "Mietswohnung",
+        "Haus": "Haus",
+        "keine Angabe": "keine Angabe"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Wohnsituation",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "4",
+      "text": "Welche Größe hat Ihre Eigentumswohnung ca. in Quadratmeter (m2)?",
+      "type": "number",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Wohnsituation",
+      "expected_answer": "Eigentumswohnung",
+      "abbrv": "Größe derEigentumswohnung",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "5",
+      "text": "Welche Größe hat Ihre Mietswohnung ca. in Quadratmeter (m2)?",
+      "type": "number",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Wohnsituation",
+      "expected_answer": "Mietswohnung",
+      "abbrv": "Größe der Mietswohnung",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "6",
+      "text": "Welche Größe hat Ihr Haus ca. in Quadratmeter (m2)?",
+      "type": "number",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Wohnsituation",
+      "expected_answer": "Haus",
+      "abbrv": "Größe des Hauses",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "7",
+      "text": "Wie haben Sie von der Praxis erfahren?",
+      "type": "textarea",
+      "options": "none",
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Kenntnis der Praxis durch",
+      "score": "false",
+      "comment": "false"
+    },
+    {
+      "number": "8",
+      "text": "Was hat Sie dazu bewogen, gerade jetzt eine Behandlung anzugehen?",
+      "type": "textarea",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Gründe für die Behandlung",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "9",
+      "text": "Wer ist Ihr Hausarzt?",
+      "type": "text",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Hausarzt",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "10",
+      "text": "Seit wann sind Sie bei diesem Hausarzt?",
+      "type": "date",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Hausarztzugehörigkeit",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "11",
+      "text": "Sind Sie bei weiteren Fachärzten/Therapeuten in regelmäßiger Behandlung?",
+      "type": "textarea",
+      "options": "none",
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Weitere Fachärzte",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "12",
+      "text": "Wie groß sind Sie (Angabe in cm)?",
+      "type": "number",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Körpergröße in cm",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "13",
+      "text": "Unter welchen körperlichen Krankheiten leiden Sie zur Zeit? ",
+      "type": "textarea",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "körperliche Krankheiten",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "14",
+      "text": "Wie schätzen Sie Ihren gegenwärtigen Gesundheitszustand ein? ",
+      "type": "radio",
+      "options": {
+        "hervorragend": "hervorragend",
+        "sehr gut": "sehr gut",
+        "gut": "gut",
+        "mittelmäßig": "mittelmäßig",
+        "schlecht": "schlecht",
+        "sehr schlecht": "sehr schlecht"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Gesundheitszustand",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "15",
+      "text": "Nehmen Sie zur Zeit Medikamente ein?",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Medikamenteneinnahme",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "16",
+      "text": "Bitte schreiben Sie alle Medikamente, die Sie einnehmen auf. (Dosierung, Tageszeit etc)",
+      "type": "textarea",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Medikamenteneinnahme",
+      "expected_answer": "ja",
+      "abbrv": "Medikamente",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "17",
+      "text": "Vertragen Sie die Medikamente gut?",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "Medikamenteneinnahme",
+      "expected_answer": "ja",
+      "abbrv": "Verträglichkeit",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "18",
+      "text": "Welche Verschlechterungen (Nebenwirkungen) nehmen Sie wahr?",
+      "type": "textarea",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Verträglichkeit",
+      "expected_answer": "nein",
+      "abbrv": "Nebenwirkungen",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "19",
+      "text": "Welche Verbesserungen nehmen Sie wahr? ",
+      "type": "textarea",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Verträglichkeit",
+      "expected_answer": "ja",
+      "abbrv": "Verbesserungen",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "20",
+      "text": "Leiden Sie unter Allergien oder Unverträglichkeiten? ",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Allergien vorhanden",
+      "score": "true",
+      "comment": "false"
+    },
+    {
+      "number": "21",
+      "text": "Welche Allergien und Unverträglichkeiten haben Sie?",
+      "type": "textarea",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Allergien vorhanden",
+      "expected_answer": "ja",
+      "abbrv": "Allergien",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "22",
+      "text": "Leiden Sie unter Schlafstörungen oder Appetitlosigkeit?",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Schlafstörung vorhanden",
+      "score": "true",
+      "comment": "false"
+    },
+    {
+      "number": "23",
+      "text": "Seit wann leiden Sie an Schlafstörungen oder Appetitlosigkeit? ",
+      "type": "text",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Schlafstörung vorhanden",
+      "expected_answer": "ja",
+      "abbrv": "Symptome für Schlafstörung oder Appetitlosigkeit",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "24",
+      "text": "Haben Sie regelmäßigen Stuhlgang?",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Stuhlgang",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "25",
+      "text": "Gibt Probleme beim Wasser lassen?",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Probleme beim Wasser lassen",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "26",
+      "text": "Rauchen Sie oder haben Sie früher geraucht?",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Raucher",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "27",
+      "text": "Wie viel Rauchen Sie? Geben Sie die Anzahl der Zigarretten pro Tag an.",
+      "type": "number",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Raucher",
+      "expected_answer": "ja",
+      "abbrv": "Anzahl Zigarretten pro Tag",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "28",
+      "text": "Trinken Sie regelmäßig Alkohol?",
+      "type": "select",
+      "options": {
+        "ja": "ja",
+        "nein": "nein"
+      },
+      "required": "true",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "regelmäßiger Alkoholkonsum",
+      "score": "true",
+      "comment": "true"
+    },
+    {
+      "number": "29",
+      "text": "Wie viel Alkohol tringen Sie in etwa pro Woche? Angabe bitte in ml. ",
+      "type": "number",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "regelmäßiger Alkoholkonsum",
+      "expected_answer": "ja",
+      "abbrv": "Menge Alkohol in der Woche",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "30",
+      "text": "Welche Verbesserungen nehmen Sie wahr?",
+      "type": "textarea",
+      "options": "none",
+      "required": "true",
+      "dependent_on": "Verträglichkeit",
+      "expected_answer": "ja",
+      "abbrv": "Verbesserungen",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "31",
+      "text": "Bitte zählen Sie in tabellarischer Reihenfolge alle Ihre bisherigen Krankheiten, Unfälle, Operationen, Behandlungen (auch zahnärztliche/kieferorthopädische)so genau wie möglich auf (Datum, Ort, Verlauf, etc). Vom Kindesalter bis jetzt.",
+      "type": "textarea",
+      "options": "none",
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Bisherige Erkrankungen, Operationen und Behandlungen",
+      "score": "false",
+      "comment": "false"
+    },
+    {
+      "number": "32",
+      "text": "Schildern Sie bitte mit eigenen Worten Ihre wichtigsten Probleme und wie lange (Zeitangabe) Sie schon unter Ihnen leiden. ",
+      "type": "textarea",
+      "options": "none",
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Selbstreflexion der Probleme",
+      "score": "false",
+      "comment": "false"
+    },
+    {
+      "number": "33",
+      "text": "Wie haben sich die Probleme bis heute entwickelt?",
+      "type": "textarea",
+      "options": "none",
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Entwicklung der Probleme",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "34",
+      "text": "Welche Maßnahmen haben Sie zur Linderung unternommen? Wie haben sich diese auf Ihr Problem ausgewirkt? (Therapien, Medikamente, Salben, Sport, Schienen, etc)",
+      "type": "textarea",
+      "options": "none",
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Unternommene Maßnahmen",
+      "score": "false",
+      "comment": "true"
+    },
+    {
+      "number": "35",
+      "text": "Wie schwer empfinden Sie Ihr Problem?",
+      "type": "radio",
+      "options": {
+        "leicht beunruhigend": "leicht beunruhigend",
+        "mittelschwer beunruhigend": "mittelschwer beunruhigend",
+        "stark beunruhigend": "stark beunruhigend",
+        "sehr stark beunruhigend": "sehr stark beunruhigend",
+        "bringt mich völlig aus der Fassung": "bringt mich völlig aus der Fassung"
+      },
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Schwere der Probleme",
+      "score": "true",
+      "comment": "false"
+    },
+    {
+      "number": "36",
+      "text": "Wen haben Sie bezüglich Ihrer Probleme um Rat gefragt? Maßnahmen/Erfolg/Misserfolg?",
+      "type": "textarea",
+      "options": "none",
+      "required": "false",
+      "dependent_on": "none",
+      "expected_answer": "none",
+      "abbrv": "Bisher Rat eingeholt bei",
+      "score": "false",
+      "comment": "false"
+    }
+  ]
+}

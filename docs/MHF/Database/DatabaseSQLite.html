@@ -1,0 +1,2121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>PhysioForms.Database.DatabaseSQLite API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PhysioForms.Database.DatabaseSQLite</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# coding=utf-8
+
+__version__ = &#34;1.0&#34;
+
+import sqlite3
+from pathlib import Path
+
+from PhysioForms.Database.DatabaseExceptions import DatabaseNotConnectedError
+
+
+class DatabaseSQLite:
+    &#34;&#34;&#34;
+    DatabaseController class will handle connections between PhysioForms and a SQLite database
+    &#34;&#34;&#34;
+
+    def __init__(self, logger, pathSQLiteDatabase: Path, questionTypes: list = []):
+        &#34;&#34;&#34;
+        Constructor
+        :keyword logger logger Object
+        :param pathSQLiteDatabase: path of databasefile e.g. data/physioforms.db
+        :param questionTypes: List of Questiontypes (&#34;typeName&#34;, &#34;displayName&#34;, options)
+        &#34;&#34;&#34;
+        self.logger: logger = logger
+        self.connected: bool = False
+        self.lstQuestionTypes: list = questionTypes
+
+        if not pathSQLiteDatabase.parent.is_dir():
+            self.logger.warning(&#34;Data directory not exist, will be created.&#34;)
+            try:
+                pathSQLiteDatabase.parent.mkdir()
+            except Exception as e:
+                self.logger.error(&#34;Error while create data directory: &#34; + str(e))
+                raise
+
+        try:
+            self.conn = sqlite3.connect(str(pathSQLiteDatabase))
+            self.c = self.conn.cursor()
+
+        except Exception as e:
+            self.logger.error(&#34;Error while connection to SQLITE database: &#34; + str(e))
+            raise
+
+        self.__createTables()
+
+        self.connected = True
+
+        self.__createTypes()
+        self.__createCategories()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        try:
+            self.conn.close()
+        except Exception as e:
+            self.logger.error(&#34;Error while disconnect SQLITE database: &#34; + str(e))
+            raise
+
+    def __createTables(self):
+        &#34;&#34;&#34;
+        Method which create all needed Tables if they not exist
+        :return: True or raise Exception
+        &#34;&#34;&#34;
+        try:
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_types(&#39;
+                &#39;id_type INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;typeName TEXT NOT NULL,&#39;
+                &#39;displayName TEXT NOT NULL,&#39;
+                &#39;options INTEGER NOT NULL&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_categories(&#39;
+                &#39;id_categoryQ INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;name TEXT UNIQUE NOT NULL,&#39;
+                &#39;description TEXT&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaire_categories(&#39;
+                &#39;id_categoryQA INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;name TEXT UNIQUE NOT NULL,&#39;
+                &#39;description TEXT&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questions(&#39;
+                &#39;id_question INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;text TEXT NOT NULL,&#39;
+                &#39;type INTEGER NOT NULL,&#39;
+                &#39;options TEXT NOT NULL,&#39;
+                &#39;required INTEGER NOT NULL,&#39;
+                &#39;dependentOn INTEGER NOT NULL,&#39;
+                &#39;expectedAnswer TEXT NOT NULL,&#39;
+                &#39;abbrv TEXT UNIQUE NOT NULL,&#39;
+                &#39;score INTEGER NOT NULL,&#39;
+                &#39;comment INTEGER NOT NULL,&#39;
+                &#39;category INTEGER NOT NULL,&#39;
+                &#39;FOREIGN KEY(type) REFERENCES tb_question_types(id_type),&#39;
+                &#39;FOREIGN KEY(dependentOn) REFERENCES tb_questions(id_question),&#39;
+                &#39;FOREIGN KEY(category) REFERENCES tb_question_Categories(id_categoryQ)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaires(&#39;
+                &#39;id_questionnaire INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;name TEXT NOT NULL,&#39;
+                &#39;description TEXT,&#39;
+                &#39;category INTEGER NOT NULL,&#39;
+                &#39;created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,&#39;
+                &#39;lastChanged TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,&#39;
+                &#39;FOREIGN KEY(category) REFERENCES tb_questionnaire_Categories(id_categoryQA)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_collections(&#39;
+                &#39;id_Q INTEGER NOT NULL,&#39;
+                &#39;id_QA INTEGER NOT NULL,&#39;
+                &#39;position INTEGER NOT NULL,&#39;
+                &#39;required INTEGER NOT NULL,&#39;
+                &#39;PRIMARY KEY (id_Q, id_QA),&#39;
+                &#39;FOREIGN KEY(id_Q) REFERENCES tb_questions(id_question),&#39;
+                &#39;FOREIGN KEY(id_QA) REFERENCES tb_questionnaires(id_questionnaire)&#39;
+                &#39;)&#39;
+            )
+
+        except Exception as e:
+            self.logger.error(&#34;Error while create tables in SQLITE database: &#34; + str(e))
+            raise
+
+        return True
+
+    def __createTypes(self):
+        &#34;&#34;&#34;
+        Method which create all possible question types
+        &#34;&#34;&#34;
+
+        for value in self.lstQuestionTypes:
+
+            if self.connected:
+
+                try:
+                    # Check if the type already exist
+                    self.c.execute(&#39;SELECT COUNT(typeName) FROM tb_question_types WHERE typeName=?&#39;, (value[0],))
+                    if self.c.fetchone()[0] == 0:
+                        self.addType(value[0], value[1], value[2])
+
+                except Exception as e:
+                    self.logger.error(&#34;Error while SELECT database rows from tb_question_types: &#34; + str(e))
+                    raise
+
+            else:
+                self.logger.error(&#34;SQLite database not connect&#34;)
+                raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+        return True
+
+    def __createCategories(self):
+        &#34;&#34;&#34;
+        Method which create the standard categories
+        &#34;&#34;&#34;
+
+        try:
+            self.c.execute(&#39;SELECT COUNT(id_categoryQ) FROM tb_question_Categories WHERE id_categoryQ=1 AND name=?&#39;,
+                           (&#34;Allgemein&#34;,))
+            if self.c.fetchone()[0] == 0:
+                self.addQuestionCategory(&#34;Allgemein&#34;, &#34;&#34;)
+
+        except Exception as e:
+            self.logger.error(&#34;Error while SELECT database rows from tb_question_Categories: &#34; + str(e))
+            raise
+
+        try:
+            self.c.execute(
+                &#39;SELECT COUNT(id_categoryQA) FROM tb_questionnaire_Categories WHERE id_categoryQA=1 AND name=?&#39;,
+                (&#34;Allgemein&#34;,))
+            if self.c.fetchone()[0] == 0:
+                self.addQuestionnaireCategory(&#34;Allgemein&#34;, &#34;&#34;)
+
+        except Exception as e:
+            self.logger.error(&#34;Error while SELECT database rows from tb_questionnaire_Categories: &#34; + str(e))
+            raise
+
+    def addQuestion(self, text: str, questionType: int, options: str, required: int, dependent_on: int,
+                    expectedAnswer: str,
+                    abbrv: str, score: int, comment: int, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new question into the tb_questions table
+        :param text: text of question
+        :param questionType: type id ov question
+        :param options: options of question (JSON)
+        :param required: if question required or not
+        :param dependent_on: dependent on question id
+        :param expectedAnswer: option of dependent on question
+        :param abbrv: unique abbreviation of question
+        :param score: if question score or not
+        :param comment: if question comment or not
+        :param category: category id of question
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questions(text, type, options, required, dependentON, expectedAnswer, abbrv, score, comment, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)&#39;,
+                    (text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score, comment,
+                     category,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questions: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestion(self, id_question: int, text: str, questionType: int, options: str, required: int,
+                       dependent_on: int,
+                       expectedAnswer: str, abbrv: str, score: int, comment: int, category: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a question from the tb_questions table
+        :param id_question: id of question
+        :param text: text of question
+        :param questionType: type id ov question
+        :param options: options of question (JSON)
+        :param required: if question required or not
+        :param dependent_on: dependent on question id
+        :param expectedAnswer: option of dependent on question
+        :param abbrv: unique abbreviation of question
+        :param score: if question score or not
+        :param comment: if question comment or not
+        :param category: category id of question
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;UPDATE tb_questions SET text=?, type=?, options=?, required=?, dependentOn=?, expectedAnswer=?, abbrv=?, score=?, comment=?, category=? WHERE id_question=?&#39;,
+                    (text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score, comment,
+                     category,
+                     id_question,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_questions: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestion(self, questionId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a question from the tb_questions table
+        :param questionId: question row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questions WHERE id_question=?&#39;, (questionId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_questions: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestions(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_questions table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_questions&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addQuestionCategory(self, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_question_Categories table
+        :param name: name of QuestionCategory
+        :param description: description of QuestionCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_question_Categories(name, description) VALUES (?, ?)&#39;,
+                               (name, description))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestionCategory(self, id_categoryQ: int, name: str, description: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a category from the tb_question_Categories table
+        :param id_categoryQ: id of row to alter
+        :param name: name of QuestionCategory
+        :param description: description of QuestionCategory
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;UPDATE tb_question_Categories SET name=?, description=? WHERE id_categoryQ=?&#39;,
+                               (name, description, id_categoryQ,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_question_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestionCategory(self, categoryId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a category from the tb_question_Categories table
+        :param categoryId: category row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_question_Categories WHERE id_categoryQ=?&#39;, (categoryId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_question_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestionCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_question_Categories table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_question_Categories&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addQuestionnaireCategory(self, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_questionnaire_Categories table
+        :param name: name of QuestionnaireCategory
+        :param description: description of QuestionnaireCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_questionnaire_Categories(name, description) VALUES (?, ?)&#39;,
+                               (name, description,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestionnaireCategory(self, id_categoryQA: int, name: str, description: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a category from the tb_questionnaire_Categories table
+        :param id_categoryQA: id of row to alter
+        :param name: name of QuestionnaireCategory
+        :param description: description of QuestionnaireCategory
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;UPDATE tb_questionnaire_Categories SET name=?, description=? WHERE id_categoryQA=?&#39;,
+                               (name, description, id_categoryQA,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestionnaireCategory(self, categoryId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a category from the tb_questionnaire_Categories table
+        :param categoryId: category row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaire_Categories WHERE id_categoryQA=?&#39;, (categoryId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestionnaireCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_questionnaire_Categories table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_questionnaire_Categories&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addCollection(self, id_Q: int, id_QA: int, position: int, required: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new collection into the tb_collections table
+        :param id_Q: id of question
+        :param id_QA: id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_collections(id_Q, id_QA, position, required) VALUES (?, ?, ?, ?)&#39;,
+                               (id_Q, id_QA, position, required,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_collections: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeCollection(self, id_Q: int, id_QA: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a collection from the tb_collections table
+        :param id_Q: id of question
+        :param id_QA: id of questionnaire
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_collections WHERE id_Q=? AND id_QA=?&#39;, (id_Q, id_QA,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_collections: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getCollections(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_collections table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_collections&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addType(self, name: str, displayName: str, options: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new type into the tb_question_types table
+        :param name: name of type
+        :param displayName: displayName of type
+        :param options: 1=true, 0=false
+        :return: new row id
+        &#34;&#34;&#34;
+
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_question_types(typeName, displayName, options) VALUES (?, ?, ?)&#39;,
+                               (name, displayName, options,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_types: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getTypes(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_question_types table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_question_types&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addQuestionnaire(self, name: str, description: str, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new questionnaire into the tb_questionnaires table
+        :param name: name of questionnaire
+        :param description: description of questionnaire
+        :param category: category id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_questionnaires(name, description, category) VALUES (?, ?, ?)&#39;,
+                               (name, description, category,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questionnaires: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestionnaire(self, id_questionnaire: int, name: str, description: str, category: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a questionnaire from the tb_questionnaires table
+        :param id_questionnaire: id of questionnaire
+        :param name: name of questionnaire
+        :param description: description of questionnaire
+        :param category: category id of questionnaire
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;UPDATE tb_questionnaires SET name=?, description=?, category=?, lastChanged=CURRENT_TIMESTAMP WHERE id_questionnaire=?&#39;,
+                    (name, description, category, id_questionnaire))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_questionnaires: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestionnaire(self, questionnaireId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a questionnaire from the tb_questionnaires table
+        :param questionnaireId: questionnaire row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaires WHERE id_questionnaire=?&#39;, (questionnaireId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_questionnaires: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestionnaire(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_questionnaires table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_questionnaires&#39;):
+            lstRows.append(row)
+
+        return lstRows</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite"><code class="flex name class">
+<span>class <span class="ident">DatabaseSQLite</span></span>
+<span>(</span><span>logger, pathSQLiteDatabase: pathlib.Path, questionTypes: list = [])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DatabaseController class will handle connections between PhysioForms and a SQLite database</p>
+<p>Constructor
+:keyword logger logger Object
+:param pathSQLiteDatabase: path of databasefile e.g. data/physioforms.db
+:param questionTypes: List of Questiontypes ("typeName", "displayName", options)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DatabaseSQLite:
+    &#34;&#34;&#34;
+    DatabaseController class will handle connections between PhysioForms and a SQLite database
+    &#34;&#34;&#34;
+
+    def __init__(self, logger, pathSQLiteDatabase: Path, questionTypes: list = []):
+        &#34;&#34;&#34;
+        Constructor
+        :keyword logger logger Object
+        :param pathSQLiteDatabase: path of databasefile e.g. data/physioforms.db
+        :param questionTypes: List of Questiontypes (&#34;typeName&#34;, &#34;displayName&#34;, options)
+        &#34;&#34;&#34;
+        self.logger: logger = logger
+        self.connected: bool = False
+        self.lstQuestionTypes: list = questionTypes
+
+        if not pathSQLiteDatabase.parent.is_dir():
+            self.logger.warning(&#34;Data directory not exist, will be created.&#34;)
+            try:
+                pathSQLiteDatabase.parent.mkdir()
+            except Exception as e:
+                self.logger.error(&#34;Error while create data directory: &#34; + str(e))
+                raise
+
+        try:
+            self.conn = sqlite3.connect(str(pathSQLiteDatabase))
+            self.c = self.conn.cursor()
+
+        except Exception as e:
+            self.logger.error(&#34;Error while connection to SQLITE database: &#34; + str(e))
+            raise
+
+        self.__createTables()
+
+        self.connected = True
+
+        self.__createTypes()
+        self.__createCategories()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        try:
+            self.conn.close()
+        except Exception as e:
+            self.logger.error(&#34;Error while disconnect SQLITE database: &#34; + str(e))
+            raise
+
+    def __createTables(self):
+        &#34;&#34;&#34;
+        Method which create all needed Tables if they not exist
+        :return: True or raise Exception
+        &#34;&#34;&#34;
+        try:
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_types(&#39;
+                &#39;id_type INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;typeName TEXT NOT NULL,&#39;
+                &#39;displayName TEXT NOT NULL,&#39;
+                &#39;options INTEGER NOT NULL&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_question_categories(&#39;
+                &#39;id_categoryQ INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;name TEXT UNIQUE NOT NULL,&#39;
+                &#39;description TEXT&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaire_categories(&#39;
+                &#39;id_categoryQA INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;name TEXT UNIQUE NOT NULL,&#39;
+                &#39;description TEXT&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questions(&#39;
+                &#39;id_question INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;text TEXT NOT NULL,&#39;
+                &#39;type INTEGER NOT NULL,&#39;
+                &#39;options TEXT NOT NULL,&#39;
+                &#39;required INTEGER NOT NULL,&#39;
+                &#39;dependentOn INTEGER NOT NULL,&#39;
+                &#39;expectedAnswer TEXT NOT NULL,&#39;
+                &#39;abbrv TEXT UNIQUE NOT NULL,&#39;
+                &#39;score INTEGER NOT NULL,&#39;
+                &#39;comment INTEGER NOT NULL,&#39;
+                &#39;category INTEGER NOT NULL,&#39;
+                &#39;FOREIGN KEY(type) REFERENCES tb_question_types(id_type),&#39;
+                &#39;FOREIGN KEY(dependentOn) REFERENCES tb_questions(id_question),&#39;
+                &#39;FOREIGN KEY(category) REFERENCES tb_question_Categories(id_categoryQ)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_questionnaires(&#39;
+                &#39;id_questionnaire INTEGER PRIMARY KEY AUTOINCREMENT,&#39;
+                &#39;name TEXT NOT NULL,&#39;
+                &#39;description TEXT,&#39;
+                &#39;category INTEGER NOT NULL,&#39;
+                &#39;created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,&#39;
+                &#39;lastChanged TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,&#39;
+                &#39;FOREIGN KEY(category) REFERENCES tb_questionnaire_Categories(id_categoryQA)&#39;
+                &#39;)&#39;
+            )
+
+            self.c.execute(
+                &#39;CREATE TABLE IF NOT EXISTS tb_collections(&#39;
+                &#39;id_Q INTEGER NOT NULL,&#39;
+                &#39;id_QA INTEGER NOT NULL,&#39;
+                &#39;position INTEGER NOT NULL,&#39;
+                &#39;required INTEGER NOT NULL,&#39;
+                &#39;PRIMARY KEY (id_Q, id_QA),&#39;
+                &#39;FOREIGN KEY(id_Q) REFERENCES tb_questions(id_question),&#39;
+                &#39;FOREIGN KEY(id_QA) REFERENCES tb_questionnaires(id_questionnaire)&#39;
+                &#39;)&#39;
+            )
+
+        except Exception as e:
+            self.logger.error(&#34;Error while create tables in SQLITE database: &#34; + str(e))
+            raise
+
+        return True
+
+    def __createTypes(self):
+        &#34;&#34;&#34;
+        Method which create all possible question types
+        &#34;&#34;&#34;
+
+        for value in self.lstQuestionTypes:
+
+            if self.connected:
+
+                try:
+                    # Check if the type already exist
+                    self.c.execute(&#39;SELECT COUNT(typeName) FROM tb_question_types WHERE typeName=?&#39;, (value[0],))
+                    if self.c.fetchone()[0] == 0:
+                        self.addType(value[0], value[1], value[2])
+
+                except Exception as e:
+                    self.logger.error(&#34;Error while SELECT database rows from tb_question_types: &#34; + str(e))
+                    raise
+
+            else:
+                self.logger.error(&#34;SQLite database not connect&#34;)
+                raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+        return True
+
+    def __createCategories(self):
+        &#34;&#34;&#34;
+        Method which create the standard categories
+        &#34;&#34;&#34;
+
+        try:
+            self.c.execute(&#39;SELECT COUNT(id_categoryQ) FROM tb_question_Categories WHERE id_categoryQ=1 AND name=?&#39;,
+                           (&#34;Allgemein&#34;,))
+            if self.c.fetchone()[0] == 0:
+                self.addQuestionCategory(&#34;Allgemein&#34;, &#34;&#34;)
+
+        except Exception as e:
+            self.logger.error(&#34;Error while SELECT database rows from tb_question_Categories: &#34; + str(e))
+            raise
+
+        try:
+            self.c.execute(
+                &#39;SELECT COUNT(id_categoryQA) FROM tb_questionnaire_Categories WHERE id_categoryQA=1 AND name=?&#39;,
+                (&#34;Allgemein&#34;,))
+            if self.c.fetchone()[0] == 0:
+                self.addQuestionnaireCategory(&#34;Allgemein&#34;, &#34;&#34;)
+
+        except Exception as e:
+            self.logger.error(&#34;Error while SELECT database rows from tb_questionnaire_Categories: &#34; + str(e))
+            raise
+
+    def addQuestion(self, text: str, questionType: int, options: str, required: int, dependent_on: int,
+                    expectedAnswer: str,
+                    abbrv: str, score: int, comment: int, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new question into the tb_questions table
+        :param text: text of question
+        :param questionType: type id ov question
+        :param options: options of question (JSON)
+        :param required: if question required or not
+        :param dependent_on: dependent on question id
+        :param expectedAnswer: option of dependent on question
+        :param abbrv: unique abbreviation of question
+        :param score: if question score or not
+        :param comment: if question comment or not
+        :param category: category id of question
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;INSERT INTO tb_questions(text, type, options, required, dependentON, expectedAnswer, abbrv, score, comment, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)&#39;,
+                    (text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score, comment,
+                     category,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questions: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestion(self, id_question: int, text: str, questionType: int, options: str, required: int,
+                       dependent_on: int,
+                       expectedAnswer: str, abbrv: str, score: int, comment: int, category: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a question from the tb_questions table
+        :param id_question: id of question
+        :param text: text of question
+        :param questionType: type id ov question
+        :param options: options of question (JSON)
+        :param required: if question required or not
+        :param dependent_on: dependent on question id
+        :param expectedAnswer: option of dependent on question
+        :param abbrv: unique abbreviation of question
+        :param score: if question score or not
+        :param comment: if question comment or not
+        :param category: category id of question
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;UPDATE tb_questions SET text=?, type=?, options=?, required=?, dependentOn=?, expectedAnswer=?, abbrv=?, score=?, comment=?, category=? WHERE id_question=?&#39;,
+                    (text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score, comment,
+                     category,
+                     id_question,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_questions: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestion(self, questionId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a question from the tb_questions table
+        :param questionId: question row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questions WHERE id_question=?&#39;, (questionId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_questions: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestions(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_questions table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_questions&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addQuestionCategory(self, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_question_Categories table
+        :param name: name of QuestionCategory
+        :param description: description of QuestionCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_question_Categories(name, description) VALUES (?, ?)&#39;,
+                               (name, description))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestionCategory(self, id_categoryQ: int, name: str, description: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a category from the tb_question_Categories table
+        :param id_categoryQ: id of row to alter
+        :param name: name of QuestionCategory
+        :param description: description of QuestionCategory
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;UPDATE tb_question_Categories SET name=?, description=? WHERE id_categoryQ=?&#39;,
+                               (name, description, id_categoryQ,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_question_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestionCategory(self, categoryId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a category from the tb_question_Categories table
+        :param categoryId: category row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_question_Categories WHERE id_categoryQ=?&#39;, (categoryId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_question_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestionCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_question_Categories table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_question_Categories&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addQuestionnaireCategory(self, name: str, description: str) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new category into the tb_questionnaire_Categories table
+        :param name: name of QuestionnaireCategory
+        :param description: description of QuestionnaireCategory
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_questionnaire_Categories(name, description) VALUES (?, ?)&#39;,
+                               (name, description,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_Categories: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestionnaireCategory(self, id_categoryQA: int, name: str, description: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a category from the tb_questionnaire_Categories table
+        :param id_categoryQA: id of row to alter
+        :param name: name of QuestionnaireCategory
+        :param description: description of QuestionnaireCategory
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;UPDATE tb_questionnaire_Categories SET name=?, description=? WHERE id_categoryQA=?&#39;,
+                               (name, description, id_categoryQA,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestionnaireCategory(self, categoryId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a category from the tb_questionnaire_Categories table
+        :param categoryId: category row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaire_Categories WHERE id_categoryQA=?&#39;, (categoryId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_Categories: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestionnaireCategories(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_questionnaire_Categories table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_questionnaire_Categories&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addCollection(self, id_Q: int, id_QA: int, position: int, required: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new collection into the tb_collections table
+        :param id_Q: id of question
+        :param id_QA: id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_collections(id_Q, id_QA, position, required) VALUES (?, ?, ?, ?)&#39;,
+                               (id_Q, id_QA, position, required,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_collections: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeCollection(self, id_Q: int, id_QA: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a collection from the tb_collections table
+        :param id_Q: id of question
+        :param id_QA: id of questionnaire
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_collections WHERE id_Q=? AND id_QA=?&#39;, (id_Q, id_QA,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_collections: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getCollections(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_collections table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_collections&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addType(self, name: str, displayName: str, options: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new type into the tb_question_types table
+        :param name: name of type
+        :param displayName: displayName of type
+        :param options: 1=true, 0=false
+        :return: new row id
+        &#34;&#34;&#34;
+
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_question_types(typeName, displayName, options) VALUES (?, ?, ?)&#39;,
+                               (name, displayName, options,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_question_types: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getTypes(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_question_types table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_question_types&#39;):
+            lstRows.append(row)
+
+        return lstRows
+
+    def addQuestionnaire(self, name: str, description: str, category: int) -&gt; int:
+        &#34;&#34;&#34;
+        Method to add a new questionnaire into the tb_questionnaires table
+        :param name: name of questionnaire
+        :param description: description of questionnaire
+        :param category: category id of questionnaire
+        :return: new row id
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;INSERT INTO tb_questionnaires(name, description, category) VALUES (?, ?, ?)&#39;,
+                               (name, description, category,))
+                self.conn.commit()
+
+                return self.c.lastrowid
+
+            except Exception as e:
+                self.logger.error(&#34;Error while insert database row into tb_questionnaires: &#34; + str(e))
+                raise
+
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def changeQuestionnaire(self, id_questionnaire: int, name: str, description: str, category: int) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to change a questionnaire from the tb_questionnaires table
+        :param id_questionnaire: id of questionnaire
+        :param name: name of questionnaire
+        :param description: description of questionnaire
+        :param category: category id of questionnaire
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(
+                    &#39;UPDATE tb_questionnaires SET name=?, description=?, category=?, lastChanged=CURRENT_TIMESTAMP WHERE id_questionnaire=?&#39;,
+                    (name, description, category, id_questionnaire))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while update database row from tb_questionnaires: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def removeQuestionnaire(self, questionnaireId) -&gt; bool:
+        &#34;&#34;&#34;
+        Method to remove a questionnaire from the tb_questionnaires table
+        :param questionnaireId: questionnaire row id
+        :return: True / exception
+        &#34;&#34;&#34;
+        if self.connected:
+
+            try:
+                self.c.execute(&#39;DELETE FROM tb_questionnaires WHERE id_questionnaire=?&#39;, (questionnaireId,))
+                self.conn.commit()
+
+                return True
+
+            except Exception as e:
+                self.logger.error(&#34;Error while delete database row from tb_questionnaires: &#34; + str(e))
+                raise
+        else:
+            self.logger.error(&#34;SQLite database not connect&#34;)
+            raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)
+
+    def getQuestionnaire(self) -&gt; list:
+        &#34;&#34;&#34;
+        Method to return all rows from the tb_questionnaires table
+        return: List of rows
+        &#34;&#34;&#34;
+
+        lstRows = []
+
+        for row in self.c.execute(&#39;SELECT * FROM tb_questionnaires&#39;):
+            lstRows.append(row)
+
+        return lstRows</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addCollection"><code class="name flex">
+<span>def <span class="ident">addCollection</span></span>(<span>self, id_Q: int, id_QA: int, position: int, required: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new collection into the tb_collections table
+:param id_Q: id of question
+:param id_QA: id of questionnaire
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addCollection(self, id_Q: int, id_QA: int, position: int, required: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new collection into the tb_collections table
+    :param id_Q: id of question
+    :param id_QA: id of questionnaire
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;INSERT INTO tb_collections(id_Q, id_QA, position, required) VALUES (?, ?, ?, ?)&#39;,
+                           (id_Q, id_QA, position, required,))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_collections: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestion"><code class="name flex">
+<span>def <span class="ident">addQuestion</span></span>(<span>self, text: str, questionType: int, options: str, required: int, dependent_on: int, expectedAnswer: str, abbrv: str, score: int, comment: int, category: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new question into the tb_questions table
+:param text: text of question
+:param questionType: type id ov question
+:param options: options of question (JSON)
+:param required: if question required or not
+:param dependent_on: dependent on question id
+:param expectedAnswer: option of dependent on question
+:param abbrv: unique abbreviation of question
+:param score: if question score or not
+:param comment: if question comment or not
+:param category: category id of question
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestion(self, text: str, questionType: int, options: str, required: int, dependent_on: int,
+                expectedAnswer: str,
+                abbrv: str, score: int, comment: int, category: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new question into the tb_questions table
+    :param text: text of question
+    :param questionType: type id ov question
+    :param options: options of question (JSON)
+    :param required: if question required or not
+    :param dependent_on: dependent on question id
+    :param expectedAnswer: option of dependent on question
+    :param abbrv: unique abbreviation of question
+    :param score: if question score or not
+    :param comment: if question comment or not
+    :param category: category id of question
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;INSERT INTO tb_questions(text, type, options, required, dependentON, expectedAnswer, abbrv, score, comment, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)&#39;,
+                (text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score, comment,
+                 category,))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_questions: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionCategory"><code class="name flex">
+<span>def <span class="ident">addQuestionCategory</span></span>(<span>self, name: str, description: str) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new category into the tb_question_Categories table
+:param name: name of QuestionCategory
+:param description: description of QuestionCategory
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionCategory(self, name: str, description: str) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new category into the tb_question_Categories table
+    :param name: name of QuestionCategory
+    :param description: description of QuestionCategory
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;INSERT INTO tb_question_Categories(name, description) VALUES (?, ?)&#39;,
+                           (name, description))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_question_Categories: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionnaire"><code class="name flex">
+<span>def <span class="ident">addQuestionnaire</span></span>(<span>self, name: str, description: str, category: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new questionnaire into the tb_questionnaires table
+:param name: name of questionnaire
+:param description: description of questionnaire
+:param category: category id of questionnaire
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionnaire(self, name: str, description: str, category: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new questionnaire into the tb_questionnaires table
+    :param name: name of questionnaire
+    :param description: description of questionnaire
+    :param category: category id of questionnaire
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;INSERT INTO tb_questionnaires(name, description, category) VALUES (?, ?, ?)&#39;,
+                           (name, description, category,))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_questionnaires: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionnaireCategory"><code class="name flex">
+<span>def <span class="ident">addQuestionnaireCategory</span></span>(<span>self, name: str, description: str) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new category into the tb_questionnaire_Categories table
+:param name: name of QuestionnaireCategory
+:param description: description of QuestionnaireCategory
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionnaireCategory(self, name: str, description: str) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new category into the tb_questionnaire_Categories table
+    :param name: name of QuestionnaireCategory
+    :param description: description of QuestionnaireCategory
+    :return: new row id
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;INSERT INTO tb_questionnaire_Categories(name, description) VALUES (?, ?)&#39;,
+                           (name, description,))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_Categories: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addType"><code class="name flex">
+<span>def <span class="ident">addType</span></span>(<span>self, name: str, displayName: str, options: int) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add a new type into the tb_question_types table
+:param name: name of type
+:param displayName: displayName of type
+:param options: 1=true, 0=false
+:return: new row id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addType(self, name: str, displayName: str, options: int) -&gt; int:
+    &#34;&#34;&#34;
+    Method to add a new type into the tb_question_types table
+    :param name: name of type
+    :param displayName: displayName of type
+    :param options: 1=true, 0=false
+    :return: new row id
+    &#34;&#34;&#34;
+
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;INSERT INTO tb_question_types(typeName, displayName, options) VALUES (?, ?, ?)&#39;,
+                           (name, displayName, options,))
+            self.conn.commit()
+
+            return self.c.lastrowid
+
+        except Exception as e:
+            self.logger.error(&#34;Error while insert database row into tb_question_types: &#34; + str(e))
+            raise
+
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestion"><code class="name flex">
+<span>def <span class="ident">changeQuestion</span></span>(<span>self, id_question: int, text: str, questionType: int, options: str, required: int, dependent_on: int, expectedAnswer: str, abbrv: str, score: int, comment: int, category: int) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to change a question from the tb_questions table
+:param id_question: id of question
+:param text: text of question
+:param questionType: type id ov question
+:param options: options of question (JSON)
+:param required: if question required or not
+:param dependent_on: dependent on question id
+:param expectedAnswer: option of dependent on question
+:param abbrv: unique abbreviation of question
+:param score: if question score or not
+:param comment: if question comment or not
+:param category: category id of question
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def changeQuestion(self, id_question: int, text: str, questionType: int, options: str, required: int,
+                   dependent_on: int,
+                   expectedAnswer: str, abbrv: str, score: int, comment: int, category: int) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to change a question from the tb_questions table
+    :param id_question: id of question
+    :param text: text of question
+    :param questionType: type id ov question
+    :param options: options of question (JSON)
+    :param required: if question required or not
+    :param dependent_on: dependent on question id
+    :param expectedAnswer: option of dependent on question
+    :param abbrv: unique abbreviation of question
+    :param score: if question score or not
+    :param comment: if question comment or not
+    :param category: category id of question
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;UPDATE tb_questions SET text=?, type=?, options=?, required=?, dependentOn=?, expectedAnswer=?, abbrv=?, score=?, comment=?, category=? WHERE id_question=?&#39;,
+                (text, questionType, options, required, dependent_on, expectedAnswer, abbrv, score, comment,
+                 category,
+                 id_question,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while update database row from tb_questions: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionCategory"><code class="name flex">
+<span>def <span class="ident">changeQuestionCategory</span></span>(<span>self, id_categoryQ: int, name: str, description: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to change a category from the tb_question_Categories table
+:param id_categoryQ: id of row to alter
+:param name: name of QuestionCategory
+:param description: description of QuestionCategory
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def changeQuestionCategory(self, id_categoryQ: int, name: str, description: str) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to change a category from the tb_question_Categories table
+    :param id_categoryQ: id of row to alter
+    :param name: name of QuestionCategory
+    :param description: description of QuestionCategory
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;UPDATE tb_question_Categories SET name=?, description=? WHERE id_categoryQ=?&#39;,
+                           (name, description, id_categoryQ,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while update database row from tb_question_Categories: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionnaire"><code class="name flex">
+<span>def <span class="ident">changeQuestionnaire</span></span>(<span>self, id_questionnaire: int, name: str, description: str, category: int) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to change a questionnaire from the tb_questionnaires table
+:param id_questionnaire: id of questionnaire
+:param name: name of questionnaire
+:param description: description of questionnaire
+:param category: category id of questionnaire
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def changeQuestionnaire(self, id_questionnaire: int, name: str, description: str, category: int) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to change a questionnaire from the tb_questionnaires table
+    :param id_questionnaire: id of questionnaire
+    :param name: name of questionnaire
+    :param description: description of questionnaire
+    :param category: category id of questionnaire
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(
+                &#39;UPDATE tb_questionnaires SET name=?, description=?, category=?, lastChanged=CURRENT_TIMESTAMP WHERE id_questionnaire=?&#39;,
+                (name, description, category, id_questionnaire))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while update database row from tb_questionnaires: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionnaireCategory"><code class="name flex">
+<span>def <span class="ident">changeQuestionnaireCategory</span></span>(<span>self, id_categoryQA: int, name: str, description: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to change a category from the tb_questionnaire_Categories table
+:param id_categoryQA: id of row to alter
+:param name: name of QuestionnaireCategory
+:param description: description of QuestionnaireCategory
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def changeQuestionnaireCategory(self, id_categoryQA: int, name: str, description: str) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to change a category from the tb_questionnaire_Categories table
+    :param id_categoryQA: id of row to alter
+    :param name: name of QuestionnaireCategory
+    :param description: description of QuestionnaireCategory
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;UPDATE tb_questionnaire_Categories SET name=?, description=? WHERE id_categoryQA=?&#39;,
+                           (name, description, id_categoryQA,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while update database row from tb_Categories: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getCollections"><code class="name flex">
+<span>def <span class="ident">getCollections</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return all rows from the tb_collections table
+return: List of rows</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCollections(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to return all rows from the tb_collections table
+    return: List of rows
+    &#34;&#34;&#34;
+
+    lstRows = []
+
+    for row in self.c.execute(&#39;SELECT * FROM tb_collections&#39;):
+        lstRows.append(row)
+
+    return lstRows</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionCategories"><code class="name flex">
+<span>def <span class="ident">getQuestionCategories</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return all rows from the tb_question_Categories table
+return: List of rows</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionCategories(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to return all rows from the tb_question_Categories table
+    return: List of rows
+    &#34;&#34;&#34;
+
+    lstRows = []
+
+    for row in self.c.execute(&#39;SELECT * FROM tb_question_Categories&#39;):
+        lstRows.append(row)
+
+    return lstRows</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionnaire"><code class="name flex">
+<span>def <span class="ident">getQuestionnaire</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return all rows from the tb_questionnaires table
+return: List of rows</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionnaire(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to return all rows from the tb_questionnaires table
+    return: List of rows
+    &#34;&#34;&#34;
+
+    lstRows = []
+
+    for row in self.c.execute(&#39;SELECT * FROM tb_questionnaires&#39;):
+        lstRows.append(row)
+
+    return lstRows</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionnaireCategories"><code class="name flex">
+<span>def <span class="ident">getQuestionnaireCategories</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return all rows from the tb_questionnaire_Categories table
+return: List of rows</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestionnaireCategories(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to return all rows from the tb_questionnaire_Categories table
+    return: List of rows
+    &#34;&#34;&#34;
+
+    lstRows = []
+
+    for row in self.c.execute(&#39;SELECT * FROM tb_questionnaire_Categories&#39;):
+        lstRows.append(row)
+
+    return lstRows</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestions"><code class="name flex">
+<span>def <span class="ident">getQuestions</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return all rows from the tb_questions table
+return: List of rows</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getQuestions(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to return all rows from the tb_questions table
+    return: List of rows
+    &#34;&#34;&#34;
+
+    lstRows = []
+
+    for row in self.c.execute(&#39;SELECT * FROM tb_questions&#39;):
+        lstRows.append(row)
+
+    return lstRows</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getTypes"><code class="name flex">
+<span>def <span class="ident">getTypes</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to return all rows from the tb_question_types table
+return: List of rows</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getTypes(self) -&gt; list:
+    &#34;&#34;&#34;
+    Method to return all rows from the tb_question_types table
+    return: List of rows
+    &#34;&#34;&#34;
+
+    lstRows = []
+
+    for row in self.c.execute(&#39;SELECT * FROM tb_question_types&#39;):
+        lstRows.append(row)
+
+    return lstRows</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeCollection"><code class="name flex">
+<span>def <span class="ident">removeCollection</span></span>(<span>self, id_Q: int, id_QA: int) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to remove a collection from the tb_collections table
+:param id_Q: id of question
+:param id_QA: id of questionnaire
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeCollection(self, id_Q: int, id_QA: int) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to remove a collection from the tb_collections table
+    :param id_Q: id of question
+    :param id_QA: id of questionnaire
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_collections WHERE id_Q=? AND id_QA=?&#39;, (id_Q, id_QA,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while delete database row from tb_collections: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestion"><code class="name flex">
+<span>def <span class="ident">removeQuestion</span></span>(<span>self, questionId) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to remove a question from the tb_questions table
+:param questionId: question row id
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestion(self, questionId) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to remove a question from the tb_questions table
+    :param questionId: question row id
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_questions WHERE id_question=?&#39;, (questionId,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while delete database row from tb_questions: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionCategory"><code class="name flex">
+<span>def <span class="ident">removeQuestionCategory</span></span>(<span>self, categoryId) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to remove a category from the tb_question_Categories table
+:param categoryId: category row id
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionCategory(self, categoryId) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to remove a category from the tb_question_Categories table
+    :param categoryId: category row id
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_question_Categories WHERE id_categoryQ=?&#39;, (categoryId,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while delete database row from tb_question_Categories: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionnaire"><code class="name flex">
+<span>def <span class="ident">removeQuestionnaire</span></span>(<span>self, questionnaireId) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to remove a questionnaire from the tb_questionnaires table
+:param questionnaireId: questionnaire row id
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionnaire(self, questionnaireId) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to remove a questionnaire from the tb_questionnaires table
+    :param questionnaireId: questionnaire row id
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_questionnaires WHERE id_questionnaire=?&#39;, (questionnaireId,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while delete database row from tb_questionnaires: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionnaireCategory"><code class="name flex">
+<span>def <span class="ident">removeQuestionnaireCategory</span></span>(<span>self, categoryId) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to remove a category from the tb_questionnaire_Categories table
+:param categoryId: category row id
+:return: True / exception</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionnaireCategory(self, categoryId) -&gt; bool:
+    &#34;&#34;&#34;
+    Method to remove a category from the tb_questionnaire_Categories table
+    :param categoryId: category row id
+    :return: True / exception
+    &#34;&#34;&#34;
+    if self.connected:
+
+        try:
+            self.c.execute(&#39;DELETE FROM tb_questionnaire_Categories WHERE id_categoryQA=?&#39;, (categoryId,))
+            self.conn.commit()
+
+            return True
+
+        except Exception as e:
+            self.logger.error(&#34;Error while delete database row from tb_Categories: &#34; + str(e))
+            raise
+    else:
+        self.logger.error(&#34;SQLite database not connect&#34;)
+        raise DatabaseNotConnectedError(&#34;SQLite database not connect&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PhysioForms.Database" href="index.html">PhysioForms.Database</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite">DatabaseSQLite</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addCollection" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addCollection">addCollection</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestion" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestion">addQuestion</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionCategory" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionCategory">addQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionnaire" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionnaire">addQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionnaireCategory" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addQuestionnaireCategory">addQuestionnaireCategory</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addType" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.addType">addType</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestion" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestion">changeQuestion</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionCategory" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionCategory">changeQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionnaire" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionnaire">changeQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionnaireCategory" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.changeQuestionnaireCategory">changeQuestionnaireCategory</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getCollections" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getCollections">getCollections</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionCategories" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionCategories">getQuestionCategories</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionnaire" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionnaire">getQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionnaireCategories" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestionnaireCategories">getQuestionnaireCategories</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestions" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getQuestions">getQuestions</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getTypes" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.getTypes">getTypes</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeCollection" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeCollection">removeCollection</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestion" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestion">removeQuestion</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionCategory" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionCategory">removeQuestionCategory</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionnaire" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionnaire">removeQuestionnaire</a></code></li>
+<li><code><a title="PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionnaireCategory" href="#PhysioForms.Database.DatabaseSQLite.DatabaseSQLite.removeQuestionnaireCategory">removeQuestionnaireCategory</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

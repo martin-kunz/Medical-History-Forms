@@ -1,0 +1,2755 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>PhysioForms.GUI.MainFrame API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PhysioForms.GUI.MainFrame</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">__author__ = &#34;Stefan Lerch und André Kinzenbach&#34;
+__version__ = &#34;1.0&#34;
+
+import os
+import sys
+from pathlib import Path
+
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt, QSize, QEvent
+from PyQt5.QtGui import QPixmap, QIcon, QCloseEvent
+from PyQt5.QtWidgets import QFileDialog, QTreeWidgetItem, QListWidgetItem, QMainWindow
+
+from PhysioForms.designerFiles.DesignerMainFrame import Ui_MainWindow
+from PhysioForms.GUI.Library import Library
+from PhysioForms.GUI.SaveQuestion import SaveQuestion
+from PhysioForms.GUI.SaveQuestionnaire import SaveQuestionnaire
+from PhysioForms.GUI.SaveCategoryQ import SaveCategory
+from PhysioForms.GUI.SaveCategoryQA import SaveCategoryQA
+from PhysioForms.GUI.HelpWindow import HelpWindow
+from PhysioForms.GUI.DBInformation import DBWindow
+from PhysioForms.GUI.ChooseQA import ChooseQAWindow
+from PhysioForms.GUI.WarningAbbrv import WarningAbbrv
+from PhysioForms.Question import Question
+from PhysioForms.QuestionCategory import QuestionCategory
+from PhysioForms.Questionnaire import Questionnaire
+from PhysioForms.QuestionnaireController import QuestionnaireController
+from PhysioForms.QuestionController import QuestionController
+from PhysioForms.fileHandler import readConfigFile
+
+# Logo and icon path
+logoPicturePath = &#34;GUI/pictures/logo-annette-boehm.png&#34;
+iconPicturePath = &#34;./GUI/pictures/icon-annette-boehm-square.png&#34;
+arrowLeftPicPath = &#34;GUI/pictures/arrow-left.png&#34;
+arrowRightPicPath = &#34;GUI/pictures/arrow-right.png&#34;
+
+MAIN_WINDOW = 1
+
+
+class CustomTreeItem(QTreeWidgetItem):
+    &#34;&#34;&#34;
+    Class custom QTreeWidgetItem with Widgets to represent our Data in TreeWidget
+    &#34;&#34;&#34;
+
+    def __init__(self, parent, parentFrame: QMainWindow, data: Question):
+        &#34;&#34;&#34;
+        Constructor
+        :param parent       : Item&#39;s QTreeWidget or Question.
+        :param parentFrame  : The frame where the item gets created, here MainFrame
+        :param data         : Question
+        &#34;&#34;&#34;
+        # Init super class ( QtGui.QTreeWidgetItem )
+        super(CustomTreeItem, self).__init__(parent)
+
+        self.question = data
+        self.updateItem()
+
+        self.parentFrame = parentFrame
+
+        if self.parent() is None:
+            self.setFlags(
+                Qt.ItemIsEnabled |
+                Qt.ItemIsSelectable |
+                Qt.ItemIsDragEnabled
+            )
+        else:
+            self.setFlags(
+                Qt.ItemIsEnabled
+            )
+
+    @property
+    def returnText(self):
+        &#34;&#34;&#34;
+        :return: str
+        &#34;&#34;&#34;
+        return self.thisQuestion.text
+
+    def returnQuestion(self):
+        &#34;&#34;&#34;
+        :return: question
+        &#34;&#34;&#34;
+        return self.question
+
+    def removeAllChildren(self):
+        &#34;&#34;&#34;
+        Remove all children of the called QTreeWidgetItem
+        &#34;&#34;&#34;
+        for i in reversed(range(self.childCount())):
+            self.removeChild(self.child(i))
+
+    def updateItem(self):
+        &#34;&#34;&#34;
+        Inserts the text in the right columns and rows(right side)
+        &#34;&#34;&#34;
+        self.removeAllChildren()
+        if self.parent() is None:
+            description = &#39;[&#39; + self.question.abbreviation + &#39;] &#39;
+            description += self.question.text
+            if self.question.dependent_on != &#34;none&#34;:
+                description += &#39; (&#39; + self.question.dependent_on + &#39; -&gt; &#39; + self.question.expected_answer + &#39;)&#39;
+            self.setText(0, description)
+
+        if self.question.options:
+            if len(self.question.options[0]) &gt; 0:
+                for answer in self.question.options:
+                    item = QTreeWidgetItem(self, [&#39;&gt; &#39; + answer])
+                    item.setFlags(Qt.NoItemFlags)
+                    self.addChild(item)
+
+
+class CustomListItem(QListWidgetItem):
+    &#34;&#34;&#34;
+    Class custom QListWidgetItem to display our data in our list(left side)
+    &#34;&#34;&#34;
+
+    def __init__(self, data: Question):
+        &#34;&#34;&#34;
+        Constructor
+        :param data    : Question
+        &#34;&#34;&#34;
+        # Init super class ( QtGui.QListWidgetItem )
+        super(CustomListItem, self).__init__()
+
+        self.question = data
+
+        self.setText(data.text)
+
+        self.setFlags(
+            Qt.ItemIsEnabled |
+            Qt.ItemIsSelectable
+        )
+
+    def returnText(self) -&gt; str:
+        &#34;&#34;&#34;
+        :return: str
+        &#34;&#34;&#34;
+        return self.text()
+
+    def returnQuestion(self) -&gt; Question:
+        &#34;&#34;&#34;
+        :return: Question
+        &#34;&#34;&#34;
+        return self.question.text
+
+
+class MainFrame(QtWidgets.QMainWindow):
+    &#34;&#34;&#34;
+    class MainFrame to build GUI and connect GUI elements with variables
+    &#34;&#34;&#34;
+
+    def __init__(self, questionnaireController: QuestionnaireController, questionController: QuestionController):
+
+        &#34;&#34;&#34;
+        Constructor
+        :param questionnaireController  : QuestionnaireController from config
+        :param questionController       : QuestionController from config
+        &#34;&#34;&#34;
+        super().__init__()
+        &#34;&#34;&#34;
+        Constructor
+        &#34;&#34;&#34;
+
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        self.questionnaireController = questionnaireController
+        self.questionController = questionController
+
+        # Import Logo
+        pixMap = QPixmap(logoPicturePath)
+        self.ui.MainImportPicture.setPixmap(pixMap)
+
+        # Import Icon
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        MainFrame.setWindowIcon(self, icon)
+        Library.setWindowIcon(self, icon)
+
+        # Set the default values for the names
+        self.setCategoryName()
+        self.setQuestionnaireName()
+
+        # Connect buttons to functions
+        self.ui.MainNeueFrageButton.clicked.connect(self.newQuestion)
+        self.ui.MainImportButton.clicked.connect(self.importQA)
+        self.ui.MainExportButton.clicked.connect(self.exportQA)
+        self.ui.MainAbbrechenButton.clicked.connect(self.cancelClicked)
+        self.ui.MainSpeichernButton.clicked.connect(self.saveClicked)
+        self.ui.MainLibraryButton.clicked.connect(self.openLib)
+        self.ui.mainAddfromListButton.clicked.connect(self.addQuestionFromListToTree)
+        self.ui.mainopenqabutton.clicked.connect(self.openChooseQA)
+        self.ui.mainedittreebutton.clicked.connect(self.editQuestionClicked)
+        self.ui.mainDelfromTreeButton.clicked.connect(self.removeQuestionClicked)
+        self.ui.maindeletetreebutton.clicked.connect(self.deleteSelectedQuestion)
+
+        # Connection MainFrame to library
+        self.ui.actionNeue_Frage_erstellen.triggered.connect(lambda: self.newQuestion())
+        self.ui.actionNeue_Kategorie_erstellen.triggered.connect(lambda: self.newQCat())
+        self.ui.actionNeuen_Fragebogen_erstellen.triggered.connect(lambda: self.saveClicked())
+        self.ui.actionNewQuestionnaireCategory.triggered.connect(lambda: self.newQACat())
+        self.ui.actionDatenbank_anzeigen_hinzuf_gen.triggered.connect(lambda: self.openDB())
+        self.ui.actionDatei_importieren.triggered.connect(lambda: self.importQA())
+        self.ui.actionFragebogen_exportieren.triggered.connect(lambda: self.exportQA())
+        self.ui.actionProgramm_beenden_2.triggered.connect(lambda: sys.exit())
+        self.ui.actionFragenbibliothek.triggered.connect(lambda: self.openFBib())
+        self.ui.actionFragenkatalogbibliothek.triggered.connect(lambda: self.openFKBib())
+        self.ui.actionKategorien.triggered.connect(lambda: self.openKBib())
+        self.ui.actionHilfe_ffnen.triggered.connect(lambda: self.openHelp())
+        self.ui.actionFragebogen_Kategorien.triggered.connect(lambda: self.openQAKBib())
+        self.ui.actionFragebogen_ffnen.triggered.connect(lambda: self.openChooseQA())
+
+        self.ui.MainSearchLine.textChanged.connect(self.updateQuestionList)
+
+        # Button Designs
+        icon_button = QIcon(arrowLeftPicPath)
+        self.ui.mainAddfromListButton.setIcon(icon_button)
+        self.ui.mainAddfromListButton.setIconSize(QSize(35, 40))
+
+        icon_button = QIcon(arrowRightPicPath)
+        self.ui.mainDelfromTreeButton.setIcon(icon_button)
+        self.ui.mainDelfromTreeButton.setIconSize(QSize(35, 40))
+
+        &#34;&#34;&#34;Several important UI Settings for our TreeWidget&#34;&#34;&#34;
+        self.ui.MaintreeWidgetFK.setColumnCount(1)
+        self.ui.MaintreeWidgetFK.setSelectionMode(1)
+        self.ui.MaintreeWidgetFK.setSelectionBehavior(1)
+        self.ui.MaintreeWidgetFK.header().setStretchLastSection(False)
+        self.ui.MaintreeWidgetFK.setIndentation(25)
+        self.ui.MaintreeWidgetFK.header().setSectionResizeMode(0, 3)
+        self.ui.MaintreeWidgetFK.setDragDropMode(3)
+        self.ui.MaintreeWidgetFK.header().setSectionsMovable(True)
+        self.ui.MaintreeWidgetFK.setExpandsOnDoubleClick(False)
+
+        self.questionTypes = self.questionController.types
+
+        # Fill Dropdown in MainFrame with Categories
+        self.updateCategories()
+
+        # Update the Tree
+        self.updateTree()
+        self.updateQuestionList()
+
+        # Event filters for user action in tree, list and dropdown
+        self.ui.MaintreeWidgetFK.viewport().installEventFilter(self)
+        self.ui.mainDropdownQList.currentIndexChanged.connect(self.updateQuestionList)
+        self.ui.MainlistWidgetFragen.itemDoubleClicked.connect(self.addQuestionFromListToTree)
+
+    def importQA(self):
+        &#34;&#34;&#34;
+        Imports the selected questionnaire and shows the questions in the tree
+        &#34;&#34;&#34;
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self, &#34;physioForms - Fragebogen importieren&#34;, &#34;&#34;,
+                                                  &#34;Json Files (*.json)&#34;, options=options)
+        labelname = os.path.basename(fileName)
+        labelname = os.path.splitext(labelname)[0]
+        self.setQuestionnaireName()
+        self.setCategoryName()
+        if fileName:
+            self.questionnaireController.importQuestionnaire(Path(fileName))
+            self.saveAfterImport()
+        self.updateTree()
+        self.updateQuestionList()
+        self.setQuestionnaireName(labelname)
+
+    def saveAfterImport(self):
+        &#34;&#34;&#34;
+        Simple Dialog that asks the user if he wants to
+        save all the questions and the questionnaire after the import
+        &#34;&#34;&#34;
+        errorQuestionList = []
+        if self.popUpDialog(&#39;Speichern&#39;, &#39;Sollen alle Fragen des importierten Fragebogens bereits gespeichert werden?&#39;):
+            for question in self.questionnaireController.questionnaire.questions:
+                res = self.questionController.saveQuestion(question)
+                if not res[0]:
+                    errorQuestionList.append(res[1])
+
+        if len(errorQuestionList) &gt; 0:
+            self.dialog = WarningAbbrv(self, errorQuestionList)
+            self.dialog.show()
+
+    def newQuestion(self):
+        &#34;&#34;&#34;
+        Opens new Question window
+        &#34;&#34;&#34;
+        self.dialog = SaveQuestion(self)
+        self.dialog.show()
+
+    def editQuestionItem(self, newQuestion: Question):
+        &#34;&#34;&#34;
+        Receives the changed question from SaveQuestion window
+        and implements the changes in our model
+        :param newQuestion: Question we want to edit
+        &#34;&#34;&#34;
+        self.questionController.saveQuestion(newQuestion)
+        self.questionnairePosition()
+        self.updateQuestionList()
+
+    def closeEvent(self, event: QCloseEvent) -&gt; None:
+        &#34;&#34;&#34;
+        Is called when the user closes the window
+        :param event: QCloseevent
+        &#34;&#34;&#34;
+        close = self.popUpDialog(&#39;Warnung&#39;,
+                                 &#39;Sind sie sicher das Sie die Applikation schließen möchten? Ungespeicherte &#39;
+                                 &#39;Änderungen werden nicht übernommen.&#39;)
+        if close:
+            event.accept()
+        else:
+            event.ignore()
+
+    def updateAll(self):
+        &#34;&#34;&#34;
+        Updates the tree, list and the searchText
+        &#34;&#34;&#34;
+        self.updateTree()
+        self.updateQuestionList()
+        self.updateText()
+
+    def updateTree(self):
+        &#34;&#34;&#34;
+        Updates the tree (left side MainFrame)
+        &#34;&#34;&#34;
+        self.ui.MaintreeWidgetFK.clear()
+        for question in self.questionnaireController.questionnaire.questions:
+            self.addQuestionTreeWidget(question)
+
+    def updateText(self):
+        &#34;&#34;&#34;
+        Updates the names for our labels: Name and category
+        &#34;&#34;&#34;
+        self.setQuestionnaireName(self.questionnaireController.questionnaire.name)
+        self.setCategoryName(self.questionnaireController.questionnaire.category.category)
+
+    def updateCategories(self):
+        &#34;&#34;&#34;
+        Updates the categories in the combobox in Mainframe
+        &#34;&#34;&#34;
+        self.ui.mainDropdownQList.clear()
+        self.ui.mainDropdownQList.addItem(&#34;Alle&#34;)
+        for category in self.questionController.categories():
+            self.ui.mainDropdownQList.addItem(category.category)
+
+    def addQuestionList(self, question: Question):
+        &#34;&#34;&#34;
+        Add a question to the list(right side of MainFrame)
+        :param question: Question
+        &#34;&#34;&#34;
+        item = CustomListItem(question)
+        self.ui.MainlistWidgetFragen.addItem(item)
+
+    def updateQuestionList(self):
+        &#34;&#34;&#34;
+        Updates the list(Right) with all questions or with selected ones
+        Also filters this list with the selected category and searchText
+        &#34;&#34;&#34;
+        searchText = self.ui.MainSearchLine.text()
+        self.ui.MainlistWidgetFragen.clear()
+        currentQuestionCategory = self.findCategory(self.ui.mainDropdownQList.currentText())
+        questionsList = self.questionController.findByName(searchText, currentQuestionCategory)
+        for question in self.questionnaireController.questionnaire.questions:
+            for question2 in questionsList:
+                if question.id == question2.id:
+                    questionsList.remove(question2)
+        for question in questionsList:
+            self.addQuestionList(question)
+
+    def addQuestionFromListToTree(self, item: CustomListItem = None, question: Question = None,
+                                  silentMode: bool = False):
+        &#34;&#34;&#34;
+        Item catches the case of mouseDoubleClickEvent, sends CustomListWidgetItem
+        Adds the selected question from the List(Right) to the Tree(Left).
+        If the selcted question has dependencies they will be added aswell, user has to accept
+        :param item         : CustomListItem in case of mouseDoubeClickEvent
+        :param question     : Question that we want to transfer
+        :param silentMode   : Recursive calls no more popups
+        &#34;&#34;&#34;
+        if question:
+            addQuestion = question
+        else:
+            if not isinstance(self.ui.MainlistWidgetFragen.currentItem(), CustomListItem):
+                return
+            addQuestion = self.ui.MainlistWidgetFragen.currentItem().question
+
+        checkDependency = False
+        dependentQuestion = None
+
+        if addQuestion.dependent_on != &#34;none&#34;:
+            checkDependency = True
+            dependentQuestion = self.questionController.getDependentQuestion(addQuestion)
+
+        if checkDependency:
+            dependencyFulfilled = False
+        else:
+            dependencyFulfilled = True
+
+        for question in self.questionnaireController.questionnaire.questions:
+            if checkDependency:
+                if question.abbreviation == dependentQuestion.abbreviation:
+                    dependencyFulfilled = True
+            if question.abbreviation == addQuestion.abbreviation:
+                if question.id != addQuestion.id:
+                    self.popUp(title=&#34;Warnung&#34;, message=&#34;Die Kurzbeschreibung ist bereits im Fragenkatalog vergeben!&#34;)
+                    return
+
+        if not dependencyFulfilled:
+            if not silentMode:
+                if self.popUpDialog(&#34;Warnung&#34;,
+                                    &#34;Ihre ausgewählte Frage ist abhängig von einer anderen. Abhängige Frage &#34;
+                                    &#34;hinzufügen? Der Vorgang wird andernfalls abgebrochen.&#34;):
+                    self.addQuestionFromListToTree(question=dependentQuestion, silentMode=True)
+                else:
+                    return
+            else:
+                self.addQuestionFromListToTree(question=dependentQuestion, silentMode=True)
+
+        if not self.questionnaireController.addQuestion(newQuestion=addQuestion):
+            self.popUp(title=&#34;Warnung&#34;, message=&#34;Frage befindet sich bereits im Fragenkatalog.&#34;)
+        self.questionnairePosition()
+        self.updateQuestionList()
+
+    def popUp(self, title: str, message: str):
+        &#34;&#34;&#34;
+        Creates a simple popup
+        :param title: Title of the popup
+        :param message: custom message inside the popup
+        &#34;&#34;&#34;
+        box = QtWidgets.QMessageBox()
+        box.setIcon(QtWidgets.QMessageBox.Warning)
+        box.setWindowTitle(title)
+        box.setText(message)
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        box.setWindowIcon(icon)
+        box.exec_()
+        return
+
+    def popUpDialog(self, title: str, message: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Creates popup With yes or no buttons
+        :param title: Title of the popup
+        :param message: Custom message
+        :return: bool, yes equals true
+        &#34;&#34;&#34;
+        box = QtWidgets.QMessageBox()
+        box.setIcon(QtWidgets.QMessageBox.Warning)
+        box.setWindowTitle(title)
+        box.setText(message)
+        box.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        box.setWindowIcon(icon)
+        buttonY = box.button(QtWidgets.QMessageBox.Yes)
+        buttonY.setText(&#39;Ja&#39;)
+        buttonN = box.button(QtWidgets.QMessageBox.No)
+        buttonN.setText(&#39;Nein&#39;)
+        box.exec_()
+
+        if box.clickedButton() == buttonY:
+            return True
+        if box.clickedButton() == buttonN:
+            return False
+
+    def editQuestionClicked(self):
+        &#34;&#34;&#34;
+        Edits the current selected question in our TreeWidget(left side)
+        &#34;&#34;&#34;
+        if self.ui.MaintreeWidgetFK.currentItem() == None:
+            return
+
+        itemToEdit = self.ui.MaintreeWidgetFK.currentItem()
+        question = itemToEdit.returnQuestion()
+
+        self.dialog = SaveQuestion(self, question)
+        self.dialog.ui.label.setText(&#34;Frage bearbeiten&#34;)
+        self.dialog.setWindowTitle(&#34;Frage bearbeiten&#34;)
+        self.dialog.show()
+
+    def removeQuestionClicked(self, question: Question = None, silentMode: bool = False):
+        &#34;&#34;&#34;
+        Deletes the current selected question in the QTreeWidget(left side)
+        :param question: question we want to remove
+        :param silentMode: Recursive call no more popups
+        &#34;&#34;&#34;
+        if question:
+            removeQuestion = question
+        else:
+            if not isinstance(self.ui.MaintreeWidgetFK.currentItem(), CustomTreeItem):
+                return
+            removeQuestion = self.ui.MaintreeWidgetFK.currentItem().question
+
+        dependencies = self.questionnaireController.getDependencies(removeQuestion)
+
+        # Question abbrv already exists, warning!
+        for question in self.questionController.questions():
+            if question.abbreviation == removeQuestion.abbreviation:
+                if question.id != removeQuestion.id:
+                    self.popUp(&#34;Warnung&#34;, &#34;Die Kurzbeschreibung ist in der Datenbank bereits vergeben!&#34;)
+                    return
+
+        if len(dependencies) &gt; 0:
+            if not silentMode:
+                if self.popUpDialog(&#34;Warnung&#34;,
+                                    &#34;Die zu entfernende Frage besitzt andere abhängige Fragen im Fragebogen. Sollen &#34;
+                                    &#34;diese entfernt werden? Andernfalls wird der Vorgang abgebrochen.&#34;):
+                    for dependency in dependencies:
+                        self.removeQuestionClicked(dependency, True)
+                else:
+                    return
+            else:
+                for dependency in dependencies:
+                    self.removeQuestionClicked(dependency, True)
+
+        # Identify the question in our questionnaire and delete the question
+        for question in self.questionnaireController.questionnaire.questions:
+            if question.abbreviation == removeQuestion.abbreviation:
+                self.questionnaireController.removeQuestion(question)
+
+                # Case question is not in Database Dialog save? (Import)
+                if removeQuestion.id == -1:
+                    if self.popUpDialog(&#39;Achtung&#39;,
+                                        &#39;Die ausgewählte Frage ist noch nicht gespeichert.\nMöchten Sie diese &#39;
+                                        &#39;speichern?&#39;):
+                        self.editQuestionItem(removeQuestion)
+
+        self.updateQuestionList()
+        self.questionnairePosition()
+
+    def deleteSelectedQuestion(self, question: Question = None, silentMode: bool = False):
+        &#34;&#34;&#34;
+        Removes the question in the questionnaire. If the question is not in the database it is completely removed
+        &#34;&#34;&#34;
+        if question:
+            removeQuestion = question
+        else:
+            if not isinstance(self.ui.MaintreeWidgetFK.currentItem(), CustomTreeItem):
+                return
+            removeQuestion = self.ui.MaintreeWidgetFK.currentItem().question
+
+        dependencies = self.questionnaireController.getDependencies(removeQuestion)
+
+        if len(dependencies) &gt; 0:
+            if not silentMode:
+                if self.popUpDialog(&#34;Warnung&#34;,
+                                    &#34;Die zu entfernende Frage besitzt andere abhängige Fragen im Fragebogen. Sollen &#34;
+                                    &#34;diese entfernt werden? Andernfalls wird der Vorgang abgebrochen.&#34;):
+                    for dependency in dependencies:
+                        self.deleteSelectedQuestion(dependency, True)
+                else:
+                    return
+            else:
+                for dependency in dependencies:
+                    self.deleteSelectedQuestion(dependency, True)
+
+        # Identify the question in our questionnaire and delete the question
+        for question in self.questionnaireController.questionnaire.questions:
+            if question.abbreviation == removeQuestion.abbreviation:
+                self.questionnaireController.removeQuestion(question)
+
+        self.updateQuestionList()
+        self.questionnairePosition()
+
+    def addQuestionTreeWidget(self, data: Question):
+        &#34;&#34;&#34;
+        Method to add one question to the Tree
+        :param data: Question we want to add the questionnaire(left side)
+        &#34;&#34;&#34;
+        item = CustomTreeItem(self.ui.MaintreeWidgetFK, self, data)
+        self.ui.MaintreeWidgetFK.collapseAll()
+
+    def cancelClicked(self):
+        &#34;&#34;&#34;
+        Clears tree and open new unsaved Questionnaire in main window
+        &#34;&#34;&#34;
+        if self.popUpDialog(&#39;Abbrechen&#39;, &#39;Alle Änderungen im Fragebogen werden verworfen. \nWirklich abbrechen?&#39;):
+            self.questionnaireController.setQuestionnaire(
+                Questionnaire(self.questionnaireController.getCategoryByID(1)))
+            self.ui.MaintreeWidgetFK.clear()
+            self.updateQuestionList()
+            self.setCategoryName()
+            self.setQuestionnaireName()
+
+    def saveClicked(self):
+        &#34;&#34;&#34;
+        Opens save questionnaire window
+        &#34;&#34;&#34;
+        self.dialog = SaveQuestionnaire(self, self.questionnaireController.questionnaire)
+        self.dialog.show()
+
+    def saveQuestionnaireRecieve(self, questionnaire: Questionnaire, source: int = 0):
+        &#34;&#34;&#34;
+        Saves the received questionnaire
+        :param questionnaire: The questionnaire we want to save
+        :param source: If source == 1, the method was called from the MainFrame, otherwise from the library
+        &#34;&#34;&#34;
+        res = self.questionnaireController.saveQuestionnaire(questionnaire=questionnaire)
+        if len(res[1]) &gt; 0:
+            questionList = res[1]
+            self.dialog = WarningAbbrv(self, questionList)
+            self.dialog.show()
+            return
+        if source == MAIN_WINDOW:
+            self.questionnaireController.questionnaire = res[0]
+
+        self.setQuestionnaireName(questionnaire.name)
+        self.setCategoryName(questionnaire.category.category)
+
+    def exportQA(self, questionnaire: Questionnaire = None):
+        &#34;&#34;&#34;
+        Exports the current questionnaire, if a questionnaire is selected in the library
+        the current questionnaire has to be overwritten with this one
+        &#34;&#34;&#34;
+
+        if questionnaire != None:
+            self.questionnaireController.questionnaire = questionnaire
+
+        if len(self.questionnaireController.questionnaire.questions) == 0:
+            self.popUp(&#39;Warning&#39;, &#39;Sie können keinen leeren Fragebogen exportieren&#39;)
+            return
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getSaveFileName(self, &#34;physioForms - Fragebogen exportieren&#34;, &#34;&#34;,
+                                                  &#34;Json Files (*.json)&#34;, options=options)
+
+        &#34;&#34;&#34;Add .json if missing&#34;&#34;&#34;
+        if fileName[-5:] != &#34;.json&#34;:
+            fileName += &#34;.json&#34;
+
+        if fileName:
+            try:
+                self.questionnaireController.exportQuestionnaire(Path(fileName))
+            except:
+                self.popUp(&#34;Warnung&#34;, &#34;Fragenkatalog konnte nicht exportiert werden.&#34;)
+
+    def setQuestionnaireName(self, name=&#34;ungespeichert&#34;):
+        &#34;&#34;&#34;
+        Sets the name of questionnaire in main window to name of the imported file
+        :param name: The name that gets displayed for our questionnaire
+        &#34;&#34;&#34;
+        self.ui.MainFragebogenLabel.setText(&#34;Fragebogen: &#34; + name)
+
+    def setCategoryName(self, name=&#34;ohne Kategorie&#34;):
+        &#34;&#34;&#34;
+        method sets name of the category in main window to the given category name
+        :param name: Name of the category our questionnaire relates to
+        &#34;&#34;&#34;
+        self.ui.MainKategorieLabel.setText(&#34;Kategorie: &#34; + name)
+
+    def openLib(self):
+        &#34;&#34;&#34;
+        Opens Library through Bibliotheks button in MainFrame in Tab Fragen
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.show()
+
+    # Menubar
+    def openFBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 1 Fragen through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(0)
+        self.dialog.show()
+
+    def openFKBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 0 Fragebögen through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(1)
+        self.dialog.show()
+
+    def openKBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 2 Fagen-Kategorien through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(2)
+        self.dialog.show()
+
+    def openQAKBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 4 Fragebogen-Kategorien through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(3)
+        self.dialog.show()
+
+    def openHelp(self):
+        &#34;&#34;&#34;
+        Opens help window through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = HelpWindow()
+        self.dialog.show()
+
+    def openDB(self):
+        &#34;&#34;&#34;
+        Opens Database window through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = DBWindow(self, config=readConfigFile())
+        self.dialog.show()
+
+    def openChooseQA(self):
+        &#34;&#34;&#34;
+        Opens a window to choose an Questionnaire which will be loaded in tree
+        &#34;&#34;&#34;
+        self.dialog = ChooseQAWindow(self)
+        self.dialog.show()
+
+    def newQCat(self):
+        &#34;&#34;&#34;
+        Opens window to add a new category
+        &#34;&#34;&#34;
+        self.dialog = SaveCategory(self)
+        self.dialog.show()
+
+    def newQACat(self):
+        &#34;&#34;&#34;
+        Opens window to add a new category
+        &#34;&#34;&#34;
+        self.dialog = SaveCategoryQA(self)
+        self.dialog.show()
+
+    def eventFilter(self, source, event):
+        &#34;&#34;&#34;
+        This is a eventfilter for our TreeWidget(left)
+        :param source: Where the event came from, here always QTreeWidget
+        :Param event: Event either drop or mouseDoubleClicked
+        :return: Returns the chosen event
+        &#34;&#34;&#34;
+        if event.type() == QEvent.Drop:
+            event.setDropAction(Qt.MoveAction)
+            super().dropEvent(event)
+        if event.type() == QEvent.MouseButtonDblClick:
+            self.editQuestionClicked()
+        return super(MainFrame, self).eventFilter(source, event)
+
+    def questionnairePosition(self):
+        &#34;&#34;&#34;
+        Iterates over all questions in our Tree.
+        Then sends the current row position and the id to the controller
+        &#34;&#34;&#34;
+        self.updateTree()
+        nrOfTreeItems = self.ui.MaintreeWidgetFK.topLevelItemCount()
+        for i in range(0, nrOfTreeItems):
+            treeItem = self.ui.MaintreeWidgetFK.topLevelItem(i)
+            self.questionnaireController.swapQuestionPosition(treeItem.question.abbreviation, i)
+        self.updateTree()
+
+    def findCategory(self, name: str) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Support method that finds the category
+        :param name: Name of the category we want to find
+        :return: Returns the category the question belongs to
+        &#34;&#34;&#34;
+        if name == &#34;Alle&#34;:
+            return None
+        for category in self.questionController.categories():
+            if category.category == name:
+                return category
+
+
+&#34;&#34;&#34;Stylesheet-file&#34;&#34;&#34;
+qss = &#34;&#34;&#34;
+
+QTreeWidget::Item {margin: 5px;}
+QListWidget::Item {margin: 2px;}
+
+QPushButton{ 
+
+    background-color: rgb(220,210,200);
+
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 5px;
+    opacity: 50;
+    padding: 6px;
+}
+
+
+QPushButton:hover {
+    background-color: lightgray;
+
+}
+
+
+&#34;&#34;&#34;
+&#34;&#34;&#34;
+Mögliche CSS Codes in PyQT:
+https://doc.qt.io/qt-5/stylesheet-reference.html#list-of-properties
+&#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="PhysioForms.GUI.MainFrame.qss"><code class="name">var <span class="ident">qss</span></code></dt>
+<dd>
+<div class="desc"><p>Mögliche CSS Codes in PyQT:
+<a href="https://doc.qt.io/qt-5/stylesheet-reference.html#list-of-properties">https://doc.qt.io/qt-5/stylesheet-reference.html#list-of-properties</a></p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="PhysioForms.GUI.MainFrame.CustomListItem"><code class="flex name class">
+<span>class <span class="ident">CustomListItem</span></span>
+<span>(</span><span>data: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class custom QListWidgetItem to display our data in our list(left side)</p>
+<p>Constructor
+:param data
+: Question</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CustomListItem(QListWidgetItem):
+    &#34;&#34;&#34;
+    Class custom QListWidgetItem to display our data in our list(left side)
+    &#34;&#34;&#34;
+
+    def __init__(self, data: Question):
+        &#34;&#34;&#34;
+        Constructor
+        :param data    : Question
+        &#34;&#34;&#34;
+        # Init super class ( QtGui.QListWidgetItem )
+        super(CustomListItem, self).__init__()
+
+        self.question = data
+
+        self.setText(data.text)
+
+        self.setFlags(
+            Qt.ItemIsEnabled |
+            Qt.ItemIsSelectable
+        )
+
+    def returnText(self) -&gt; str:
+        &#34;&#34;&#34;
+        :return: str
+        &#34;&#34;&#34;
+        return self.text()
+
+    def returnQuestion(self) -&gt; Question:
+        &#34;&#34;&#34;
+        :return: Question
+        &#34;&#34;&#34;
+        return self.question.text</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QListWidgetItem</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.GUI.MainFrame.CustomListItem.returnQuestion"><code class="name flex">
+<span>def <span class="ident">returnQuestion</span></span>(<span>self) ‑> <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>:return: Question</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def returnQuestion(self) -&gt; Question:
+    &#34;&#34;&#34;
+    :return: Question
+    &#34;&#34;&#34;
+    return self.question.text</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.CustomListItem.returnText"><code class="name flex">
+<span>def <span class="ident">returnText</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:return: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def returnText(self) -&gt; str:
+    &#34;&#34;&#34;
+    :return: str
+    &#34;&#34;&#34;
+    return self.text()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.CustomTreeItem"><code class="flex name class">
+<span>class <span class="ident">CustomTreeItem</span></span>
+<span>(</span><span>parent, parentFrame: PyQt5.QtWidgets.QMainWindow, data: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class custom QTreeWidgetItem with Widgets to represent our Data in TreeWidget</p>
+<p>Constructor
+:param parent
+: Item's QTreeWidget or Question.
+:param parentFrame
+: The frame where the item gets created, here MainFrame
+:param data
+: Question</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CustomTreeItem(QTreeWidgetItem):
+    &#34;&#34;&#34;
+    Class custom QTreeWidgetItem with Widgets to represent our Data in TreeWidget
+    &#34;&#34;&#34;
+
+    def __init__(self, parent, parentFrame: QMainWindow, data: Question):
+        &#34;&#34;&#34;
+        Constructor
+        :param parent       : Item&#39;s QTreeWidget or Question.
+        :param parentFrame  : The frame where the item gets created, here MainFrame
+        :param data         : Question
+        &#34;&#34;&#34;
+        # Init super class ( QtGui.QTreeWidgetItem )
+        super(CustomTreeItem, self).__init__(parent)
+
+        self.question = data
+        self.updateItem()
+
+        self.parentFrame = parentFrame
+
+        if self.parent() is None:
+            self.setFlags(
+                Qt.ItemIsEnabled |
+                Qt.ItemIsSelectable |
+                Qt.ItemIsDragEnabled
+            )
+        else:
+            self.setFlags(
+                Qt.ItemIsEnabled
+            )
+
+    @property
+    def returnText(self):
+        &#34;&#34;&#34;
+        :return: str
+        &#34;&#34;&#34;
+        return self.thisQuestion.text
+
+    def returnQuestion(self):
+        &#34;&#34;&#34;
+        :return: question
+        &#34;&#34;&#34;
+        return self.question
+
+    def removeAllChildren(self):
+        &#34;&#34;&#34;
+        Remove all children of the called QTreeWidgetItem
+        &#34;&#34;&#34;
+        for i in reversed(range(self.childCount())):
+            self.removeChild(self.child(i))
+
+    def updateItem(self):
+        &#34;&#34;&#34;
+        Inserts the text in the right columns and rows(right side)
+        &#34;&#34;&#34;
+        self.removeAllChildren()
+        if self.parent() is None:
+            description = &#39;[&#39; + self.question.abbreviation + &#39;] &#39;
+            description += self.question.text
+            if self.question.dependent_on != &#34;none&#34;:
+                description += &#39; (&#39; + self.question.dependent_on + &#39; -&gt; &#39; + self.question.expected_answer + &#39;)&#39;
+            self.setText(0, description)
+
+        if self.question.options:
+            if len(self.question.options[0]) &gt; 0:
+                for answer in self.question.options:
+                    item = QTreeWidgetItem(self, [&#39;&gt; &#39; + answer])
+                    item.setFlags(Qt.NoItemFlags)
+                    self.addChild(item)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QTreeWidgetItem</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="PhysioForms.GUI.MainFrame.CustomTreeItem.returnText"><code class="name">var <span class="ident">returnText</span></code></dt>
+<dd>
+<div class="desc"><p>:return: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def returnText(self):
+    &#34;&#34;&#34;
+    :return: str
+    &#34;&#34;&#34;
+    return self.thisQuestion.text</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.GUI.MainFrame.CustomTreeItem.removeAllChildren"><code class="name flex">
+<span>def <span class="ident">removeAllChildren</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove all children of the called QTreeWidgetItem</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeAllChildren(self):
+    &#34;&#34;&#34;
+    Remove all children of the called QTreeWidgetItem
+    &#34;&#34;&#34;
+    for i in reversed(range(self.childCount())):
+        self.removeChild(self.child(i))</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.CustomTreeItem.returnQuestion"><code class="name flex">
+<span>def <span class="ident">returnQuestion</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:return: question</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def returnQuestion(self):
+    &#34;&#34;&#34;
+    :return: question
+    &#34;&#34;&#34;
+    return self.question</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.CustomTreeItem.updateItem"><code class="name flex">
+<span>def <span class="ident">updateItem</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inserts the text in the right columns and rows(right side)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updateItem(self):
+    &#34;&#34;&#34;
+    Inserts the text in the right columns and rows(right side)
+    &#34;&#34;&#34;
+    self.removeAllChildren()
+    if self.parent() is None:
+        description = &#39;[&#39; + self.question.abbreviation + &#39;] &#39;
+        description += self.question.text
+        if self.question.dependent_on != &#34;none&#34;:
+            description += &#39; (&#39; + self.question.dependent_on + &#39; -&gt; &#39; + self.question.expected_answer + &#39;)&#39;
+        self.setText(0, description)
+
+    if self.question.options:
+        if len(self.question.options[0]) &gt; 0:
+            for answer in self.question.options:
+                item = QTreeWidgetItem(self, [&#39;&gt; &#39; + answer])
+                item.setFlags(Qt.NoItemFlags)
+                self.addChild(item)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame"><code class="flex name class">
+<span>class <span class="ident">MainFrame</span></span>
+<span>(</span><span>questionnaireController: <a title="PhysioForms.QuestionnaireController.QuestionnaireController" href="../QuestionnaireController.html#PhysioForms.QuestionnaireController.QuestionnaireController">QuestionnaireController</a>, questionController: <a title="PhysioForms.QuestionController.QuestionController" href="../QuestionController.html#PhysioForms.QuestionController.QuestionController">QuestionController</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>class MainFrame to build GUI and connect GUI elements with variables</p>
+<p>Constructor
+:param questionnaireController
+: QuestionnaireController from config
+:param questionController
+: QuestionController from config</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MainFrame(QtWidgets.QMainWindow):
+    &#34;&#34;&#34;
+    class MainFrame to build GUI and connect GUI elements with variables
+    &#34;&#34;&#34;
+
+    def __init__(self, questionnaireController: QuestionnaireController, questionController: QuestionController):
+
+        &#34;&#34;&#34;
+        Constructor
+        :param questionnaireController  : QuestionnaireController from config
+        :param questionController       : QuestionController from config
+        &#34;&#34;&#34;
+        super().__init__()
+        &#34;&#34;&#34;
+        Constructor
+        &#34;&#34;&#34;
+
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        self.questionnaireController = questionnaireController
+        self.questionController = questionController
+
+        # Import Logo
+        pixMap = QPixmap(logoPicturePath)
+        self.ui.MainImportPicture.setPixmap(pixMap)
+
+        # Import Icon
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        MainFrame.setWindowIcon(self, icon)
+        Library.setWindowIcon(self, icon)
+
+        # Set the default values for the names
+        self.setCategoryName()
+        self.setQuestionnaireName()
+
+        # Connect buttons to functions
+        self.ui.MainNeueFrageButton.clicked.connect(self.newQuestion)
+        self.ui.MainImportButton.clicked.connect(self.importQA)
+        self.ui.MainExportButton.clicked.connect(self.exportQA)
+        self.ui.MainAbbrechenButton.clicked.connect(self.cancelClicked)
+        self.ui.MainSpeichernButton.clicked.connect(self.saveClicked)
+        self.ui.MainLibraryButton.clicked.connect(self.openLib)
+        self.ui.mainAddfromListButton.clicked.connect(self.addQuestionFromListToTree)
+        self.ui.mainopenqabutton.clicked.connect(self.openChooseQA)
+        self.ui.mainedittreebutton.clicked.connect(self.editQuestionClicked)
+        self.ui.mainDelfromTreeButton.clicked.connect(self.removeQuestionClicked)
+        self.ui.maindeletetreebutton.clicked.connect(self.deleteSelectedQuestion)
+
+        # Connection MainFrame to library
+        self.ui.actionNeue_Frage_erstellen.triggered.connect(lambda: self.newQuestion())
+        self.ui.actionNeue_Kategorie_erstellen.triggered.connect(lambda: self.newQCat())
+        self.ui.actionNeuen_Fragebogen_erstellen.triggered.connect(lambda: self.saveClicked())
+        self.ui.actionNewQuestionnaireCategory.triggered.connect(lambda: self.newQACat())
+        self.ui.actionDatenbank_anzeigen_hinzuf_gen.triggered.connect(lambda: self.openDB())
+        self.ui.actionDatei_importieren.triggered.connect(lambda: self.importQA())
+        self.ui.actionFragebogen_exportieren.triggered.connect(lambda: self.exportQA())
+        self.ui.actionProgramm_beenden_2.triggered.connect(lambda: sys.exit())
+        self.ui.actionFragenbibliothek.triggered.connect(lambda: self.openFBib())
+        self.ui.actionFragenkatalogbibliothek.triggered.connect(lambda: self.openFKBib())
+        self.ui.actionKategorien.triggered.connect(lambda: self.openKBib())
+        self.ui.actionHilfe_ffnen.triggered.connect(lambda: self.openHelp())
+        self.ui.actionFragebogen_Kategorien.triggered.connect(lambda: self.openQAKBib())
+        self.ui.actionFragebogen_ffnen.triggered.connect(lambda: self.openChooseQA())
+
+        self.ui.MainSearchLine.textChanged.connect(self.updateQuestionList)
+
+        # Button Designs
+        icon_button = QIcon(arrowLeftPicPath)
+        self.ui.mainAddfromListButton.setIcon(icon_button)
+        self.ui.mainAddfromListButton.setIconSize(QSize(35, 40))
+
+        icon_button = QIcon(arrowRightPicPath)
+        self.ui.mainDelfromTreeButton.setIcon(icon_button)
+        self.ui.mainDelfromTreeButton.setIconSize(QSize(35, 40))
+
+        &#34;&#34;&#34;Several important UI Settings for our TreeWidget&#34;&#34;&#34;
+        self.ui.MaintreeWidgetFK.setColumnCount(1)
+        self.ui.MaintreeWidgetFK.setSelectionMode(1)
+        self.ui.MaintreeWidgetFK.setSelectionBehavior(1)
+        self.ui.MaintreeWidgetFK.header().setStretchLastSection(False)
+        self.ui.MaintreeWidgetFK.setIndentation(25)
+        self.ui.MaintreeWidgetFK.header().setSectionResizeMode(0, 3)
+        self.ui.MaintreeWidgetFK.setDragDropMode(3)
+        self.ui.MaintreeWidgetFK.header().setSectionsMovable(True)
+        self.ui.MaintreeWidgetFK.setExpandsOnDoubleClick(False)
+
+        self.questionTypes = self.questionController.types
+
+        # Fill Dropdown in MainFrame with Categories
+        self.updateCategories()
+
+        # Update the Tree
+        self.updateTree()
+        self.updateQuestionList()
+
+        # Event filters for user action in tree, list and dropdown
+        self.ui.MaintreeWidgetFK.viewport().installEventFilter(self)
+        self.ui.mainDropdownQList.currentIndexChanged.connect(self.updateQuestionList)
+        self.ui.MainlistWidgetFragen.itemDoubleClicked.connect(self.addQuestionFromListToTree)
+
+    def importQA(self):
+        &#34;&#34;&#34;
+        Imports the selected questionnaire and shows the questions in the tree
+        &#34;&#34;&#34;
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self, &#34;physioForms - Fragebogen importieren&#34;, &#34;&#34;,
+                                                  &#34;Json Files (*.json)&#34;, options=options)
+        labelname = os.path.basename(fileName)
+        labelname = os.path.splitext(labelname)[0]
+        self.setQuestionnaireName()
+        self.setCategoryName()
+        if fileName:
+            self.questionnaireController.importQuestionnaire(Path(fileName))
+            self.saveAfterImport()
+        self.updateTree()
+        self.updateQuestionList()
+        self.setQuestionnaireName(labelname)
+
+    def saveAfterImport(self):
+        &#34;&#34;&#34;
+        Simple Dialog that asks the user if he wants to
+        save all the questions and the questionnaire after the import
+        &#34;&#34;&#34;
+        errorQuestionList = []
+        if self.popUpDialog(&#39;Speichern&#39;, &#39;Sollen alle Fragen des importierten Fragebogens bereits gespeichert werden?&#39;):
+            for question in self.questionnaireController.questionnaire.questions:
+                res = self.questionController.saveQuestion(question)
+                if not res[0]:
+                    errorQuestionList.append(res[1])
+
+        if len(errorQuestionList) &gt; 0:
+            self.dialog = WarningAbbrv(self, errorQuestionList)
+            self.dialog.show()
+
+    def newQuestion(self):
+        &#34;&#34;&#34;
+        Opens new Question window
+        &#34;&#34;&#34;
+        self.dialog = SaveQuestion(self)
+        self.dialog.show()
+
+    def editQuestionItem(self, newQuestion: Question):
+        &#34;&#34;&#34;
+        Receives the changed question from SaveQuestion window
+        and implements the changes in our model
+        :param newQuestion: Question we want to edit
+        &#34;&#34;&#34;
+        self.questionController.saveQuestion(newQuestion)
+        self.questionnairePosition()
+        self.updateQuestionList()
+
+    def closeEvent(self, event: QCloseEvent) -&gt; None:
+        &#34;&#34;&#34;
+        Is called when the user closes the window
+        :param event: QCloseevent
+        &#34;&#34;&#34;
+        close = self.popUpDialog(&#39;Warnung&#39;,
+                                 &#39;Sind sie sicher das Sie die Applikation schließen möchten? Ungespeicherte &#39;
+                                 &#39;Änderungen werden nicht übernommen.&#39;)
+        if close:
+            event.accept()
+        else:
+            event.ignore()
+
+    def updateAll(self):
+        &#34;&#34;&#34;
+        Updates the tree, list and the searchText
+        &#34;&#34;&#34;
+        self.updateTree()
+        self.updateQuestionList()
+        self.updateText()
+
+    def updateTree(self):
+        &#34;&#34;&#34;
+        Updates the tree (left side MainFrame)
+        &#34;&#34;&#34;
+        self.ui.MaintreeWidgetFK.clear()
+        for question in self.questionnaireController.questionnaire.questions:
+            self.addQuestionTreeWidget(question)
+
+    def updateText(self):
+        &#34;&#34;&#34;
+        Updates the names for our labels: Name and category
+        &#34;&#34;&#34;
+        self.setQuestionnaireName(self.questionnaireController.questionnaire.name)
+        self.setCategoryName(self.questionnaireController.questionnaire.category.category)
+
+    def updateCategories(self):
+        &#34;&#34;&#34;
+        Updates the categories in the combobox in Mainframe
+        &#34;&#34;&#34;
+        self.ui.mainDropdownQList.clear()
+        self.ui.mainDropdownQList.addItem(&#34;Alle&#34;)
+        for category in self.questionController.categories():
+            self.ui.mainDropdownQList.addItem(category.category)
+
+    def addQuestionList(self, question: Question):
+        &#34;&#34;&#34;
+        Add a question to the list(right side of MainFrame)
+        :param question: Question
+        &#34;&#34;&#34;
+        item = CustomListItem(question)
+        self.ui.MainlistWidgetFragen.addItem(item)
+
+    def updateQuestionList(self):
+        &#34;&#34;&#34;
+        Updates the list(Right) with all questions or with selected ones
+        Also filters this list with the selected category and searchText
+        &#34;&#34;&#34;
+        searchText = self.ui.MainSearchLine.text()
+        self.ui.MainlistWidgetFragen.clear()
+        currentQuestionCategory = self.findCategory(self.ui.mainDropdownQList.currentText())
+        questionsList = self.questionController.findByName(searchText, currentQuestionCategory)
+        for question in self.questionnaireController.questionnaire.questions:
+            for question2 in questionsList:
+                if question.id == question2.id:
+                    questionsList.remove(question2)
+        for question in questionsList:
+            self.addQuestionList(question)
+
+    def addQuestionFromListToTree(self, item: CustomListItem = None, question: Question = None,
+                                  silentMode: bool = False):
+        &#34;&#34;&#34;
+        Item catches the case of mouseDoubleClickEvent, sends CustomListWidgetItem
+        Adds the selected question from the List(Right) to the Tree(Left).
+        If the selcted question has dependencies they will be added aswell, user has to accept
+        :param item         : CustomListItem in case of mouseDoubeClickEvent
+        :param question     : Question that we want to transfer
+        :param silentMode   : Recursive calls no more popups
+        &#34;&#34;&#34;
+        if question:
+            addQuestion = question
+        else:
+            if not isinstance(self.ui.MainlistWidgetFragen.currentItem(), CustomListItem):
+                return
+            addQuestion = self.ui.MainlistWidgetFragen.currentItem().question
+
+        checkDependency = False
+        dependentQuestion = None
+
+        if addQuestion.dependent_on != &#34;none&#34;:
+            checkDependency = True
+            dependentQuestion = self.questionController.getDependentQuestion(addQuestion)
+
+        if checkDependency:
+            dependencyFulfilled = False
+        else:
+            dependencyFulfilled = True
+
+        for question in self.questionnaireController.questionnaire.questions:
+            if checkDependency:
+                if question.abbreviation == dependentQuestion.abbreviation:
+                    dependencyFulfilled = True
+            if question.abbreviation == addQuestion.abbreviation:
+                if question.id != addQuestion.id:
+                    self.popUp(title=&#34;Warnung&#34;, message=&#34;Die Kurzbeschreibung ist bereits im Fragenkatalog vergeben!&#34;)
+                    return
+
+        if not dependencyFulfilled:
+            if not silentMode:
+                if self.popUpDialog(&#34;Warnung&#34;,
+                                    &#34;Ihre ausgewählte Frage ist abhängig von einer anderen. Abhängige Frage &#34;
+                                    &#34;hinzufügen? Der Vorgang wird andernfalls abgebrochen.&#34;):
+                    self.addQuestionFromListToTree(question=dependentQuestion, silentMode=True)
+                else:
+                    return
+            else:
+                self.addQuestionFromListToTree(question=dependentQuestion, silentMode=True)
+
+        if not self.questionnaireController.addQuestion(newQuestion=addQuestion):
+            self.popUp(title=&#34;Warnung&#34;, message=&#34;Frage befindet sich bereits im Fragenkatalog.&#34;)
+        self.questionnairePosition()
+        self.updateQuestionList()
+
+    def popUp(self, title: str, message: str):
+        &#34;&#34;&#34;
+        Creates a simple popup
+        :param title: Title of the popup
+        :param message: custom message inside the popup
+        &#34;&#34;&#34;
+        box = QtWidgets.QMessageBox()
+        box.setIcon(QtWidgets.QMessageBox.Warning)
+        box.setWindowTitle(title)
+        box.setText(message)
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        box.setWindowIcon(icon)
+        box.exec_()
+        return
+
+    def popUpDialog(self, title: str, message: str) -&gt; bool:
+        &#34;&#34;&#34;
+        Creates popup With yes or no buttons
+        :param title: Title of the popup
+        :param message: Custom message
+        :return: bool, yes equals true
+        &#34;&#34;&#34;
+        box = QtWidgets.QMessageBox()
+        box.setIcon(QtWidgets.QMessageBox.Warning)
+        box.setWindowTitle(title)
+        box.setText(message)
+        box.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+        icon = QIcon()
+        icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+        box.setWindowIcon(icon)
+        buttonY = box.button(QtWidgets.QMessageBox.Yes)
+        buttonY.setText(&#39;Ja&#39;)
+        buttonN = box.button(QtWidgets.QMessageBox.No)
+        buttonN.setText(&#39;Nein&#39;)
+        box.exec_()
+
+        if box.clickedButton() == buttonY:
+            return True
+        if box.clickedButton() == buttonN:
+            return False
+
+    def editQuestionClicked(self):
+        &#34;&#34;&#34;
+        Edits the current selected question in our TreeWidget(left side)
+        &#34;&#34;&#34;
+        if self.ui.MaintreeWidgetFK.currentItem() == None:
+            return
+
+        itemToEdit = self.ui.MaintreeWidgetFK.currentItem()
+        question = itemToEdit.returnQuestion()
+
+        self.dialog = SaveQuestion(self, question)
+        self.dialog.ui.label.setText(&#34;Frage bearbeiten&#34;)
+        self.dialog.setWindowTitle(&#34;Frage bearbeiten&#34;)
+        self.dialog.show()
+
+    def removeQuestionClicked(self, question: Question = None, silentMode: bool = False):
+        &#34;&#34;&#34;
+        Deletes the current selected question in the QTreeWidget(left side)
+        :param question: question we want to remove
+        :param silentMode: Recursive call no more popups
+        &#34;&#34;&#34;
+        if question:
+            removeQuestion = question
+        else:
+            if not isinstance(self.ui.MaintreeWidgetFK.currentItem(), CustomTreeItem):
+                return
+            removeQuestion = self.ui.MaintreeWidgetFK.currentItem().question
+
+        dependencies = self.questionnaireController.getDependencies(removeQuestion)
+
+        # Question abbrv already exists, warning!
+        for question in self.questionController.questions():
+            if question.abbreviation == removeQuestion.abbreviation:
+                if question.id != removeQuestion.id:
+                    self.popUp(&#34;Warnung&#34;, &#34;Die Kurzbeschreibung ist in der Datenbank bereits vergeben!&#34;)
+                    return
+
+        if len(dependencies) &gt; 0:
+            if not silentMode:
+                if self.popUpDialog(&#34;Warnung&#34;,
+                                    &#34;Die zu entfernende Frage besitzt andere abhängige Fragen im Fragebogen. Sollen &#34;
+                                    &#34;diese entfernt werden? Andernfalls wird der Vorgang abgebrochen.&#34;):
+                    for dependency in dependencies:
+                        self.removeQuestionClicked(dependency, True)
+                else:
+                    return
+            else:
+                for dependency in dependencies:
+                    self.removeQuestionClicked(dependency, True)
+
+        # Identify the question in our questionnaire and delete the question
+        for question in self.questionnaireController.questionnaire.questions:
+            if question.abbreviation == removeQuestion.abbreviation:
+                self.questionnaireController.removeQuestion(question)
+
+                # Case question is not in Database Dialog save? (Import)
+                if removeQuestion.id == -1:
+                    if self.popUpDialog(&#39;Achtung&#39;,
+                                        &#39;Die ausgewählte Frage ist noch nicht gespeichert.\nMöchten Sie diese &#39;
+                                        &#39;speichern?&#39;):
+                        self.editQuestionItem(removeQuestion)
+
+        self.updateQuestionList()
+        self.questionnairePosition()
+
+    def deleteSelectedQuestion(self, question: Question = None, silentMode: bool = False):
+        &#34;&#34;&#34;
+        Removes the question in the questionnaire. If the question is not in the database it is completely removed
+        &#34;&#34;&#34;
+        if question:
+            removeQuestion = question
+        else:
+            if not isinstance(self.ui.MaintreeWidgetFK.currentItem(), CustomTreeItem):
+                return
+            removeQuestion = self.ui.MaintreeWidgetFK.currentItem().question
+
+        dependencies = self.questionnaireController.getDependencies(removeQuestion)
+
+        if len(dependencies) &gt; 0:
+            if not silentMode:
+                if self.popUpDialog(&#34;Warnung&#34;,
+                                    &#34;Die zu entfernende Frage besitzt andere abhängige Fragen im Fragebogen. Sollen &#34;
+                                    &#34;diese entfernt werden? Andernfalls wird der Vorgang abgebrochen.&#34;):
+                    for dependency in dependencies:
+                        self.deleteSelectedQuestion(dependency, True)
+                else:
+                    return
+            else:
+                for dependency in dependencies:
+                    self.deleteSelectedQuestion(dependency, True)
+
+        # Identify the question in our questionnaire and delete the question
+        for question in self.questionnaireController.questionnaire.questions:
+            if question.abbreviation == removeQuestion.abbreviation:
+                self.questionnaireController.removeQuestion(question)
+
+        self.updateQuestionList()
+        self.questionnairePosition()
+
+    def addQuestionTreeWidget(self, data: Question):
+        &#34;&#34;&#34;
+        Method to add one question to the Tree
+        :param data: Question we want to add the questionnaire(left side)
+        &#34;&#34;&#34;
+        item = CustomTreeItem(self.ui.MaintreeWidgetFK, self, data)
+        self.ui.MaintreeWidgetFK.collapseAll()
+
+    def cancelClicked(self):
+        &#34;&#34;&#34;
+        Clears tree and open new unsaved Questionnaire in main window
+        &#34;&#34;&#34;
+        if self.popUpDialog(&#39;Abbrechen&#39;, &#39;Alle Änderungen im Fragebogen werden verworfen. \nWirklich abbrechen?&#39;):
+            self.questionnaireController.setQuestionnaire(
+                Questionnaire(self.questionnaireController.getCategoryByID(1)))
+            self.ui.MaintreeWidgetFK.clear()
+            self.updateQuestionList()
+            self.setCategoryName()
+            self.setQuestionnaireName()
+
+    def saveClicked(self):
+        &#34;&#34;&#34;
+        Opens save questionnaire window
+        &#34;&#34;&#34;
+        self.dialog = SaveQuestionnaire(self, self.questionnaireController.questionnaire)
+        self.dialog.show()
+
+    def saveQuestionnaireRecieve(self, questionnaire: Questionnaire, source: int = 0):
+        &#34;&#34;&#34;
+        Saves the received questionnaire
+        :param questionnaire: The questionnaire we want to save
+        :param source: If source == 1, the method was called from the MainFrame, otherwise from the library
+        &#34;&#34;&#34;
+        res = self.questionnaireController.saveQuestionnaire(questionnaire=questionnaire)
+        if len(res[1]) &gt; 0:
+            questionList = res[1]
+            self.dialog = WarningAbbrv(self, questionList)
+            self.dialog.show()
+            return
+        if source == MAIN_WINDOW:
+            self.questionnaireController.questionnaire = res[0]
+
+        self.setQuestionnaireName(questionnaire.name)
+        self.setCategoryName(questionnaire.category.category)
+
+    def exportQA(self, questionnaire: Questionnaire = None):
+        &#34;&#34;&#34;
+        Exports the current questionnaire, if a questionnaire is selected in the library
+        the current questionnaire has to be overwritten with this one
+        &#34;&#34;&#34;
+
+        if questionnaire != None:
+            self.questionnaireController.questionnaire = questionnaire
+
+        if len(self.questionnaireController.questionnaire.questions) == 0:
+            self.popUp(&#39;Warning&#39;, &#39;Sie können keinen leeren Fragebogen exportieren&#39;)
+            return
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getSaveFileName(self, &#34;physioForms - Fragebogen exportieren&#34;, &#34;&#34;,
+                                                  &#34;Json Files (*.json)&#34;, options=options)
+
+        &#34;&#34;&#34;Add .json if missing&#34;&#34;&#34;
+        if fileName[-5:] != &#34;.json&#34;:
+            fileName += &#34;.json&#34;
+
+        if fileName:
+            try:
+                self.questionnaireController.exportQuestionnaire(Path(fileName))
+            except:
+                self.popUp(&#34;Warnung&#34;, &#34;Fragenkatalog konnte nicht exportiert werden.&#34;)
+
+    def setQuestionnaireName(self, name=&#34;ungespeichert&#34;):
+        &#34;&#34;&#34;
+        Sets the name of questionnaire in main window to name of the imported file
+        :param name: The name that gets displayed for our questionnaire
+        &#34;&#34;&#34;
+        self.ui.MainFragebogenLabel.setText(&#34;Fragebogen: &#34; + name)
+
+    def setCategoryName(self, name=&#34;ohne Kategorie&#34;):
+        &#34;&#34;&#34;
+        method sets name of the category in main window to the given category name
+        :param name: Name of the category our questionnaire relates to
+        &#34;&#34;&#34;
+        self.ui.MainKategorieLabel.setText(&#34;Kategorie: &#34; + name)
+
+    def openLib(self):
+        &#34;&#34;&#34;
+        Opens Library through Bibliotheks button in MainFrame in Tab Fragen
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.show()
+
+    # Menubar
+    def openFBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 1 Fragen through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(0)
+        self.dialog.show()
+
+    def openFKBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 0 Fragebögen through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(1)
+        self.dialog.show()
+
+    def openKBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 2 Fagen-Kategorien through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(2)
+        self.dialog.show()
+
+    def openQAKBib(self):
+        &#34;&#34;&#34;
+        Opens library with tab 4 Fragebogen-Kategorien through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = Library(self)
+        self.dialog.ui.libraryTabs.setCurrentIndex(3)
+        self.dialog.show()
+
+    def openHelp(self):
+        &#34;&#34;&#34;
+        Opens help window through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = HelpWindow()
+        self.dialog.show()
+
+    def openDB(self):
+        &#34;&#34;&#34;
+        Opens Database window through menu bar point
+        &#34;&#34;&#34;
+        self.dialog = DBWindow(self, config=readConfigFile())
+        self.dialog.show()
+
+    def openChooseQA(self):
+        &#34;&#34;&#34;
+        Opens a window to choose an Questionnaire which will be loaded in tree
+        &#34;&#34;&#34;
+        self.dialog = ChooseQAWindow(self)
+        self.dialog.show()
+
+    def newQCat(self):
+        &#34;&#34;&#34;
+        Opens window to add a new category
+        &#34;&#34;&#34;
+        self.dialog = SaveCategory(self)
+        self.dialog.show()
+
+    def newQACat(self):
+        &#34;&#34;&#34;
+        Opens window to add a new category
+        &#34;&#34;&#34;
+        self.dialog = SaveCategoryQA(self)
+        self.dialog.show()
+
+    def eventFilter(self, source, event):
+        &#34;&#34;&#34;
+        This is a eventfilter for our TreeWidget(left)
+        :param source: Where the event came from, here always QTreeWidget
+        :Param event: Event either drop or mouseDoubleClicked
+        :return: Returns the chosen event
+        &#34;&#34;&#34;
+        if event.type() == QEvent.Drop:
+            event.setDropAction(Qt.MoveAction)
+            super().dropEvent(event)
+        if event.type() == QEvent.MouseButtonDblClick:
+            self.editQuestionClicked()
+        return super(MainFrame, self).eventFilter(source, event)
+
+    def questionnairePosition(self):
+        &#34;&#34;&#34;
+        Iterates over all questions in our Tree.
+        Then sends the current row position and the id to the controller
+        &#34;&#34;&#34;
+        self.updateTree()
+        nrOfTreeItems = self.ui.MaintreeWidgetFK.topLevelItemCount()
+        for i in range(0, nrOfTreeItems):
+            treeItem = self.ui.MaintreeWidgetFK.topLevelItem(i)
+            self.questionnaireController.swapQuestionPosition(treeItem.question.abbreviation, i)
+        self.updateTree()
+
+    def findCategory(self, name: str) -&gt; QuestionCategory:
+        &#34;&#34;&#34;
+        Support method that finds the category
+        :param name: Name of the category we want to find
+        :return: Returns the category the question belongs to
+        &#34;&#34;&#34;
+        if name == &#34;Alle&#34;:
+            return None
+        for category in self.questionController.categories():
+            if category.category == name:
+                return category</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QMainWindow</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.addQuestionFromListToTree"><code class="name flex">
+<span>def <span class="ident">addQuestionFromListToTree</span></span>(<span>self, item: <a title="PhysioForms.GUI.MainFrame.CustomListItem" href="#PhysioForms.GUI.MainFrame.CustomListItem">CustomListItem</a> = None, question: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a> = None, silentMode: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Item catches the case of mouseDoubleClickEvent, sends CustomListWidgetItem
+Adds the selected question from the List(Right) to the Tree(Left).
+If the selcted question has dependencies they will be added aswell, user has to accept
+:param item
+: CustomListItem in case of mouseDoubeClickEvent
+:param question
+: Question that we want to transfer
+:param silentMode
+: Recursive calls no more popups</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionFromListToTree(self, item: CustomListItem = None, question: Question = None,
+                              silentMode: bool = False):
+    &#34;&#34;&#34;
+    Item catches the case of mouseDoubleClickEvent, sends CustomListWidgetItem
+    Adds the selected question from the List(Right) to the Tree(Left).
+    If the selcted question has dependencies they will be added aswell, user has to accept
+    :param item         : CustomListItem in case of mouseDoubeClickEvent
+    :param question     : Question that we want to transfer
+    :param silentMode   : Recursive calls no more popups
+    &#34;&#34;&#34;
+    if question:
+        addQuestion = question
+    else:
+        if not isinstance(self.ui.MainlistWidgetFragen.currentItem(), CustomListItem):
+            return
+        addQuestion = self.ui.MainlistWidgetFragen.currentItem().question
+
+    checkDependency = False
+    dependentQuestion = None
+
+    if addQuestion.dependent_on != &#34;none&#34;:
+        checkDependency = True
+        dependentQuestion = self.questionController.getDependentQuestion(addQuestion)
+
+    if checkDependency:
+        dependencyFulfilled = False
+    else:
+        dependencyFulfilled = True
+
+    for question in self.questionnaireController.questionnaire.questions:
+        if checkDependency:
+            if question.abbreviation == dependentQuestion.abbreviation:
+                dependencyFulfilled = True
+        if question.abbreviation == addQuestion.abbreviation:
+            if question.id != addQuestion.id:
+                self.popUp(title=&#34;Warnung&#34;, message=&#34;Die Kurzbeschreibung ist bereits im Fragenkatalog vergeben!&#34;)
+                return
+
+    if not dependencyFulfilled:
+        if not silentMode:
+            if self.popUpDialog(&#34;Warnung&#34;,
+                                &#34;Ihre ausgewählte Frage ist abhängig von einer anderen. Abhängige Frage &#34;
+                                &#34;hinzufügen? Der Vorgang wird andernfalls abgebrochen.&#34;):
+                self.addQuestionFromListToTree(question=dependentQuestion, silentMode=True)
+            else:
+                return
+        else:
+            self.addQuestionFromListToTree(question=dependentQuestion, silentMode=True)
+
+    if not self.questionnaireController.addQuestion(newQuestion=addQuestion):
+        self.popUp(title=&#34;Warnung&#34;, message=&#34;Frage befindet sich bereits im Fragenkatalog.&#34;)
+    self.questionnairePosition()
+    self.updateQuestionList()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.addQuestionList"><code class="name flex">
+<span>def <span class="ident">addQuestionList</span></span>(<span>self, question: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a question to the list(right side of MainFrame)
+:param question: Question</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionList(self, question: Question):
+    &#34;&#34;&#34;
+    Add a question to the list(right side of MainFrame)
+    :param question: Question
+    &#34;&#34;&#34;
+    item = CustomListItem(question)
+    self.ui.MainlistWidgetFragen.addItem(item)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.addQuestionTreeWidget"><code class="name flex">
+<span>def <span class="ident">addQuestionTreeWidget</span></span>(<span>self, data: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to add one question to the Tree
+:param data: Question we want to add the questionnaire(left side)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addQuestionTreeWidget(self, data: Question):
+    &#34;&#34;&#34;
+    Method to add one question to the Tree
+    :param data: Question we want to add the questionnaire(left side)
+    &#34;&#34;&#34;
+    item = CustomTreeItem(self.ui.MaintreeWidgetFK, self, data)
+    self.ui.MaintreeWidgetFK.collapseAll()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.cancelClicked"><code class="name flex">
+<span>def <span class="ident">cancelClicked</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clears tree and open new unsaved Questionnaire in main window</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cancelClicked(self):
+    &#34;&#34;&#34;
+    Clears tree and open new unsaved Questionnaire in main window
+    &#34;&#34;&#34;
+    if self.popUpDialog(&#39;Abbrechen&#39;, &#39;Alle Änderungen im Fragebogen werden verworfen. \nWirklich abbrechen?&#39;):
+        self.questionnaireController.setQuestionnaire(
+            Questionnaire(self.questionnaireController.getCategoryByID(1)))
+        self.ui.MaintreeWidgetFK.clear()
+        self.updateQuestionList()
+        self.setCategoryName()
+        self.setQuestionnaireName()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.closeEvent"><code class="name flex">
+<span>def <span class="ident">closeEvent</span></span>(<span>self, event: PyQt5.QtGui.QCloseEvent) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is called when the user closes the window
+:param event: QCloseevent</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def closeEvent(self, event: QCloseEvent) -&gt; None:
+    &#34;&#34;&#34;
+    Is called when the user closes the window
+    :param event: QCloseevent
+    &#34;&#34;&#34;
+    close = self.popUpDialog(&#39;Warnung&#39;,
+                             &#39;Sind sie sicher das Sie die Applikation schließen möchten? Ungespeicherte &#39;
+                             &#39;Änderungen werden nicht übernommen.&#39;)
+    if close:
+        event.accept()
+    else:
+        event.ignore()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.deleteSelectedQuestion"><code class="name flex">
+<span>def <span class="ident">deleteSelectedQuestion</span></span>(<span>self, question: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a> = None, silentMode: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Removes the question in the questionnaire. If the question is not in the database it is completely removed</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def deleteSelectedQuestion(self, question: Question = None, silentMode: bool = False):
+    &#34;&#34;&#34;
+    Removes the question in the questionnaire. If the question is not in the database it is completely removed
+    &#34;&#34;&#34;
+    if question:
+        removeQuestion = question
+    else:
+        if not isinstance(self.ui.MaintreeWidgetFK.currentItem(), CustomTreeItem):
+            return
+        removeQuestion = self.ui.MaintreeWidgetFK.currentItem().question
+
+    dependencies = self.questionnaireController.getDependencies(removeQuestion)
+
+    if len(dependencies) &gt; 0:
+        if not silentMode:
+            if self.popUpDialog(&#34;Warnung&#34;,
+                                &#34;Die zu entfernende Frage besitzt andere abhängige Fragen im Fragebogen. Sollen &#34;
+                                &#34;diese entfernt werden? Andernfalls wird der Vorgang abgebrochen.&#34;):
+                for dependency in dependencies:
+                    self.deleteSelectedQuestion(dependency, True)
+            else:
+                return
+        else:
+            for dependency in dependencies:
+                self.deleteSelectedQuestion(dependency, True)
+
+    # Identify the question in our questionnaire and delete the question
+    for question in self.questionnaireController.questionnaire.questions:
+        if question.abbreviation == removeQuestion.abbreviation:
+            self.questionnaireController.removeQuestion(question)
+
+    self.updateQuestionList()
+    self.questionnairePosition()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.editQuestionClicked"><code class="name flex">
+<span>def <span class="ident">editQuestionClicked</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Edits the current selected question in our TreeWidget(left side)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editQuestionClicked(self):
+    &#34;&#34;&#34;
+    Edits the current selected question in our TreeWidget(left side)
+    &#34;&#34;&#34;
+    if self.ui.MaintreeWidgetFK.currentItem() == None:
+        return
+
+    itemToEdit = self.ui.MaintreeWidgetFK.currentItem()
+    question = itemToEdit.returnQuestion()
+
+    self.dialog = SaveQuestion(self, question)
+    self.dialog.ui.label.setText(&#34;Frage bearbeiten&#34;)
+    self.dialog.setWindowTitle(&#34;Frage bearbeiten&#34;)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.editQuestionItem"><code class="name flex">
+<span>def <span class="ident">editQuestionItem</span></span>(<span>self, newQuestion: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Receives the changed question from SaveQuestion window
+and implements the changes in our model
+:param newQuestion: Question we want to edit</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editQuestionItem(self, newQuestion: Question):
+    &#34;&#34;&#34;
+    Receives the changed question from SaveQuestion window
+    and implements the changes in our model
+    :param newQuestion: Question we want to edit
+    &#34;&#34;&#34;
+    self.questionController.saveQuestion(newQuestion)
+    self.questionnairePosition()
+    self.updateQuestionList()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.eventFilter"><code class="name flex">
+<span>def <span class="ident">eventFilter</span></span>(<span>self, source, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is a eventfilter for our TreeWidget(left)
+:param source: Where the event came from, here always QTreeWidget
+:Param event: Event either drop or mouseDoubleClicked
+:return: Returns the chosen event</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def eventFilter(self, source, event):
+    &#34;&#34;&#34;
+    This is a eventfilter for our TreeWidget(left)
+    :param source: Where the event came from, here always QTreeWidget
+    :Param event: Event either drop or mouseDoubleClicked
+    :return: Returns the chosen event
+    &#34;&#34;&#34;
+    if event.type() == QEvent.Drop:
+        event.setDropAction(Qt.MoveAction)
+        super().dropEvent(event)
+    if event.type() == QEvent.MouseButtonDblClick:
+        self.editQuestionClicked()
+    return super(MainFrame, self).eventFilter(source, event)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.exportQA"><code class="name flex">
+<span>def <span class="ident">exportQA</span></span>(<span>self, questionnaire: <a title="PhysioForms.Questionnaire.Questionnaire" href="../Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exports the current questionnaire, if a questionnaire is selected in the library
+the current questionnaire has to be overwritten with this one</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exportQA(self, questionnaire: Questionnaire = None):
+    &#34;&#34;&#34;
+    Exports the current questionnaire, if a questionnaire is selected in the library
+    the current questionnaire has to be overwritten with this one
+    &#34;&#34;&#34;
+
+    if questionnaire != None:
+        self.questionnaireController.questionnaire = questionnaire
+
+    if len(self.questionnaireController.questionnaire.questions) == 0:
+        self.popUp(&#39;Warning&#39;, &#39;Sie können keinen leeren Fragebogen exportieren&#39;)
+        return
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    fileName, _ = QFileDialog.getSaveFileName(self, &#34;physioForms - Fragebogen exportieren&#34;, &#34;&#34;,
+                                              &#34;Json Files (*.json)&#34;, options=options)
+
+    &#34;&#34;&#34;Add .json if missing&#34;&#34;&#34;
+    if fileName[-5:] != &#34;.json&#34;:
+        fileName += &#34;.json&#34;
+
+    if fileName:
+        try:
+            self.questionnaireController.exportQuestionnaire(Path(fileName))
+        except:
+            self.popUp(&#34;Warnung&#34;, &#34;Fragenkatalog konnte nicht exportiert werden.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.findCategory"><code class="name flex">
+<span>def <span class="ident">findCategory</span></span>(<span>self, name: str) ‑> <a title="PhysioForms.QuestionCategory.QuestionCategory" href="../QuestionCategory.html#PhysioForms.QuestionCategory.QuestionCategory">QuestionCategory</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Support method that finds the category
+:param name: Name of the category we want to find
+:return: Returns the category the question belongs to</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def findCategory(self, name: str) -&gt; QuestionCategory:
+    &#34;&#34;&#34;
+    Support method that finds the category
+    :param name: Name of the category we want to find
+    :return: Returns the category the question belongs to
+    &#34;&#34;&#34;
+    if name == &#34;Alle&#34;:
+        return None
+    for category in self.questionController.categories():
+        if category.category == name:
+            return category</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.importQA"><code class="name flex">
+<span>def <span class="ident">importQA</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Imports the selected questionnaire and shows the questions in the tree</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def importQA(self):
+    &#34;&#34;&#34;
+    Imports the selected questionnaire and shows the questions in the tree
+    &#34;&#34;&#34;
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    fileName, _ = QFileDialog.getOpenFileName(self, &#34;physioForms - Fragebogen importieren&#34;, &#34;&#34;,
+                                              &#34;Json Files (*.json)&#34;, options=options)
+    labelname = os.path.basename(fileName)
+    labelname = os.path.splitext(labelname)[0]
+    self.setQuestionnaireName()
+    self.setCategoryName()
+    if fileName:
+        self.questionnaireController.importQuestionnaire(Path(fileName))
+        self.saveAfterImport()
+    self.updateTree()
+    self.updateQuestionList()
+    self.setQuestionnaireName(labelname)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.newQACat"><code class="name flex">
+<span>def <span class="ident">newQACat</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens window to add a new category</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def newQACat(self):
+    &#34;&#34;&#34;
+    Opens window to add a new category
+    &#34;&#34;&#34;
+    self.dialog = SaveCategoryQA(self)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.newQCat"><code class="name flex">
+<span>def <span class="ident">newQCat</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens window to add a new category</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def newQCat(self):
+    &#34;&#34;&#34;
+    Opens window to add a new category
+    &#34;&#34;&#34;
+    self.dialog = SaveCategory(self)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.newQuestion"><code class="name flex">
+<span>def <span class="ident">newQuestion</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens new Question window</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def newQuestion(self):
+    &#34;&#34;&#34;
+    Opens new Question window
+    &#34;&#34;&#34;
+    self.dialog = SaveQuestion(self)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openChooseQA"><code class="name flex">
+<span>def <span class="ident">openChooseQA</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens a window to choose an Questionnaire which will be loaded in tree</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openChooseQA(self):
+    &#34;&#34;&#34;
+    Opens a window to choose an Questionnaire which will be loaded in tree
+    &#34;&#34;&#34;
+    self.dialog = ChooseQAWindow(self)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openDB"><code class="name flex">
+<span>def <span class="ident">openDB</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens Database window through menu bar point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openDB(self):
+    &#34;&#34;&#34;
+    Opens Database window through menu bar point
+    &#34;&#34;&#34;
+    self.dialog = DBWindow(self, config=readConfigFile())
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openFBib"><code class="name flex">
+<span>def <span class="ident">openFBib</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens library with tab 1 Fragen through menu bar point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openFBib(self):
+    &#34;&#34;&#34;
+    Opens library with tab 1 Fragen through menu bar point
+    &#34;&#34;&#34;
+    self.dialog = Library(self)
+    self.dialog.ui.libraryTabs.setCurrentIndex(0)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openFKBib"><code class="name flex">
+<span>def <span class="ident">openFKBib</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens library with tab 0 Fragebögen through menu bar point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openFKBib(self):
+    &#34;&#34;&#34;
+    Opens library with tab 0 Fragebögen through menu bar point
+    &#34;&#34;&#34;
+    self.dialog = Library(self)
+    self.dialog.ui.libraryTabs.setCurrentIndex(1)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openHelp"><code class="name flex">
+<span>def <span class="ident">openHelp</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens help window through menu bar point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openHelp(self):
+    &#34;&#34;&#34;
+    Opens help window through menu bar point
+    &#34;&#34;&#34;
+    self.dialog = HelpWindow()
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openKBib"><code class="name flex">
+<span>def <span class="ident">openKBib</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens library with tab 2 Fagen-Kategorien through menu bar point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openKBib(self):
+    &#34;&#34;&#34;
+    Opens library with tab 2 Fagen-Kategorien through menu bar point
+    &#34;&#34;&#34;
+    self.dialog = Library(self)
+    self.dialog.ui.libraryTabs.setCurrentIndex(2)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openLib"><code class="name flex">
+<span>def <span class="ident">openLib</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens Library through Bibliotheks button in MainFrame in Tab Fragen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openLib(self):
+    &#34;&#34;&#34;
+    Opens Library through Bibliotheks button in MainFrame in Tab Fragen
+    &#34;&#34;&#34;
+    self.dialog = Library(self)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.openQAKBib"><code class="name flex">
+<span>def <span class="ident">openQAKBib</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens library with tab 4 Fragebogen-Kategorien through menu bar point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openQAKBib(self):
+    &#34;&#34;&#34;
+    Opens library with tab 4 Fragebogen-Kategorien through menu bar point
+    &#34;&#34;&#34;
+    self.dialog = Library(self)
+    self.dialog.ui.libraryTabs.setCurrentIndex(3)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.popUp"><code class="name flex">
+<span>def <span class="ident">popUp</span></span>(<span>self, title: str, message: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a simple popup
+:param title: Title of the popup
+:param message: custom message inside the popup</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def popUp(self, title: str, message: str):
+    &#34;&#34;&#34;
+    Creates a simple popup
+    :param title: Title of the popup
+    :param message: custom message inside the popup
+    &#34;&#34;&#34;
+    box = QtWidgets.QMessageBox()
+    box.setIcon(QtWidgets.QMessageBox.Warning)
+    box.setWindowTitle(title)
+    box.setText(message)
+    icon = QIcon()
+    icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+    box.setWindowIcon(icon)
+    box.exec_()
+    return</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.popUpDialog"><code class="name flex">
+<span>def <span class="ident">popUpDialog</span></span>(<span>self, title: str, message: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates popup With yes or no buttons
+:param title: Title of the popup
+:param message: Custom message
+:return: bool, yes equals true</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def popUpDialog(self, title: str, message: str) -&gt; bool:
+    &#34;&#34;&#34;
+    Creates popup With yes or no buttons
+    :param title: Title of the popup
+    :param message: Custom message
+    :return: bool, yes equals true
+    &#34;&#34;&#34;
+    box = QtWidgets.QMessageBox()
+    box.setIcon(QtWidgets.QMessageBox.Warning)
+    box.setWindowTitle(title)
+    box.setText(message)
+    box.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+    icon = QIcon()
+    icon.addPixmap(QPixmap(iconPicturePath), QIcon.Normal, QIcon.Off)
+    box.setWindowIcon(icon)
+    buttonY = box.button(QtWidgets.QMessageBox.Yes)
+    buttonY.setText(&#39;Ja&#39;)
+    buttonN = box.button(QtWidgets.QMessageBox.No)
+    buttonN.setText(&#39;Nein&#39;)
+    box.exec_()
+
+    if box.clickedButton() == buttonY:
+        return True
+    if box.clickedButton() == buttonN:
+        return False</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.questionnairePosition"><code class="name flex">
+<span>def <span class="ident">questionnairePosition</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Iterates over all questions in our Tree.
+Then sends the current row position and the id to the controller</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def questionnairePosition(self):
+    &#34;&#34;&#34;
+    Iterates over all questions in our Tree.
+    Then sends the current row position and the id to the controller
+    &#34;&#34;&#34;
+    self.updateTree()
+    nrOfTreeItems = self.ui.MaintreeWidgetFK.topLevelItemCount()
+    for i in range(0, nrOfTreeItems):
+        treeItem = self.ui.MaintreeWidgetFK.topLevelItem(i)
+        self.questionnaireController.swapQuestionPosition(treeItem.question.abbreviation, i)
+    self.updateTree()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.removeQuestionClicked"><code class="name flex">
+<span>def <span class="ident">removeQuestionClicked</span></span>(<span>self, question: <a title="PhysioForms.Question.Question" href="../Question.html#PhysioForms.Question.Question">Question</a> = None, silentMode: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deletes the current selected question in the QTreeWidget(left side)
+:param question: question we want to remove
+:param silentMode: Recursive call no more popups</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeQuestionClicked(self, question: Question = None, silentMode: bool = False):
+    &#34;&#34;&#34;
+    Deletes the current selected question in the QTreeWidget(left side)
+    :param question: question we want to remove
+    :param silentMode: Recursive call no more popups
+    &#34;&#34;&#34;
+    if question:
+        removeQuestion = question
+    else:
+        if not isinstance(self.ui.MaintreeWidgetFK.currentItem(), CustomTreeItem):
+            return
+        removeQuestion = self.ui.MaintreeWidgetFK.currentItem().question
+
+    dependencies = self.questionnaireController.getDependencies(removeQuestion)
+
+    # Question abbrv already exists, warning!
+    for question in self.questionController.questions():
+        if question.abbreviation == removeQuestion.abbreviation:
+            if question.id != removeQuestion.id:
+                self.popUp(&#34;Warnung&#34;, &#34;Die Kurzbeschreibung ist in der Datenbank bereits vergeben!&#34;)
+                return
+
+    if len(dependencies) &gt; 0:
+        if not silentMode:
+            if self.popUpDialog(&#34;Warnung&#34;,
+                                &#34;Die zu entfernende Frage besitzt andere abhängige Fragen im Fragebogen. Sollen &#34;
+                                &#34;diese entfernt werden? Andernfalls wird der Vorgang abgebrochen.&#34;):
+                for dependency in dependencies:
+                    self.removeQuestionClicked(dependency, True)
+            else:
+                return
+        else:
+            for dependency in dependencies:
+                self.removeQuestionClicked(dependency, True)
+
+    # Identify the question in our questionnaire and delete the question
+    for question in self.questionnaireController.questionnaire.questions:
+        if question.abbreviation == removeQuestion.abbreviation:
+            self.questionnaireController.removeQuestion(question)
+
+            # Case question is not in Database Dialog save? (Import)
+            if removeQuestion.id == -1:
+                if self.popUpDialog(&#39;Achtung&#39;,
+                                    &#39;Die ausgewählte Frage ist noch nicht gespeichert.\nMöchten Sie diese &#39;
+                                    &#39;speichern?&#39;):
+                    self.editQuestionItem(removeQuestion)
+
+    self.updateQuestionList()
+    self.questionnairePosition()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.saveAfterImport"><code class="name flex">
+<span>def <span class="ident">saveAfterImport</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simple Dialog that asks the user if he wants to
+save all the questions and the questionnaire after the import</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveAfterImport(self):
+    &#34;&#34;&#34;
+    Simple Dialog that asks the user if he wants to
+    save all the questions and the questionnaire after the import
+    &#34;&#34;&#34;
+    errorQuestionList = []
+    if self.popUpDialog(&#39;Speichern&#39;, &#39;Sollen alle Fragen des importierten Fragebogens bereits gespeichert werden?&#39;):
+        for question in self.questionnaireController.questionnaire.questions:
+            res = self.questionController.saveQuestion(question)
+            if not res[0]:
+                errorQuestionList.append(res[1])
+
+    if len(errorQuestionList) &gt; 0:
+        self.dialog = WarningAbbrv(self, errorQuestionList)
+        self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.saveClicked"><code class="name flex">
+<span>def <span class="ident">saveClicked</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Opens save questionnaire window</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveClicked(self):
+    &#34;&#34;&#34;
+    Opens save questionnaire window
+    &#34;&#34;&#34;
+    self.dialog = SaveQuestionnaire(self, self.questionnaireController.questionnaire)
+    self.dialog.show()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.saveQuestionnaireRecieve"><code class="name flex">
+<span>def <span class="ident">saveQuestionnaireRecieve</span></span>(<span>self, questionnaire: <a title="PhysioForms.Questionnaire.Questionnaire" href="../Questionnaire.html#PhysioForms.Questionnaire.Questionnaire">Questionnaire</a>, source: int = 0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Saves the received questionnaire
+:param questionnaire: The questionnaire we want to save
+:param source: If source == 1, the method was called from the MainFrame, otherwise from the library</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveQuestionnaireRecieve(self, questionnaire: Questionnaire, source: int = 0):
+    &#34;&#34;&#34;
+    Saves the received questionnaire
+    :param questionnaire: The questionnaire we want to save
+    :param source: If source == 1, the method was called from the MainFrame, otherwise from the library
+    &#34;&#34;&#34;
+    res = self.questionnaireController.saveQuestionnaire(questionnaire=questionnaire)
+    if len(res[1]) &gt; 0:
+        questionList = res[1]
+        self.dialog = WarningAbbrv(self, questionList)
+        self.dialog.show()
+        return
+    if source == MAIN_WINDOW:
+        self.questionnaireController.questionnaire = res[0]
+
+    self.setQuestionnaireName(questionnaire.name)
+    self.setCategoryName(questionnaire.category.category)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.setCategoryName"><code class="name flex">
+<span>def <span class="ident">setCategoryName</span></span>(<span>self, name='ohne Kategorie')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>method sets name of the category in main window to the given category name
+:param name: Name of the category our questionnaire relates to</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setCategoryName(self, name=&#34;ohne Kategorie&#34;):
+    &#34;&#34;&#34;
+    method sets name of the category in main window to the given category name
+    :param name: Name of the category our questionnaire relates to
+    &#34;&#34;&#34;
+    self.ui.MainKategorieLabel.setText(&#34;Kategorie: &#34; + name)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.setQuestionnaireName"><code class="name flex">
+<span>def <span class="ident">setQuestionnaireName</span></span>(<span>self, name='ungespeichert')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the name of questionnaire in main window to name of the imported file
+:param name: The name that gets displayed for our questionnaire</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setQuestionnaireName(self, name=&#34;ungespeichert&#34;):
+    &#34;&#34;&#34;
+    Sets the name of questionnaire in main window to name of the imported file
+    :param name: The name that gets displayed for our questionnaire
+    &#34;&#34;&#34;
+    self.ui.MainFragebogenLabel.setText(&#34;Fragebogen: &#34; + name)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.updateAll"><code class="name flex">
+<span>def <span class="ident">updateAll</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the tree, list and the searchText</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updateAll(self):
+    &#34;&#34;&#34;
+    Updates the tree, list and the searchText
+    &#34;&#34;&#34;
+    self.updateTree()
+    self.updateQuestionList()
+    self.updateText()</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.updateCategories"><code class="name flex">
+<span>def <span class="ident">updateCategories</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the categories in the combobox in Mainframe</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updateCategories(self):
+    &#34;&#34;&#34;
+    Updates the categories in the combobox in Mainframe
+    &#34;&#34;&#34;
+    self.ui.mainDropdownQList.clear()
+    self.ui.mainDropdownQList.addItem(&#34;Alle&#34;)
+    for category in self.questionController.categories():
+        self.ui.mainDropdownQList.addItem(category.category)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.updateQuestionList"><code class="name flex">
+<span>def <span class="ident">updateQuestionList</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the list(Right) with all questions or with selected ones
+Also filters this list with the selected category and searchText</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updateQuestionList(self):
+    &#34;&#34;&#34;
+    Updates the list(Right) with all questions or with selected ones
+    Also filters this list with the selected category and searchText
+    &#34;&#34;&#34;
+    searchText = self.ui.MainSearchLine.text()
+    self.ui.MainlistWidgetFragen.clear()
+    currentQuestionCategory = self.findCategory(self.ui.mainDropdownQList.currentText())
+    questionsList = self.questionController.findByName(searchText, currentQuestionCategory)
+    for question in self.questionnaireController.questionnaire.questions:
+        for question2 in questionsList:
+            if question.id == question2.id:
+                questionsList.remove(question2)
+    for question in questionsList:
+        self.addQuestionList(question)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.updateText"><code class="name flex">
+<span>def <span class="ident">updateText</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the names for our labels: Name and category</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updateText(self):
+    &#34;&#34;&#34;
+    Updates the names for our labels: Name and category
+    &#34;&#34;&#34;
+    self.setQuestionnaireName(self.questionnaireController.questionnaire.name)
+    self.setCategoryName(self.questionnaireController.questionnaire.category.category)</code></pre>
+</details>
+</dd>
+<dt id="PhysioForms.GUI.MainFrame.MainFrame.updateTree"><code class="name flex">
+<span>def <span class="ident">updateTree</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the tree (left side MainFrame)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updateTree(self):
+    &#34;&#34;&#34;
+    Updates the tree (left side MainFrame)
+    &#34;&#34;&#34;
+    self.ui.MaintreeWidgetFK.clear()
+    for question in self.questionnaireController.questionnaire.questions:
+        self.addQuestionTreeWidget(question)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="PhysioForms.GUI" href="index.html">PhysioForms.GUI</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="PhysioForms.GUI.MainFrame.qss" href="#PhysioForms.GUI.MainFrame.qss">qss</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="PhysioForms.GUI.MainFrame.CustomListItem" href="#PhysioForms.GUI.MainFrame.CustomListItem">CustomListItem</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.GUI.MainFrame.CustomListItem.returnQuestion" href="#PhysioForms.GUI.MainFrame.CustomListItem.returnQuestion">returnQuestion</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.CustomListItem.returnText" href="#PhysioForms.GUI.MainFrame.CustomListItem.returnText">returnText</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="PhysioForms.GUI.MainFrame.CustomTreeItem" href="#PhysioForms.GUI.MainFrame.CustomTreeItem">CustomTreeItem</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.GUI.MainFrame.CustomTreeItem.removeAllChildren" href="#PhysioForms.GUI.MainFrame.CustomTreeItem.removeAllChildren">removeAllChildren</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.CustomTreeItem.returnQuestion" href="#PhysioForms.GUI.MainFrame.CustomTreeItem.returnQuestion">returnQuestion</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.CustomTreeItem.returnText" href="#PhysioForms.GUI.MainFrame.CustomTreeItem.returnText">returnText</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.CustomTreeItem.updateItem" href="#PhysioForms.GUI.MainFrame.CustomTreeItem.updateItem">updateItem</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="PhysioForms.GUI.MainFrame.MainFrame" href="#PhysioForms.GUI.MainFrame.MainFrame">MainFrame</a></code></h4>
+<ul class="">
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.addQuestionFromListToTree" href="#PhysioForms.GUI.MainFrame.MainFrame.addQuestionFromListToTree">addQuestionFromListToTree</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.addQuestionList" href="#PhysioForms.GUI.MainFrame.MainFrame.addQuestionList">addQuestionList</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.addQuestionTreeWidget" href="#PhysioForms.GUI.MainFrame.MainFrame.addQuestionTreeWidget">addQuestionTreeWidget</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.cancelClicked" href="#PhysioForms.GUI.MainFrame.MainFrame.cancelClicked">cancelClicked</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.closeEvent" href="#PhysioForms.GUI.MainFrame.MainFrame.closeEvent">closeEvent</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.deleteSelectedQuestion" href="#PhysioForms.GUI.MainFrame.MainFrame.deleteSelectedQuestion">deleteSelectedQuestion</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.editQuestionClicked" href="#PhysioForms.GUI.MainFrame.MainFrame.editQuestionClicked">editQuestionClicked</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.editQuestionItem" href="#PhysioForms.GUI.MainFrame.MainFrame.editQuestionItem">editQuestionItem</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.eventFilter" href="#PhysioForms.GUI.MainFrame.MainFrame.eventFilter">eventFilter</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.exportQA" href="#PhysioForms.GUI.MainFrame.MainFrame.exportQA">exportQA</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.findCategory" href="#PhysioForms.GUI.MainFrame.MainFrame.findCategory">findCategory</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.importQA" href="#PhysioForms.GUI.MainFrame.MainFrame.importQA">importQA</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.newQACat" href="#PhysioForms.GUI.MainFrame.MainFrame.newQACat">newQACat</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.newQCat" href="#PhysioForms.GUI.MainFrame.MainFrame.newQCat">newQCat</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.newQuestion" href="#PhysioForms.GUI.MainFrame.MainFrame.newQuestion">newQuestion</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openChooseQA" href="#PhysioForms.GUI.MainFrame.MainFrame.openChooseQA">openChooseQA</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openDB" href="#PhysioForms.GUI.MainFrame.MainFrame.openDB">openDB</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openFBib" href="#PhysioForms.GUI.MainFrame.MainFrame.openFBib">openFBib</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openFKBib" href="#PhysioForms.GUI.MainFrame.MainFrame.openFKBib">openFKBib</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openHelp" href="#PhysioForms.GUI.MainFrame.MainFrame.openHelp">openHelp</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openKBib" href="#PhysioForms.GUI.MainFrame.MainFrame.openKBib">openKBib</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openLib" href="#PhysioForms.GUI.MainFrame.MainFrame.openLib">openLib</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.openQAKBib" href="#PhysioForms.GUI.MainFrame.MainFrame.openQAKBib">openQAKBib</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.popUp" href="#PhysioForms.GUI.MainFrame.MainFrame.popUp">popUp</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.popUpDialog" href="#PhysioForms.GUI.MainFrame.MainFrame.popUpDialog">popUpDialog</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.questionnairePosition" href="#PhysioForms.GUI.MainFrame.MainFrame.questionnairePosition">questionnairePosition</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.removeQuestionClicked" href="#PhysioForms.GUI.MainFrame.MainFrame.removeQuestionClicked">removeQuestionClicked</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.saveAfterImport" href="#PhysioForms.GUI.MainFrame.MainFrame.saveAfterImport">saveAfterImport</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.saveClicked" href="#PhysioForms.GUI.MainFrame.MainFrame.saveClicked">saveClicked</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.saveQuestionnaireRecieve" href="#PhysioForms.GUI.MainFrame.MainFrame.saveQuestionnaireRecieve">saveQuestionnaireRecieve</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.setCategoryName" href="#PhysioForms.GUI.MainFrame.MainFrame.setCategoryName">setCategoryName</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.setQuestionnaireName" href="#PhysioForms.GUI.MainFrame.MainFrame.setQuestionnaireName">setQuestionnaireName</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.updateAll" href="#PhysioForms.GUI.MainFrame.MainFrame.updateAll">updateAll</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.updateCategories" href="#PhysioForms.GUI.MainFrame.MainFrame.updateCategories">updateCategories</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.updateQuestionList" href="#PhysioForms.GUI.MainFrame.MainFrame.updateQuestionList">updateQuestionList</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.updateText" href="#PhysioForms.GUI.MainFrame.MainFrame.updateText">updateText</a></code></li>
+<li><code><a title="PhysioForms.GUI.MainFrame.MainFrame.updateTree" href="#PhysioForms.GUI.MainFrame.MainFrame.updateTree">updateTree</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

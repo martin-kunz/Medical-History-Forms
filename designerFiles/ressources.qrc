@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="html">
+    <file>html-files/Lib_editdelete.JPG</file>
+    <file>html-files/Lib_impexpqa.JPG</file>
+    <file>html-files/Lib_new.JPG</file>
+    <file>html-files/Lib_openqa.JPG</file>
+    <file>html-files/MainFrameBar_Fragen.JPG</file>
+    <file>html-files/MainFrameBar_FragenKat.JPG</file>
+    <file>html-files/MainFrameBar_ImpExpJPG.JPG</file>
+    <file>html-files/MainFrameBar_Liste.JPG</file>
+    <file>html-files/MainFrameListJPG.JPG</file>
+    <file>html-files/MainFrameTitle.JPG</file>
+    <file>html-files/MainFrameTree.JPG</file>
+  </qresource>
+</RCC>
