@@ -306,6 +306,7 @@ $RECYCLE.BIN/
 
 .idea/*
 .idea
+/data/physioforms.db
 /PhysioForms/log/
 /PhysioForms/data/
 /PhysioForms/config/
