@@ -38,7 +38,7 @@ The main goal of this application is to physicians and clinics to design, manage
 
 #### ➕ Add or Edit a Question
 ![add-edit_question](./images/Add-Edit-Question.png)
-**Figure 2:** Dialog window for adding or editing a question, including dropdown options, mandatory settings, and dependency logic.<br><br>
+<br>**Figure 2:** Dialog window for adding or editing a question, including dropdown options, mandatory settings, and dependency logic.<br><br>
 
 #### 📚 Question Library
 ![question_library](./images/Library.png)
